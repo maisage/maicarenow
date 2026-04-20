@@ -347,7 +347,12 @@
     <div class="wrapper">
       <div class="form-card">
 
-        <form action="#" method="POST">
+        <!-- Submissions go to mai@maicarenow.com via Formspree -->
+        <form action="https://formspree.io/f/xrerakzd" method="POST">
+
+          <!-- Email subject line and honeypot spam protection -->
+          <input type="hidden" name="_subject" value="New MaiCareNow intake submission">
+          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
 
           <!-- 1. What's happening -->
           <div class="form-group">

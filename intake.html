@@ -5,41 +5,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Start your care intake · MaiCareNow</title>
 
-  <!-- Fonts (optional, easy to remove if you prefer system fonts) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
-    /* =============================================
-       Colors & shared values (matches index.html)
-       ============================================= */
     :root {
       --bg: #f7f9fc;
       --card: #ffffff;
-
       --text: #0f172a;
       --body: #334155;
       --muted: #64748b;
-
       --primary: #2563eb;
       --primary-dark: #1d4ed8;
       --primary-soft: #eef4ff;
-
       --border: #e6ebf2;
       --border-strong: #d8e0ea;
-
       --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.04);
       --shadow-md: 0 6px 20px rgba(15, 23, 42, 0.05);
       --shadow-lg: 0 14px 36px rgba(15, 23, 42, 0.07);
     }
 
-    /* =============================================
-       Base
-       ============================================= */
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
 
-    html { scroll-behavior: smooth; }
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       margin: 0;
@@ -65,18 +58,12 @@
       text-decoration: underline;
     }
 
-    /* =============================================
-       Layout wrapper
-       ============================================= */
     .wrapper {
       max-width: 720px;
       margin: 0 auto;
       padding: 0 24px;
     }
 
-    /* =============================================
-       Header (matches index.html)
-       ============================================= */
     .site-header {
       background: rgba(255, 255, 255, 0.75);
       backdrop-filter: saturate(140%) blur(8px);
@@ -115,9 +102,6 @@
       margin-top: 2px;
     }
 
-    /* =============================================
-       Page intro
-       ============================================= */
     .intake-intro {
       padding: 64px 0 36px;
       text-align: center;
@@ -136,9 +120,6 @@
       max-width: 560px;
     }
 
-    /* =============================================
-       Content card
-       ============================================= */
     .content-card {
       background: var(--card);
       border: 1px solid var(--border);
@@ -161,6 +142,8 @@
       margin: 0 0 32px;
       text-align: left;
       display: inline-block;
+      max-width: 420px;
+      width: 100%;
     }
 
     .checklist li {
@@ -190,9 +173,6 @@
       background-position: center;
     }
 
-    /* =============================================
-       Button & back link
-       ============================================= */
     .button {
       display: inline-block;
       padding: 16px 30px;
@@ -232,9 +212,6 @@
       color: var(--primary);
     }
 
-    /* =============================================
-       Footer (matches index.html)
-       ============================================= */
     footer {
       padding: 36px 0 56px;
       text-align: center;
@@ -244,9 +221,6 @@
       margin-top: 40px;
     }
 
-    /* =============================================
-       Responsive
-       ============================================= */
     @media (max-width: 600px) {
       .site-header .wrapper {
         padding-top: 14px;
@@ -298,7 +272,6 @@
   <section>
     <div class="wrapper">
       <div class="content-card">
-
         <p>
           You’ll answer a few short questions about your situation so we can point you
           toward the next best steps.
@@ -306,14 +279,14 @@
 
         <ul class="checklist">
           <li>What is happening now</li>
-          <li>Where their loved one is currently</li>
+          <li>Where your loved one is currently</li>
           <li>What kind of help may be needed</li>
           <li>How soon help is needed</li>
         </ul>
 
-        
+        <a
           class="button button-primary"
-          href="https://forms.gle/U9DZR7W9nBp1oqrf8"
+          href="https://forms.gle/1swSjZXxiLtLaaeV9"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -321,7 +294,6 @@
         </a>
 
         <a href="index.html" class="back-link">Back to home</a>
-
       </div>
     </div>
   </section>

@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -137,105 +138,57 @@
     }
 
     /* =============================================
-       Form card
+       Content card
        ============================================= */
-    .form-card {
+    .content-card {
       background: var(--card);
       border: 1px solid var(--border);
       border-radius: 20px;
       padding: 44px 40px;
       box-shadow: var(--shadow-md);
       margin-bottom: 32px;
+      text-align: center;
     }
 
-    .form-group {
-      margin-bottom: 32px;
+    .content-card p {
+      color: var(--body);
+      font-size: 1.02rem;
+      margin: 0 0 24px;
     }
 
-    .form-group:last-of-type {
-      margin-bottom: 36px;
+    .checklist {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 32px;
+      text-align: left;
+      display: inline-block;
     }
 
-    .form-label {
-      display: block;
+    .checklist li {
+      position: relative;
+      padding: 10px 0 10px 32px;
+      color: var(--body);
       font-size: 1rem;
-      font-weight: 600;
-      color: var(--text);
-      margin-bottom: 14px;
+      border-bottom: 1px solid var(--border);
     }
 
-    /* =============================================
-       Radio groups
-       ============================================= */
-    .radio-group {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
+    .checklist li:last-child {
+      border-bottom: none;
     }
 
-    .radio-option {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding: 14px 16px;
-      background: #fbfcfe;
-      border: 1px solid var(--border-strong);
-      border-radius: 10px;
-      cursor: pointer;
-      font-size: 0.98rem;
-      color: var(--text);
-      transition: border-color 0.15s ease, background 0.15s ease;
-    }
-
-    .radio-option:hover {
-      border-color: var(--primary);
-      background: white;
-    }
-
-    .radio-option input[type="radio"] {
-      width: 18px;
-      height: 18px;
-      accent-color: var(--primary);
-      margin: 0;
-      cursor: pointer;
-      flex-shrink: 0;
-    }
-
-    /* Visually highlight the selected option */
-    .radio-option:has(input[type="radio"]:checked) {
-      border-color: var(--primary);
+    .checklist li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 20px;
+      height: 20px;
+      border-radius: 6px;
       background: var(--primary-soft);
-    }
-
-    /* =============================================
-       Text inputs & textarea
-       ============================================= */
-    input[type="text"],
-    input[type="email"],
-    textarea {
-      width: 100%;
-      padding: 12px 14px;
-      font-family: inherit;
-      font-size: 1rem;
-      color: var(--text);
-      background: #fbfcfe;
-      border: 1px solid var(--border-strong);
-      border-radius: 10px;
-      transition: border-color 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
-    }
-
-    input[type="text"]:focus,
-    input[type="email"]:focus,
-    textarea:focus {
-      outline: none;
-      border-color: var(--primary);
-      background: white;
-      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
-    }
-
-    textarea {
-      min-height: 120px;
-      resize: vertical;
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%232563eb' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='3 8 7 12 13 5'/%3e%3c/svg%3e");
+      background-repeat: no-repeat;
+      background-position: center;
     }
 
     /* =============================================
@@ -243,12 +196,12 @@
        ============================================= */
     .button {
       display: inline-block;
-      padding: 16px 26px;
+      padding: 16px 30px;
       border-radius: 10px;
       font-family: inherit;
       font-size: 1.02rem;
       font-weight: 600;
-      border: none;
+      text-decoration: none;
       cursor: pointer;
       transition: transform 0.15s ease, box-shadow 0.2s ease, background 0.2s ease;
     }
@@ -258,12 +211,12 @@
       color: white;
       box-shadow: 0 1px 2px rgba(37, 99, 235, 0.2),
                   0 6px 16px rgba(37, 99, 235, 0.18);
-      width: 100%;
     }
 
     .button-primary:hover {
       background: var(--primary-dark);
       transform: translateY(-1px);
+      text-decoration: none;
       box-shadow: 0 2px 4px rgba(37, 99, 235, 0.22),
                   0 10px 22px rgba(37, 99, 235, 0.22);
     }
@@ -271,7 +224,7 @@
     .back-link {
       display: block;
       text-align: center;
-      margin-top: 20px;
+      margin-top: 24px;
       font-size: 0.95rem;
       color: var(--muted);
     }
@@ -313,12 +266,12 @@
         padding: 44px 0 24px;
       }
 
-      .form-card {
-        padding: 28px 22px;
+      .content-card {
+        padding: 32px 24px;
       }
 
-      .form-group {
-        margin-bottom: 26px;
+      .button {
+        width: 100%;
       }
     }
   </style>
@@ -338,175 +291,37 @@
     <div class="wrapper">
       <h1>Start your care intake</h1>
       <p>
-        Answer a few simple questions so we can help you understand the next best steps.
+        The intake takes just a few minutes and helps us understand what you’re going through.
       </p>
     </div>
   </section>
 
   <section>
     <div class="wrapper">
-      <div class="form-card">
+      <div class="content-card">
 
-        <!-- Submissions go to mai@maicarenow.com via Formspree -->
-        <form action="https://formspree.io/f/xrerakzd" method="POST">
+        <p>
+          You’ll answer a few short questions about your situation so we can point you
+          toward the next best steps.
+        </p>
 
-          <!-- Email subject line and honeypot spam protection -->
-          <input type="hidden" name="_subject" value="New MaiCareNow intake submission">
-          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+        <ul class="checklist">
+          <li>What is happening now</li>
+          <li>Where their loved one is currently</li>
+          <li>What kind of help may be needed</li>
+          <li>How soon help is needed</li>
+        </ul>
 
-          <!-- 1. What's happening -->
-          <div class="form-group">
-            <span class="form-label">What’s happening right now?</span>
-            <div class="radio-group">
-              <label class="radio-option">
-                <input type="radio" name="situation" value="Hospital discharge" required>
-                <span>Hospital discharge</span>
-              </label>
-              <label class="radio-option">
-                <input type="radio" name="situation" value="Fall or medical event">
-                <span>Fall or medical event</span>
-              </label>
-              <label class="radio-option">
-                <input type="radio" name="situation" value="General decline">
-                <span>General decline</span>
-              </label>
-              <label class="radio-option">
-                <input type="radio" name="situation" value="Not sure">
-                <span>Not sure</span>
-              </label>
-            </div>
-          </div>
+        
+          class="button button-primary"
+          href="PASTE-MY-GOOGLE-FORM-LINK-HERE"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Continue to intake form
+        </a>
 
-          <!-- 2. Where is your loved one -->
-          <div class="form-group">
-            <span class="form-label">Where is your loved one currently?</span>
-            <div class="radio-group">
-              <label class="radio-option">
-                <input type="radio" name="location" value="Hospital" required>
-                <span>Hospital</span>
-              </label>
-              <label class="radio-option">
-                <input type="radio" name="location" value="Home">
-                <span>Home</span>
-              </label>
-              <label class="radio-option">
-                <input type="radio" name="location" value="Rehab / facility">
-                <span>Rehab / facility</span>
-              </label>
-              <label class="radio-option">
-                <input type="radio" name="location" value="Other">
-                <span>Other</span>
-              </label>
-            </div>
-          </div>
-
-          <!-- 3. What kind of help -->
-          <div class="form-group">
-            <span class="form-label">What kind of help do you think they need?</span>
-            <div class="radio-group">
-              <label class="radio-option">
-                <input type="radio" name="help_type" value="Not sure" required>
-                <span>Not sure</span>
-              </label>
-              <label class="radio-option">
-                <input type="radio" name="help_type" value="Some help at home">
-                <span>Some help at home</span>
-              </label>
-              <label class="radio-option">
-                <input type="radio" name="help_type" value="Full-time care">
-                <span>Full-time care</span>
-              </label>
-              <label class="radio-option">
-                <input type="radio" name="help_type" value="Just exploring">
-                <span>Just exploring</span>
-              </label>
-            </div>
-          </div>
-
-          <!-- 4. Can they move on their own -->
-          <div class="form-group">
-            <span class="form-label">Can they move on their own?</span>
-            <div class="radio-group">
-              <label class="radio-option">
-                <input type="radio" name="mobility" value="Yes" required>
-                <span>Yes</span>
-              </label>
-              <label class="radio-option">
-                <input type="radio" name="mobility" value="Limited">
-                <span>Limited</span>
-              </label>
-              <label class="radio-option">
-                <input type="radio" name="mobility" value="No">
-                <span>No</span>
-              </label>
-            </div>
-          </div>
-
-          <!-- 5. Payment -->
-          <div class="form-group">
-            <span class="form-label">Do you have a way to pay for care?</span>
-            <div class="radio-group">
-              <label class="radio-option">
-                <input type="radio" name="payment" value="Medicare" required>
-                <span>Medicare</span>
-              </label>
-              <label class="radio-option">
-                <input type="radio" name="payment" value="Medicaid">
-                <span>Medicaid</span>
-              </label>
-              <label class="radio-option">
-                <input type="radio" name="payment" value="Private pay">
-                <span>Private pay</span>
-              </label>
-              <label class="radio-option">
-                <input type="radio" name="payment" value="Not sure">
-                <span>Not sure</span>
-              </label>
-            </div>
-          </div>
-
-          <!-- 6. Timing -->
-          <div class="form-group">
-            <span class="form-label">When do you need help?</span>
-            <div class="radio-group">
-              <label class="radio-option">
-                <input type="radio" name="timing" value="Immediately" required>
-                <span>Immediately</span>
-              </label>
-              <label class="radio-option">
-                <input type="radio" name="timing" value="Within a few days">
-                <span>Within a few days</span>
-              </label>
-              <label class="radio-option">
-                <input type="radio" name="timing" value="Planning ahead">
-                <span>Planning ahead</span>
-              </label>
-            </div>
-          </div>
-
-          <!-- 7. Anything else -->
-          <div class="form-group">
-            <label class="form-label" for="notes">Anything else we should know?</label>
-            <textarea id="notes" name="notes"></textarea>
-          </div>
-
-          <!-- 8. Name -->
-          <div class="form-group">
-            <label class="form-label" for="name">Your name</label>
-            <input type="text" id="name" name="name" required>
-          </div>
-
-          <!-- 9. Email -->
-          <div class="form-group">
-            <label class="form-label" for="email">Your email</label>
-            <input type="email" id="email" name="email" required>
-          </div>
-
-          <button type="submit" class="button button-primary">Submit intake</button>
-
-          <a href="index.html" class="back-link">Back to home</a>
-
-        </form>
+        <a href="index.html" class="back-link">Back to home</a>
 
       </div>
     </div>
@@ -520,3 +335,4 @@
 
 </body>
 </html>
+```

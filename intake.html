@@ -1,272 +1,125 @@
+    Replace your entire intake.html with this version below. This removes the Google Form completely and sends directly to your Formspree form at mjglogyo.
+
+Make sure this exact file is uploaded to your website after you paste it.
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Care Intake | MaiCareNow</title>
+  <style>
     body {
+      font-family: Arial, sans-serif;
+      background-color: #f7f7f5;
+      color: #333;
       margin: 0;
-      font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-      background: var(--bg);
-      color: var(--body);
-      line-height: 1.65;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
+      padding: 0;
     }
-
-    h1, h2, h3 {
-      color: var(--text);
-      letter-spacing: -0.02em;
+    .container {
+      max-width: 700px;
+      margin: 50px auto;
+      background: white;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
     }
-
-    a {
-      color: var(--primary);
+    h1 {
+      text-align: center;
+      margin-bottom: 10px;
+      color: #2f4f4f;
+    }
+    p.description {
+      text-align: center;
+      margin-bottom: 30px;
+      line-height: 1.6;
+      color: #666;
+    }
+    label {
+      display: block;
+      margin-top: 20px;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+    input,
+    textarea,
+    select {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+      box-sizing: border-box;
+    }
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+    button {
+      margin-top: 30px;
+      width: 100%;
+      padding: 14px;
+      background-color: #2f4f4f;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 17px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #3f6b6b;
+    }
+    .back-home {
+      text-align: center;
+      margin-top: 25px;
+    }
+    .back-home a {
+      color: #2f4f4f;
       text-decoration: none;
     }
-
-    a:hover {
+    .back-home a:hover {
       text-decoration: underline;
     }
-
-    .wrapper {
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-
-    .site-header {
-      background: rgba(255, 255, 255, 0.75);
-      backdrop-filter: saturate(140%) blur(8px);
-      -webkit-backdrop-filter: saturate(140%) blur(8px);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .site-header .wrapper {
-      display: flex;
-      align-items: center;
-      padding-top: 18px;
-      padding-bottom: 18px;
-    }
-
-    .brand {
-      display: flex;
-      flex-direction: column;
-      line-height: 1.2;
-      text-decoration: none;
-    }
-
-    .brand:hover {
-      text-decoration: none;
-    }
-
-    .brand-name {
-      font-size: 1.1rem;
-      font-weight: 600;
-      color: var(--text);
-      letter-spacing: -0.01em;
-    }
-
-    .brand-tagline {
-      font-size: 0.82rem;
-      color: var(--muted);
-      margin-top: 2px;
-    }
-
-    .intake-intro {
-      padding: 64px 0 36px;
-      text-align: center;
-    }
-
-    .intake-intro h1 {
-      font-size: clamp(1.9rem, 4vw, 2.5rem);
-      margin: 0 0 14px;
-      font-weight: 700;
-    }
-
-    .intake-intro p {
-      color: var(--muted);
-      font-size: 1.05rem;
-      margin: 0 auto;
-      max-width: 560px;
-    }
-
-    .content-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 44px 40px;
-      box-shadow: var(--shadow-md);
-      margin-bottom: 32px;
-      text-align: center;
-    }
-
-    .content-card p {
-      color: var(--body);
-      font-size: 1.02rem;
-      margin: 0 0 24px;
-    }
-
-    .checklist {
-      list-style: none;
-      padding: 0;
-      margin: 0 0 32px;
-      text-align: left;
-      display: inline-block;
-      max-width: 420px;
-      width: 100%;
-    }
-
-    .checklist li {
-      position: relative;
-      padding: 10px 0 10px 32px;
-      color: var(--body);
-      font-size: 1rem;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .checklist li:last-child {
-      border-bottom: none;
-    }
-
-    .checklist li::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 20px;
-      height: 20px;
-      border-radius: 6px;
-      background: var(--primary-soft);
-      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%232563eb' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='3 8 7 12 13 5'/%3e%3c/svg%3e");
-      background-repeat: no-repeat;
-      background-position: center;
-    }
-
-    .button {
-      display: inline-block;
-      padding: 16px 30px;
-      border-radius: 10px;
-      font-family: inherit;
-      font-size: 1.02rem;
-      font-weight: 600;
-      text-decoration: none;
-      cursor: pointer;
-      transition: transform 0.15s ease, box-shadow 0.2s ease, background 0.2s ease;
-    }
-
-    .button-primary {
-      background: var(--primary);
-      color: white;
-      box-shadow: 0 1px 2px rgba(37, 99, 235, 0.2),
-                  0 6px 16px rgba(37, 99, 235, 0.18);
-    }
-
-    .button-primary:hover {
-      background: var(--primary-dark);
-      transform: translateY(-1px);
-      text-decoration: none;
-      box-shadow: 0 2px 4px rgba(37, 99, 235, 0.22),
-                  0 10px 22px rgba(37, 99, 235, 0.22);
-    }
-
-    .back-link {
-      display: block;
-      text-align: center;
-      margin-top: 24px;
-      font-size: 0.95rem;
-      color: var(--muted);
-    }
-
-    .back-link:hover {
-      color: var(--primary);
-    }
-
-    footer {
-      padding: 36px 0 56px;
-      text-align: center;
-      color: var(--muted);
-      font-size: 0.92rem;
-      border-top: 1px solid var(--border);
-      margin-top: 40px;
-    }
-
-    @media (max-width: 600px) {
-      .site-header .wrapper {
-        padding-top: 14px;
-        padding-bottom: 14px;
-      }
-
-      .brand-name {
-        font-size: 1.05rem;
-      }
-
-      .brand-tagline {
-        font-size: 0.78rem;
-      }
-
-      .intake-intro {
-        padding: 44px 0 24px;
-      }
-
-      .content-card {
-        padding: 32px 24px;
-      }
-
-      .button {
-        width: 100%;
+    @media (max-width: 768px) {
+      .container {
+        margin: 20px;
+        padding: 25px;
       }
     }
   </style>
 </head>
 <body>
-
-  <header class="site-header">
-    <div class="wrapper">
-      <a class="brand" href="index.html">
-        <span class="brand-name">MaiCareNow</span>
-        <span class="brand-tagline">Clearer next steps for care decisions</span>
-      </a>
+  <div class="container">
+    <h1>Care Intake</h1>
+    <p class="description">
+      Tell us a little about your situation and how we may be able to help.
+      We will review your information and follow up with you directly.
+    </p>
+    <form action="https://formspree.io/f/mjglogyo" method="POST">
+      <label for="name">Your Name</label>
+      <input type="text" id="name" name="name" required>
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" required>
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" name="phone">
+      <label for="relationship">Relationship to Person Needing Care</label>
+      <select id="relationship" name="relationship">
+        <option value="">Select One</option>
+        <option>Self</option>
+        <option>Parent</option>
+        <option>Spouse</option>
+        <option>Grandparent</option>
+        <option>Other Family Member</option>
+        <option>Friend</option>
+      </select>
+      <label for="help">What do you need help with?</label>
+      <textarea id="help" name="help" required></textarea>
+      <input type="hidden" name="_subject" value="New MaiCareNow Intake Submission">
+      <button type="submit">Submit Intake</button>
+    </form>
+    <div class="back-home">
+      <a href="index.html">← Back to Home</a>
     </div>
-  </header>
-
-  <section class="intake-intro">
-    <div class="wrapper">
-      <h1>Start your care intake</h1>
-      <p>
-        The intake takes just a few minutes and helps us understand what you’re going through.
-      </p>
-    </div>
-  </section>
-
-  <section>
-    <div class="wrapper">
-      <div class="content-card">
-        <p>
-          You’ll answer a few short questions about your situation so we can point you
-          toward the next best steps.
-        </p>
-
-        <ul class="checklist">
-          <li>What is happening now</li>
-          <li>Where your loved one is currently</li>
-          <li>What kind of help may be needed</li>
-          <li>How soon help is needed</li>
-        </ul>
-
-        <a
-          class="button button-primary"
-          href="https://forms.gle/1swSjZXxiLtLaaeV9"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Continue to intake form
-        </a>
-
-        <a href="index.html" class="back-link">Back to home</a>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <div class="wrapper">
-      © 2026 MaiCareNow. Clearer next steps for care decisions.
-    </div>
-  </footer>
-
+  </div>
 </body>
 </html>

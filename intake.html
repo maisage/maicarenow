@@ -1,121 +1,434 @@
+Absolutely — here is the full revised intake.html with the “After you submit the intake” section added and the current Formspree link kept as:
+
+https://formspree.io/f/mjglogyo
+
+Copy/paste the full file:
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Care Intake | MaiCareNow</title>
+  <title>Start Intake | MaiCareNow</title>
+  <meta name="description" content="Start a simple MaiCareNow intake to share what is happening and get help sorting through aging care questions and next steps." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f7f7f5;
-      color: #333;
-      margin: 0;
-      padding: 0;
+    :root {
+      --cream: #fbf7ef;
+      --warm-white: #fffdf9;
+      --blue: #315f85;
+      --blue-dark: #173f5f;
+      --blue-soft: #e8f1f7;
+      --sage: #6f8f7b;
+      --sage-soft: #edf4ee;
+      --text: #1f2933;
+      --body: #40505f;
+      --muted: #6b7a88;
+      --border: #e5dccf;
+      --shadow: 0 16px 40px rgba(31, 41, 51, 0.08);
+      --shadow-soft: 0 8px 22px rgba(31, 41, 51, 0.06);
     }
-    .container {
-      max-width: 700px;
-      margin: 50px auto;
-      background: white;
-      padding: 40px;
-      border-radius: 12px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-    }
-    h1 {
-      text-align: center;
-      margin-bottom: 10px;
-      color: #2f4f4f;
-    }
-    p.description {
-      text-align: center;
-      margin-bottom: 30px;
-      line-height: 1.6;
-      color: #666;
-    }
-    label {
-      display: block;
-      margin-top: 20px;
-      margin-bottom: 8px;
-      font-weight: bold;
-    }
-    input,
-    textarea,
-    select {
-      width: 100%;
-      padding: 12px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      font-size: 16px;
+    * {
       box-sizing: border-box;
     }
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      margin: 0;
+      font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      background:
+        radial-gradient(circle at 12% 18%, rgba(111, 143, 123, 0.18), transparent 26%),
+        radial-gradient(circle at 88% 8%, rgba(49, 95, 133, 0.14), transparent 30%),
+        var(--cream);
+      color: var(--body);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+    a {
+      color: inherit;
+    }
+    h1, h2, h3 {
+      color: var(--text);
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+    }
+    p {
+      margin-top: 0;
+    }
+    .wrapper {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .site-header {
+      background: rgba(255, 253, 249, 0.9);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(229, 220, 207, 0.8);
+    }
+    .site-header .wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding-top: 16px;
+      padding-bottom: 16px;
+    }
+    .brand {
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      line-height: 1.2;
+    }
+    .brand-name {
+      font-weight: 800;
+      font-size: 1.25rem;
+      color: var(--blue-dark);
+      letter-spacing: -0.04em;
+    }
+    .brand-tagline {
+      color: var(--muted);
+      font-size: 0.82rem;
+      margin-top: 2px;
+    }
+    .home-link {
+      font-size: 0.94rem;
+      font-weight: 700;
+      text-decoration: none;
+      color: var(--body);
+    }
+    .home-link:hover {
+      color: var(--blue-dark);
+    }
+    main {
+      padding: 64px 0 72px;
+    }
+    .intro {
+      text-align: center;
+      margin-bottom: 28px;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--warm-white);
+      border: 1px solid var(--border);
+      color: var(--blue-dark);
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 800;
+      box-shadow: var(--shadow-soft);
+      margin-bottom: 18px;
+    }
+    .eyebrow-dot {
+      width: 9px;
+      height: 9px;
+      background: var(--sage);
+      border-radius: 50%;
+    }
+    .intro h1 {
+      font-size: clamp(2.1rem, 5vw, 3.1rem);
+      margin: 0 0 16px;
+      color: var(--blue-dark);
+    }
+    .intro p {
+      max-width: 620px;
+      margin: 0 auto;
+      color: var(--body);
+      font-size: 1.08rem;
+    }
+    .intake-card {
+      background: rgba(255, 253, 249, 0.96);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      padding: 34px;
+      box-shadow: var(--shadow);
+    }
+    .expect-box {
+      background: var(--blue-soft);
+      border: 1px solid rgba(49, 95, 133, 0.15);
+      border-radius: 22px;
+      padding: 22px;
+      margin-bottom: 28px;
+    }
+    .expect-box h2 {
+      margin: 0 0 12px;
+      color: var(--blue-dark);
+      font-size: 1.35rem;
+      letter-spacing: -0.02em;
+    }
+    .expect-box p {
+      color: var(--body);
+      margin-bottom: 12px;
+      font-size: 0.98rem;
+    }
+    .expect-box p:last-child {
+      margin-bottom: 0;
+    }
+    .expect-box strong {
+      color: var(--blue-dark);
+    }
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+      margin-bottom: 18px;
+    }
+    .form-group.full {
+      grid-column: 1 / -1;
+    }
+    label {
+      font-weight: 800;
+      color: var(--blue-dark);
+      font-size: 0.95rem;
+    }
+    .hint {
+      color: var(--muted);
+      font-size: 0.86rem;
+      font-weight: 500;
+    }
+    input,
+    select,
     textarea {
-      min-height: 120px;
+      width: 100%;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 13px 14px;
+      font: inherit;
+      color: var(--text);
+      background: #ffffff;
+      outline: none;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: var(--blue);
+      box-shadow: 0 0 0 4px rgba(49, 95, 133, 0.12);
+    }
+    textarea {
+      min-height: 130px;
       resize: vertical;
     }
-    button {
-      margin-top: 30px;
+    .button {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
       width: 100%;
-      padding: 14px;
-      background-color: #2f4f4f;
-      color: white;
+      min-height: 54px;
+      padding: 14px 24px;
+      border-radius: 14px;
       border: none;
-      border-radius: 8px;
-      font-size: 17px;
+      font: inherit;
+      font-weight: 800;
+      background: var(--blue-dark);
+      color: white;
       cursor: pointer;
+      box-shadow: 0 12px 24px rgba(23, 63, 95, 0.2);
+      transition: transform 0.15s ease, background 0.2s ease, box-shadow 0.2s ease;
     }
-    button:hover {
-      background-color: #3f6b6b;
+    .button:hover {
+      background: #0f3048;
+      transform: translateY(-1px);
+      box-shadow: 0 14px 28px rgba(23, 63, 95, 0.24);
     }
-    .back-home {
+    .small-note {
+      margin: 16px auto 0;
+      color: var(--muted);
+      font-size: 0.9rem;
       text-align: center;
-      margin-top: 25px;
+      max-width: 620px;
     }
-    .back-home a {
-      color: #2f4f4f;
+    .back-link {
+      display: block;
+      margin-top: 22px;
+      text-align: center;
+      color: var(--muted);
       text-decoration: none;
+      font-weight: 700;
+      font-size: 0.94rem;
     }
-    .back-home a:hover {
-      text-decoration: underline;
+    .back-link:hover {
+      color: var(--blue-dark);
     }
-    @media (max-width: 768px) {
-      .container {
-        margin: 20px;
-        padding: 25px;
+    .disclaimer {
+      margin-top: 24px;
+      background: #fff9ef;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 18px;
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.55;
+    }
+    .disclaimer strong {
+      color: var(--text);
+    }
+    footer {
+      background: var(--blue-dark);
+      color: rgba(255, 255, 255, 0.72);
+      padding: 34px 0 42px;
+      text-align: center;
+      font-size: 0.92rem;
+    }
+    footer strong {
+      color: white;
+    }
+    @media (max-width: 720px) {
+      .form-grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+    }
+    @media (max-width: 620px) {
+      .wrapper {
+        padding: 0 18px;
+      }
+      .site-header .wrapper {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+      main {
+        padding: 48px 0 56px;
+      }
+      .intake-card {
+        padding: 26px 20px;
+        border-radius: 24px;
+      }
+      .expect-box {
+        padding: 20px;
+        border-radius: 20px;
+      }
+      .intro h1 {
+        font-size: 2.25rem;
       }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Care Intake</h1>
-    <p class="description">
-      Tell us a little about your situation and how we may be able to help.
-      We will review your information and follow up with you directly.
-    </p>
-    <form action="https://formspree.io/f/mjglogyo" method="POST">
-      <label for="name">Your Name</label>
-      <input type="text" id="name" name="name" required>
-      <label for="email">Email Address</label>
-      <input type="email" id="email" name="email" required>
-      <label for="phone">Phone Number</label>
-      <input type="tel" id="phone" name="phone">
-      <label for="relationship">Relationship to Person Needing Care</label>
-      <select id="relationship" name="relationship">
-        <option value="">Select One</option>
-        <option>Self</option>
-        <option>Parent</option>
-        <option>Spouse</option>
-        <option>Grandparent</option>
-        <option>Other Family Member</option>
-        <option>Friend</option>
-      </select>
-      <label for="help">What do you need help with?</label>
-      <textarea id="help" name="help" required></textarea>
-      <input type="hidden" name="_subject" value="New MaiCareNow Intake Submission">
-      <button type="submit">Submit Intake</button>
-    </form>
-    <div class="back-home">
-      <a href="index.html">← Back to Home</a>
+  <header class="site-header">
+    <div class="wrapper">
+      <a class="brand" href="index.html" aria-label="MaiCareNow home">
+        <span class="brand-name">MaiCareNow</span>
+        <span class="brand-tagline">Clear care guidance for families</span>
+      </a>
+      <a class="home-link" href="index.html">Back to home</a>
     </div>
-  </div>
+  </header>
+  <main>
+    <div class="wrapper">
+      <section class="intro">
+        <div class="eyebrow">
+          <span class="eyebrow-dot"></span>
+          Start with what is happening
+        </div>
+        <h1>Start your care intake.</h1>
+        <p>
+          You do not need to know the perfect question. Share the basics, and we will help sort out the next step.
+        </p>
+      </section>
+      <section class="intake-card" aria-label="MaiCareNow intake form">
+        <div class="expect-box">
+          <h2>After you submit the intake</h2>
+          <p>
+            MaiCareNow will review your intake and follow up about a
+            <strong>free 30-minute introductory call</strong>.
+          </p>
+          <p>
+            The call is a chance to better understand your situation, talk through what kind of help may be needed,
+            and explain how MaiCareNow can support your next step.
+          </p>
+          <p>
+            There is no obligation after the introductory call.
+          </p>
+          <p>
+            If additional support is requested after the introductory call, fees will be discussed before any work begins.
+          </p>
+        </div>
+        <form action="https://formspree.io/f/mjglogyo" method="POST">
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="name">Your name *</label>
+              <input type="text" id="name" name="name" autocomplete="name" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Your email *</label>
+              <input type="email" id="email" name="email" autocomplete="email" required>
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone number</label>
+              <input type="tel" id="phone" name="phone" autocomplete="tel">
+            </div>
+            <div class="form-group">
+              <label for="urgency">How soon do you need help?</label>
+              <select id="urgency" name="urgency">
+                <option value="">Select one</option>
+                <option value="Urgent - within 24 hours">Urgent - within 24 hours</option>
+                <option value="Soon - this week">Soon - this week</option>
+                <option value="Planning ahead">Planning ahead</option>
+                <option value="Not sure">Not sure</option>
+              </select>
+            </div>
+            <div class="form-group full">
+              <label for="helping">Who are you helping?</label>
+              <input
+                type="text"
+                id="helping"
+                name="who_are_you_helping"
+                placeholder="Example: my mother, father, spouse, grandparent, myself"
+              >
+            </div>
+            <div class="form-group full">
+              <label for="need">What kind of help do you need?</label>
+              <select id="need" name="type_of_help">
+                <option value="">Select one</option>
+                <option value="Care options">Understanding care options</option>
+                <option value="Hospital discharge">Hospital discharge or recent health event</option>
+                <option value="Facility review">Facility or care provider concerns</option>
+                <option value="Medication or cost questions">Medication or cost questions</option>
+                <option value="Family decision support">Family decision support</option>
+                <option value="Not sure">Not sure yet</option>
+              </select>
+            </div>
+            <div class="form-group full">
+              <label for="message">What is happening now? *</label>
+              <span class="hint">A few sentences is enough. Start wherever you are.</span>
+              <textarea
+                id="message"
+                name="message"
+                placeholder="Example: My mom is being discharged from the hospital and we are not sure whether she needs home care, rehab, or assisted living."
+                required
+              ></textarea>
+            </div>
+          </div>
+          <input type="hidden" name="_subject" value="New MaiCareNow Intake Submission">
+          <button class="button" type="submit">Submit intake</button>
+          <p class="small-note">
+            Please do not submit emergency requests through this form.
+          </p>
+          <a href="index.html" class="back-link">Back to MaiCareNow home</a>
+          <div class="disclaimer">
+            <strong>Important:</strong> MaiCareNow provides care-navigation support, research assistance,
+            and practical decision guidance. We do not provide medical diagnosis, legal advice, financial advice,
+            insurance sales, or emergency services.
+          </div>
+        </form>
+      </section>
+    </div>
+  </main>
+  <footer>
+    <div class="wrapper">
+      <strong>MaiCareNow</strong><br>
+      Practical guidance. Plain language. No pressure.
+    </div>
+  </footer>
 </body>
 </html>

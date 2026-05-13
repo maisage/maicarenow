@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Thank You | MaiCareNow</title>
+  <meta name="description" content="Thank you for contacting MaiCareNow.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --cream: #fbf7ef;
+      --warm-white: #fffdf9;
+      --blue-dark: #173f5f;
+      --sage: #6f8f7b;
+      --sage-soft: #edf4ee;
+      --text: #1f2933;
+      --body: #40505f;
+      --muted: #6b7a88;
+      --border: #e5dccf;
+      --shadow: 0 16px 40px rgba(31, 41, 51, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      background:
+        radial-gradient(circle at 12% 18%, rgba(111, 143, 123, 0.18), transparent 26%),
+        radial-gradient(circle at 88% 8%, rgba(49, 95, 133, 0.14), transparent 30%),
+        var(--cream);
+      color: var(--body);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .wrapper {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .site-header {
+      background: rgba(255, 253, 249, 0.92);
+      border-bottom: 1px solid rgba(229, 220, 207, 0.8);
+    }
+
+    .site-header .wrapper {
+      padding-top: 16px;
+      padding-bottom: 16px;
+    }
+
+    .brand {
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      line-height: 1.2;
+    }
+
+    .brand-name {
+      font-weight: 800;
+      font-size: 1.25rem;
+      color: var(--blue-dark);
+      letter-spacing: -0.04em;
+    }
+
+    .brand-tagline {
+      color: var(--muted);
+      font-size: 0.82rem;
+      margin-top: 2px;
+    }
+
+    main {
+      min-height: calc(100vh - 170px);
+      display: flex;
+      align-items: center;
+      padding: 64px 0;
+    }
+
+    .card {
+      background: rgba(255, 253, 249, 0.96);
+      border: 1px solid var(--border);
+      border-radius: 30px;
+      padding: 44px 36px;
+      box-shadow: var(--shadow);
+      text-align: center;
+    }
+
+    .check {
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      background: var(--sage-soft);
+      color: var(--sage);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      margin: 0 0 14px;
+      color: var(--blue-dark);
+      font-size: clamp(2rem, 5vw, 3rem);
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+    }
+
+    p {
+      margin: 0 auto 26px;
+      color: var(--body);
+      max-width: 560px;
+      font-size: 1.05rem;
+    }
+
+    .button {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 50px;
+      padding: 14px 24px;
+      border-radius: 14px;
+      text-decoration: none;
+      font-weight: 800;
+      background: var(--blue-dark);
+      color: white;
+      box-shadow: 0 12px 24px rgba(23, 63, 95, 0.2);
+    }
+
+    footer {
+      background: var(--blue-dark);
+      color: rgba(255, 255, 255, 0.72);
+      padding: 30px 0 38px;
+      text-align: center;
+      font-size: 0.92rem;
+    }
+
+    footer strong {
+      color: white;
+    }
+
+    @media (max-width: 620px) {
+      .wrapper {
+        padding: 0 18px;
+      }
+
+      .card {
+        padding: 34px 22px;
+        border-radius: 24px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="site-header">
+    <div class="wrapper">
+      <a class="brand" href="index.html" aria-label="MaiCareNow home">
+        <span class="brand-name">MaiCareNow</span>
+        <span class="brand-tagline">Clear care guidance for families</span>
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrapper">
+      <div class="card">
+        <div class="check">✓</div>
+        <h1>Thank you — your intake was submitted.</h1>
+        <p>
+          We received your message. If this is an emergency, please contact emergency services or the appropriate licensed professional directly.
+        </p>
+        <a class="button" href="index.html">Back to MaiCareNow home</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrapper">
+      <strong>MaiCareNow</strong><br>
+      Practical guidance. Plain language. No pressure.
+    </div>
+  </footer>
+
+</body>
+</html>

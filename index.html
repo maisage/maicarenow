@@ -865,11 +865,108 @@
         flex-direction: column;
       }
     }
+
+    /* Ambient Motion Layer - subtle cinematic movement */
+    .ambient-layer {
+      position: fixed;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .ambient-orb {
+      position: absolute;
+      width: 420px;
+      height: 420px;
+      border-radius: 50%;
+      filter: blur(60px);
+      opacity: .22;
+      animation: drift 18s ease-in-out infinite alternate;
+    }
+
+    .ambient-orb.one {
+      left: -120px;
+      top: 12%;
+      background: rgba(215, 168, 93, .55);
+    }
+
+    .ambient-orb.two {
+      right: -140px;
+      top: 36%;
+      background: rgba(143, 184, 155, .38);
+      animation-duration: 22s;
+      animation-delay: -4s;
+    }
+
+    .ambient-orb.three {
+      left: 42%;
+      bottom: -220px;
+      background: rgba(155, 201, 188, .28);
+      animation-duration: 26s;
+      animation-delay: -8s;
+    }
+
+    .ambient-particle {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: rgba(215, 168, 93, .55);
+      box-shadow: 0 0 18px rgba(215, 168, 93, .45);
+      opacity: .34;
+      animation: floatParticle 14s linear infinite;
+    }
+
+    .ambient-particle:nth-child(4) { left: 18%; top: 78%; animation-delay: 0s; }
+    .ambient-particle:nth-child(5) { left: 33%; top: 68%; animation-delay: -3s; }
+    .ambient-particle:nth-child(6) { left: 62%; top: 74%; animation-delay: -6s; }
+    .ambient-particle:nth-child(7) { left: 78%; top: 64%; animation-delay: -9s; }
+    .ambient-particle:nth-child(8) { left: 88%; top: 82%; animation-delay: -12s; }
+
+    @keyframes drift {
+      0% { transform: translate3d(0, 0, 0) scale(1); }
+      100% { transform: translate3d(70px, -55px, 0) scale(1.12); }
+    }
+
+    @keyframes floatParticle {
+      0% { transform: translateY(40px) translateX(0); opacity: 0; }
+      20% { opacity: .35; }
+      80% { opacity: .22; }
+      100% { transform: translateY(-560px) translateX(42px); opacity: 0; }
+    }
+
+    .hero-art,
+    .feature-card,
+    .visual-panel,
+    .cta,
+    .pillars {
+      position: relative;
+      z-index: 3;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .ambient-orb,
+      .ambient-particle { animation: none; }
+    }
+
   </style>
 </head>
 
 <body>
   <div class="grain"></div>
+
+  <div class="ambient-layer" aria-hidden="true">
+    <div class="ambient-orb one"></div>
+    <div class="ambient-orb two"></div>
+    <div class="ambient-orb three"></div>
+    <div class="ambient-particle"></div>
+    <div class="ambient-particle"></div>
+    <div class="ambient-particle"></div>
+    <div class="ambient-particle"></div>
+    <div class="ambient-particle"></div>
+  </div>
+
 
   <main class="page">
     <nav class="nav" aria-label="Main navigation">

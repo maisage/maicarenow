@@ -15,8 +15,11 @@
       --ink: #102033;
       --muted: #59687a;
       --line: #e3eaf0;
-      --bg: #ffffff;
-      --soft: #f7fbfa;
+      --soft-blue: #eef8ff;
+      --soft-cream: #fff7e8;
+      --soft-lavender: #f5f0fb;
+      --soft-mint: #eef8f3;
+      --soft-peach: #fff1e8;
       --shadow: 0 16px 40px rgba(11, 36, 84, 0.10);
     }
 
@@ -28,7 +31,7 @@
       margin: 0;
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       color: var(--ink);
-      background: var(--bg);
+      background: #ffffff;
       line-height: 1.45;
     }
 
@@ -37,17 +40,18 @@
     .site {
       max-width: 1500px;
       margin: 0 auto;
-      background: white;
+      background: #ffffff;
     }
 
     header {
-      height: 96px;
+      min-height: 94px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 18px 48px;
+      gap: 24px;
+      padding: 18px 46px;
       border-bottom: 1px solid var(--line);
-      background: rgba(255,255,255,.94);
+      background: rgba(255,255,255,.95);
       position: sticky;
       top: 0;
       z-index: 20;
@@ -94,7 +98,7 @@
     nav {
       display: flex;
       align-items: center;
-      gap: 34px;
+      gap: 32px;
       font-weight: 750;
       color: var(--navy);
       font-size: 15px;
@@ -103,7 +107,7 @@
     .nav-actions {
       display: flex;
       align-items: center;
-      gap: 22px;
+      gap: 20px;
     }
 
     .btn {
@@ -111,11 +115,12 @@
       align-items: center;
       justify-content: center;
       border-radius: 999px;
-      padding: 15px 28px;
+      padding: 15px 27px;
       font-weight: 800;
       border: 1px solid transparent;
       transition: 0.2s ease;
       white-space: nowrap;
+      cursor: pointer;
     }
 
     .btn:hover { transform: translateY(-1px); }
@@ -145,18 +150,17 @@
 
     .hero {
       display: grid;
-      grid-template-columns: 37% 63%;
+      grid-template-columns: 36% 64%;
       align-items: center;
-      min-height: 435px;
-      padding: 28px 44px 10px 54px;
-      gap: 10px;
+      padding: 32px 46px 28px;
+      gap: 8px;
     }
 
     .hero-copy h1 {
       margin: 0;
       color: var(--navy);
       font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(44px, 4.8vw, 72px);
+      font-size: clamp(44px, 4.6vw, 72px);
       line-height: .98;
       letter-spacing: -2px;
     }
@@ -164,7 +168,7 @@
     .hero-copy h1 span {
       display: block;
       color: var(--teal);
-      margin-top: 8px;
+      margin-top: 10px;
     }
 
     .hero-copy p {
@@ -193,192 +197,211 @@
       margin-right: 8px;
     }
 
-    .hero-image-wrap {
+    .hero-art {
       width: 100%;
-      height: 100%;
-      min-height: 410px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      border-radius: 28px;
       overflow: hidden;
-      border-radius: 24px;
       background: linear-gradient(135deg, #fff8ed, #f0faf7);
+      box-shadow: inset 0 0 0 1px rgba(11,36,84,.06);
     }
 
-    .hero-image-wrap img {
+    .hero-art img {
       width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
       display: block;
     }
 
     .cards {
-      padding: 24px 44px 12px;
+      padding: 24px 46px 34px;
       display: grid;
       grid-template-columns: repeat(5, 1fr);
       gap: 18px;
     }
 
     .card {
-      min-height: 295px;
-      border-radius: 18px;
+      border-radius: 20px;
       overflow: hidden;
-      background: #f8fbff;
-      box-shadow: inset 0 0 0 1px rgba(11,36,84,.06);
+      min-height: 390px;
       display: flex;
       flex-direction: column;
+      justify-content: space-between;
+      box-shadow: inset 0 0 0 1px rgba(11,36,84,.06);
     }
 
-    .card-img {
-      height: 155px;
-      display: grid;
-      place-items: center;
-      font-size: 76px;
-      background: linear-gradient(135deg, #eff9ff, #f8fbff);
-    }
-
-    .card:nth-child(2) .card-img { background: linear-gradient(135deg, #fff4dd, #fffaf0); }
-    .card:nth-child(3) .card-img { background: linear-gradient(135deg, #f4eefb, #fbf7ff); }
-    .card:nth-child(4) .card-img { background: linear-gradient(135deg, #eef8f3, #fbfffd); }
-    .card:nth-child(5) .card-img { background: linear-gradient(135deg, #fff0e5, #fffaf7); }
-
-    .card-body {
-      padding: 18px 22px 22px;
-    }
+    .card:nth-child(1) { background: var(--soft-blue); }
+    .card:nth-child(2) { background: var(--soft-cream); }
+    .card:nth-child(3) { background: var(--soft-lavender); }
+    .card:nth-child(4) { background: var(--soft-mint); }
+    .card:nth-child(5) { background: var(--soft-peach); }
 
     .card h3 {
-      margin: 0 0 10px;
+      margin: 0;
+      padding: 28px 18px 8px;
       color: var(--navy);
       font-family: Georgia, "Times New Roman", serif;
-      font-size: 23px;
+      font-size: 25px;
       line-height: 1.05;
       text-align: center;
     }
 
+    .card-visual {
+      min-height: 150px;
+      display: grid;
+      place-items: center;
+      font-size: 80px;
+      padding: 10px;
+    }
+
     .card p {
       margin: 0;
+      padding: 0 24px 28px;
       color: #23364f;
-      font-size: 15.5px;
+      font-size: 16px;
     }
 
     .trust-row {
-      margin: 0 44px 12px;
+      margin: 0 46px 32px;
       border: 1px solid var(--line);
-      border-radius: 18px;
-      min-height: 92px;
+      border-radius: 20px;
+      min-height: 128px;
       display: grid;
-      grid-template-columns: 1.15fr 1.15fr 1.2fr 1.25fr;
+      grid-template-columns: 1fr 1fr 1.2fr;
       overflow: hidden;
       box-shadow: 0 8px 22px rgba(11,36,84,.06);
+      background: white;
     }
 
     .trust-item {
       display: flex;
       align-items: center;
-      gap: 16px;
-      padding: 18px 28px;
+      gap: 18px;
+      padding: 25px 30px;
       border-right: 1px solid var(--line);
     }
 
-    .trust-item:last-child {
-      border-right: none;
-      justify-content: center;
-      color: var(--navy);
-      font-family: "Comic Sans MS", "Bradley Hand", cursive;
-      font-size: 31px;
-      font-weight: 700;
-    }
+    .trust-item:last-child { border-right: none; }
 
-    .trust-icon {
-      font-size: 34px;
-    }
+    .trust-icon { font-size: 42px; }
 
     .trust-item h4 {
-      margin: 0 0 4px;
+      margin: 0 0 5px;
       color: var(--navy);
-      font-size: 16px;
+      font-size: 17px;
     }
 
     .trust-item p {
       margin: 0;
       color: #2d3d55;
-      font-size: 14px;
+      font-size: 15px;
     }
 
-    .story-strip {
-      margin: 12px 44px 34px;
-      border-radius: 18px;
-      background: linear-gradient(90deg, #fff8e8, #edf8f4);
-      padding: 16px 24px;
-      color: var(--navy);
-      text-align: center;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 24px;
-      font-weight: 800;
-    }
-
-    .section {
+    .final-cta {
+      margin: 0 46px 50px;
+      border-radius: 26px;
+      background: linear-gradient(135deg, #f3fbfa, #f9fbff);
+      display: grid;
+      grid-template-columns: 1fr 330px;
+      gap: 28px;
+      align-items: center;
       padding: 42px 54px;
-      background: var(--soft);
-      border-top: 1px solid var(--line);
+      box-shadow: inset 0 0 0 1px rgba(11,36,84,.06);
     }
 
-    .section-inner {
-      max-width: 1050px;
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    .section h2 {
-      margin: 0 0 12px;
+    .final-cta h2 {
+      margin: 0 0 10px;
       color: var(--navy);
       font-family: Georgia, "Times New Roman", serif;
       font-size: 38px;
+      line-height: 1.1;
     }
 
-    .section p {
-      margin: 0 auto 24px;
-      max-width: 760px;
-      color: #304058;
-      font-size: 18px;
+    .final-cta p {
+      margin: 0 0 26px;
+      color: var(--teal);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 27px;
+      font-weight: 800;
+    }
+
+    .final-art {
+      min-height: 210px;
+      display: grid;
+      place-items: center;
+      font-size: 90px;
+      color: var(--navy);
+      text-align: center;
+    }
+
+    .note {
+      margin-top: 12px;
+      font-family: "Comic Sans MS", "Bradley Hand", cursive;
+      font-size: 28px;
+      color: var(--navy);
+      transform: rotate(-4deg);
     }
 
     footer {
-      padding: 28px 54px;
+      padding: 22px 46px;
       border-top: 1px solid var(--line);
       color: var(--muted);
-      font-size: 14px;
+      font-size: 13px;
     }
 
     @media (max-width: 1150px) {
       header { padding: 18px 24px; }
       nav, .login { display: none; }
+
       .hero {
         grid-template-columns: 1fr;
-        padding: 34px 24px 10px;
+        padding: 34px 24px 20px;
       }
-      .hero-image-wrap { min-height: auto; }
-      .cards { grid-template-columns: repeat(2, 1fr); padding: 20px 24px; }
-      .trust-row { grid-template-columns: 1fr; margin: 0 24px 12px; }
-      .trust-item { border-right: none; border-bottom: 1px solid var(--line); }
+
+      .hero-art { margin-top: 16px; }
+
+      .cards {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 20px 24px 30px;
+      }
+
+      .trust-row {
+        grid-template-columns: 1fr;
+        margin: 0 24px 28px;
+      }
+
+      .trust-item {
+        border-right: none;
+        border-bottom: 1px solid var(--line);
+      }
+
       .trust-item:last-child { border-bottom: none; }
-      .story-strip { margin: 12px 24px 30px; }
+
+      .final-cta {
+        margin: 0 24px 42px;
+        grid-template-columns: 1fr;
+        padding: 32px;
+      }
+
+      .final-art { min-height: 130px; }
     }
 
     @media (max-width: 680px) {
-      header { height: auto; }
+      header { min-height: auto; }
+      .brand { min-width: auto; }
       .brand-name { font-size: 31px; }
       .tagline { font-size: 13px; }
       .nav-actions .btn-primary { display: none; }
-      .hero-copy h1 { font-size: 46px; }
+
+      .hero-copy h1 { font-size: 45px; }
       .hero-copy p { font-size: 18px; }
+
       .hero-actions { align-items: stretch; }
-      .btn { width: 100%; }
+      .hero-actions .btn { width: 100%; }
+
       .cards { grid-template-columns: 1fr; }
       .card { min-height: auto; }
-      .trust-item:last-child { font-size: 26px; }
-      .story-strip { font-size: 20px; }
+
+      .final-cta h2 { font-size: 31px; }
+      .final-cta p { font-size: 22px; }
+      .final-art { font-size: 70px; }
     }
   </style>
 </head>
@@ -425,50 +448,40 @@
           </div>
         </div>
 
-        <div class="hero-image-wrap">
-          <img src="maicarenow-homepage-illustration.jpeg" alt="MaiCareNow illustrated healthcare navigation homepage" />
+        <div class="hero-art">
+          <img src="assets/maicarenow-homepage-mockup.png" alt="Illustration of people using MaiCareNow to navigate healthcare decisions" />
         </div>
       </section>
 
       <section class="cards" id="help">
         <article class="card">
-          <div class="card-img">💊🐷</div>
-          <div class="card-body">
-            <h3>Lower Prescription Costs</h3>
-            <p>Find possible ways to save on medications and discover programs that may help.</p>
-          </div>
+          <h3>Lower Prescription Costs</h3>
+          <div class="card-visual">💊🐷</div>
+          <p>Find possible ways to save on medications and discover programs that may help.</p>
         </article>
 
         <article class="card">
-          <div class="card-img">📁💛</div>
-          <div class="card-body">
-            <h3>Financial Assistance Programs</h3>
-            <p>Explore assistance programs, benefits, and resources you may qualify for.</p>
-          </div>
+          <h3>Financial Assistance Programs</h3>
+          <div class="card-visual">📁💛</div>
+          <p>Explore assistance programs, benefits, and resources you may qualify for.</p>
         </article>
 
         <article class="card">
-          <div class="card-img">☕🏡</div>
-          <div class="card-body">
-            <h3>Care & Support Options</h3>
-            <p>Understand care choices for yourself or a loved one, at home or in the community.</p>
-          </div>
+          <h3>Care & Support Options</h3>
+          <div class="card-visual">☕🏡</div>
+          <p>Understand care choices for yourself or a loved one, at home or in the community.</p>
         </article>
 
         <article class="card">
-          <div class="card-img">✅🖊️</div>
-          <div class="card-body">
-            <h3>Guidance for What’s Next</h3>
-            <p>Get clear next steps, important questions to ask, and guidance you can trust.</p>
-          </div>
+          <h3>Guidance for What’s Next</h3>
+          <div class="card-visual">✅🖊️</div>
+          <p>Get clear next steps, important questions to ask, and guidance you can trust.</p>
         </article>
 
         <article class="card">
-          <div class="card-img">💻🪴</div>
-          <div class="card-body">
-            <h3>All in One Place</h3>
-            <p>Your information, resources, and care plan—organized and easy to access.</p>
-          </div>
+          <h3>All in One Place</h3>
+          <div class="card-visual">💻🪴</div>
+          <p>Your information, resources, and care plan—organized and easy to access.</p>
         </article>
       </section>
 
@@ -496,31 +509,24 @@
             <p>We combine technology with compassionate guidance.</p>
           </div>
         </div>
+      </section>
 
-        <div class="trust-item">
-          You’re not alone. ♡
+      <section class="final-cta" id="how">
+        <div>
+          <h2>Not sure where to start?</h2>
+          <p>That’s exactly why MaiCareNow exists.</p>
+          <a class="btn btn-navy" href="https://tally.so/r/7RMJy9">Get Your Personalized Report →</a>
         </div>
-      </section>
-
-      <section class="story-strip">
-        Real people. Real situations. Real guidance when it matters most. ♡
-      </section>
-
-      <section class="section" id="how">
-        <div class="section-inner">
-          <h2>Start with one simple report.</h2>
-          <p>
-            Tell us what you’re dealing with. MaiCareNow helps organize the situation,
-            identify possible options, and provide practical next steps.
-          </p>
-          <a class="btn btn-primary" href="https://tally.so/r/7RMJy9">Start Now</a>
+        <div class="final-art">
+          <div>
+            ☕ 🪴
+            <div class="note">You’re not alone. ♡</div>
+          </div>
         </div>
       </section>
     </main>
 
     <footer>
-      <strong>MaiCareNow</strong> helps people navigate healthcare decisions with more clarity and confidence.
-      <br><br>
       MaiCareNow does not provide medical, legal, insurance, or financial advice. Information is for educational and navigation support only.
     </footer>
   </div>

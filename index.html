@@ -7,13 +7,585 @@
   <title>MaiCareNow — Navigate Healthcare with Confidence</title>
   <meta name="description" content="MaiCareNow helps people understand healthcare options, find possible savings, and move forward with confidence." />
 
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
-  <link rel="stylesheet" href="style.css" />
+  <style>
+    :root {
+      --navy: #0b2454;
+      --teal: #0b8f83;
+      --teal-dark: #08766d;
+      --ink: #102033;
+      --muted: #59687a;
+      --line: #e3eaf0;
+      --soft-blue: #eef8ff;
+      --soft-cream: #fff7e8;
+      --soft-lavender: #f5f0fb;
+      --soft-mint: #eef8f3;
+      --soft-peach: #fff1e8;
+      --white: #ffffff;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: #ffffff;
+      line-height: 1.45;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .site {
+      max-width: 1500px;
+      margin: 0 auto;
+      background: white;
+    }
+
+    header {
+      min-height: 94px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 18px 46px;
+      border-bottom: 1px solid var(--line);
+      background: rgba(255,255,255,.96);
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(10px);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 310px;
+    }
+
+    .brand-mark {
+      width: 52px;
+      height: 52px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, var(--teal), var(--navy));
+      color: white;
+      display: grid;
+      place-items: center;
+      font-size: 30px;
+      font-weight: 800;
+      box-shadow: 0 10px 24px rgba(15,143,131,.18);
+    }
+
+    .brand-name {
+      font-size: 39px;
+      font-weight: 850;
+      letter-spacing: -1.6px;
+      line-height: .9;
+      color: var(--navy);
+    }
+
+    .brand-name span {
+      color: var(--teal);
+    }
+
+    .brand-tagline {
+      color: var(--navy);
+      font-size: 16px;
+      font-weight: 650;
+      margin-top: 4px;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      font-weight: 750;
+      color: var(--navy);
+      font-size: 15px;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .login {
+      font-weight: 800;
+      color: var(--navy);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      padding: 15px 27px;
+      font-weight: 800;
+      border: 1px solid transparent;
+      transition: .2s ease;
+      white-space: nowrap;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--teal), var(--teal-dark));
+      color: white;
+      box-shadow: 0 12px 28px rgba(15,143,131,.22);
+    }
+
+    .btn-navy {
+      background: var(--navy);
+      color: white;
+      box-shadow: 0 12px 28px rgba(11,36,84,.18);
+    }
+
+    .btn-outline {
+      background: white;
+      color: var(--navy);
+      border-color: #c8d6e5;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 36% 64%;
+      align-items: center;
+      padding: 32px 46px 28px;
+      gap: 8px;
+    }
+
+    .hero-copy h1 {
+      margin: 0;
+      color: var(--navy);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(44px, 4.6vw, 72px);
+      line-height: .98;
+      letter-spacing: -2px;
+    }
+
+    .hero-copy h1 span {
+      display: block;
+      color: var(--teal);
+      margin-top: 10px;
+    }
+
+    .hero-copy p {
+      margin: 24px 0 28px;
+      color: #173052;
+      font-size: 21px;
+      max-width: 570px;
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .play {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--navy);
+      color: white;
+      display: inline-grid;
+      place-items: center;
+      font-size: 12px;
+      margin-right: 8px;
+    }
+
+    .hero-art {
+      min-height: 430px;
+      border-radius: 30px;
+      background: linear-gradient(135deg, #fff8ed, #eef9f6 55%, #f8fbff);
+      overflow: hidden;
+      position: relative;
+      box-shadow: inset 0 0 0 1px rgba(11,36,84,.06);
+    }
+
+    .speech {
+      position: absolute;
+      top: 34px;
+      left: 38%;
+      transform: rotate(-4deg);
+      color: var(--navy);
+      font-family: "Comic Sans MS", "Bradley Hand", cursive;
+      font-size: 26px;
+      font-weight: 800;
+      z-index: 4;
+    }
+
+    .person {
+      position: absolute;
+      bottom: 92px;
+      width: 150px;
+      height: 210px;
+      border-radius: 76px 76px 24px 24px;
+      z-index: 2;
+    }
+
+    .person.one {
+      left: 11%;
+      background: #5a9c74;
+    }
+
+    .person.two {
+      right: 16%;
+      background: #f2efe6;
+    }
+
+    .head {
+      position: absolute;
+      top: -58px;
+      left: 34px;
+      width: 86px;
+      height: 86px;
+      border-radius: 50%;
+      background: #efbd96;
+      border: 4px solid rgba(11,36,84,.10);
+    }
+
+    .hair {
+      position: absolute;
+      top: -64px;
+      left: 28px;
+      width: 100px;
+      height: 58px;
+      border-radius: 50px 50px 18px 18px;
+      background: #1f2937;
+      z-index: 1;
+    }
+
+    .person.one .hair {
+      top: -60px;
+      left: 36px;
+      width: 82px;
+      height: 34px;
+      border-radius: 44px 44px 8px 8px;
+      background: #3f3f46;
+    }
+
+    .smile {
+      position: absolute;
+      top: 46px;
+      left: 30px;
+      width: 28px;
+      height: 14px;
+      border-bottom: 3px solid #7c3f2a;
+      border-radius: 0 0 28px 28px;
+    }
+
+    .table {
+      position: absolute;
+      left: 7%;
+      right: 5%;
+      bottom: 28px;
+      height: 110px;
+      background: #d99d66;
+      border-radius: 24px;
+      box-shadow: 0 12px 0 #c98750;
+      z-index: 1;
+    }
+
+    .laptop {
+      position: absolute;
+      left: 36%;
+      bottom: 105px;
+      width: 300px;
+      height: 200px;
+      background: #dce2e8;
+      border: 8px solid #333b48;
+      border-radius: 16px;
+      box-shadow: 0 18px 35px rgba(0,0,0,.18);
+      z-index: 3;
+      padding: 18px;
+    }
+
+    .laptop h3 {
+      margin: 0 0 12px;
+      color: var(--navy);
+      font-size: 15px;
+    }
+
+    .screen-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 7px 8px;
+      margin-bottom: 6px;
+      background: white;
+      border-radius: 8px;
+      color: var(--navy);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .check {
+      color: var(--teal);
+    }
+
+    .trust-note {
+      position: absolute;
+      right: 30px;
+      top: 92px;
+      width: 170px;
+      min-height: 220px;
+      background: rgba(255,255,255,.86);
+      border: 1px solid #cde1d4;
+      border-radius: 28px;
+      text-align: center;
+      padding: 28px 18px;
+      box-shadow: 0 18px 45px rgba(11,36,84,.10);
+      color: var(--navy);
+      font-weight: 750;
+      z-index: 2;
+    }
+
+    .trust-note .heart {
+      color: var(--teal);
+      font-size: 42px;
+      line-height: 1;
+      margin-bottom: 16px;
+    }
+
+    .cards {
+      padding: 24px 46px 34px;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      border-radius: 20px;
+      overflow: hidden;
+      min-height: 390px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: inset 0 0 0 1px rgba(11,36,84,.06);
+    }
+
+    .card:nth-child(1) { background: var(--soft-blue); }
+    .card:nth-child(2) { background: var(--soft-cream); }
+    .card:nth-child(3) { background: var(--soft-lavender); }
+    .card:nth-child(4) { background: var(--soft-mint); }
+    .card:nth-child(5) { background: var(--soft-peach); }
+
+    .card h2 {
+      margin: 0;
+      padding: 28px 18px 8px;
+      color: var(--navy);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 25px;
+      line-height: 1.05;
+      text-align: center;
+    }
+
+    .card-visual {
+      min-height: 150px;
+      display: grid;
+      place-items: center;
+      font-size: 80px;
+      padding: 10px;
+    }
+
+    .card p {
+      margin: 0;
+      padding: 0 24px 28px;
+      color: #23364f;
+      font-size: 16px;
+    }
+
+    .trust-row {
+      margin: 0 46px 34px;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      min-height: 128px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1.2fr;
+      overflow: hidden;
+      box-shadow: 0 8px 22px rgba(11,36,84,.06);
+      background: white;
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      padding: 25px 30px;
+      border-right: 1px solid var(--line);
+    }
+
+    .trust-item:last-child {
+      border-right: none;
+    }
+
+    .trust-icon {
+      font-size: 42px;
+    }
+
+    .trust-item h3 {
+      margin: 0 0 5px;
+      color: var(--navy);
+      font-size: 17px;
+    }
+
+    .trust-item p {
+      margin: 0;
+      color: #2d3d55;
+      font-size: 15px;
+    }
+
+    footer {
+      padding: 18px 46px 22px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      margin-bottom: 8px;
+    }
+
+    @media (max-width: 1150px) {
+      header {
+        padding: 18px 24px;
+      }
+
+      nav,
+      .login {
+        display: none;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        padding: 34px 24px 20px;
+      }
+
+      .hero-art {
+        margin-top: 16px;
+      }
+
+      .cards {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 20px 24px 30px;
+      }
+
+      .trust-row {
+        grid-template-columns: 1fr;
+        margin: 0 24px 32px;
+      }
+
+      .trust-item {
+        border-right: none;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .trust-item:last-child {
+        border-bottom: none;
+      }
+
+      footer {
+        padding-left: 24px;
+        padding-right: 24px;
+      }
+    }
+
+    @media (max-width: 680px) {
+      header {
+        min-height: auto;
+      }
+
+      .brand {
+        min-width: auto;
+      }
+
+      .brand-name {
+        font-size: 31px;
+      }
+
+      .brand-tagline {
+        font-size: 13px;
+      }
+
+      .nav-actions .btn-primary {
+        display: none;
+      }
+
+      .hero-copy h1 {
+        font-size: 45px;
+      }
+
+      .hero-copy p {
+        font-size: 18px;
+      }
+
+      .hero-actions {
+        align-items: stretch;
+      }
+
+      .hero-actions .btn {
+        width: 100%;
+      }
+
+      .hero-art {
+        min-height: 360px;
+      }
+
+      .speech,
+      .trust-note {
+        display: none;
+      }
+
+      .person {
+        transform: scale(.72);
+        transform-origin: bottom;
+      }
+
+      .person.one {
+        left: 1%;
+      }
+
+      .person.two {
+        right: -3%;
+      }
+
+      .laptop {
+        width: 220px;
+        height: 160px;
+        left: 28%;
+        bottom: 105px;
+        padding: 12px;
+      }
+
+      .screen-row {
+        font-size: 11px;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .card {
+        min-height: auto;
+      }
+    }
+  </style>
 </head>
 
 <body>
   <div class="site">
-    <header class="header">
+    <header>
       <a href="#" class="brand" aria-label="MaiCareNow home">
         <div class="brand-mark">♡</div>
         <div>
@@ -22,7 +594,7 @@
         </div>
       </a>
 
-      <nav class="nav" aria-label="Main navigation">
+      <nav aria-label="Main navigation">
         <a href="#how">How It Works</a>
         <a href="#help">What We Help With</a>
         <a href="#resources">Resources</a>
@@ -37,7 +609,7 @@
     </header>
 
     <main>
-      <section class="hero">
+      <section class="hero" id="how">
         <div class="hero-copy">
           <h1>
             Healthcare decisions are hard.
@@ -55,8 +627,36 @@
           </div>
         </div>
 
-        <div class="hero-art">
-          <img src="assets/hero-illustration.png" alt="Illustration of people using MaiCareNow to navigate healthcare decisions" />
+        <div class="hero-art" aria-label="Illustration of people using MaiCareNow at a kitchen table">
+          <div class="speech">We finally have<br>a plan. ♡</div>
+
+          <div class="person one">
+            <div class="hair"></div>
+            <div class="head"><div class="smile"></div></div>
+          </div>
+
+          <div class="person two">
+            <div class="hair"></div>
+            <div class="head"><div class="smile"></div></div>
+          </div>
+
+          <div class="laptop">
+            <h3>MaiCareNow</h3>
+            <div class="screen-row"><span>Prescription Savings</span><span class="check">✓</span></div>
+            <div class="screen-row"><span>Financial Assistance</span><span class="check">✓</span></div>
+            <div class="screen-row"><span>Medicare Options</span><span class="check">✓</span></div>
+            <div class="screen-row"><span>Care & Support</span><span class="check">✓</span></div>
+            <div class="screen-row"><span>Next Steps</span><span class="check">✓</span></div>
+          </div>
+
+          <div class="table"></div>
+
+          <aside class="trust-note">
+            <div class="heart">♡</div>
+            <p>Clear guidance.<br>Practical tools.<br>Real support.</p>
+            <hr style="border:0;border-top:1px solid #bcd6d0;margin:22px 0;">
+            <p style="font-family:'Comic Sans MS','Bradley Hand',cursive;font-size:20px;">You’re not alone.</p>
+          </aside>
         </div>
       </section>
 
@@ -119,14 +719,15 @@
       </section>
     </main>
 
-    <footer class="footer">
+    <footer>
       <div class="footer-links">
         <span>© 2026 MaiCareNow</span>
         <a href="#">Privacy</a>
         <a href="#">Terms</a>
       </div>
       <div>
-        MaiCareNow does not provide medical, legal, insurance, or financial advice. Information is for educational and navigation support only.
+        MaiCareNow does not provide medical, legal, insurance, or financial advice.
+        Information is for educational and navigation support only.
       </div>
     </footer>
   </div>

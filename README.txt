@@ -1,17 +1,10 @@
-MaiCareNow GitHub Upload Files
+MaiCareNow Cartoon Homepage Upload
 
-Upload these files/folders to the root of your MaiCareNow GitHub Pages repository:
+Upload these to the root of your GitHub repository:
 
 1. index.html
-2. style.css
-3. assets/hero-illustration.png
-4. assets/logo.svg
+2. assets/hero-cartoon.png
 
-This version intentionally includes only:
-- Header/navigation
-- Hero section
-- Five feature cards
-- Trust bar
-- Small footer disclaimer
-
-No extra bottom call-to-action section is included.
+This version uses the cartoon image directly.
+No CSS-drawn people.
+No extra bottom homepage section.

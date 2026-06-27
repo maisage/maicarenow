@@ -25,23 +25,22 @@
 
     * { box-sizing: border-box; }
 
+    html { scroll-behavior: smooth; }
+
     body {
       margin: 0;
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       color: var(--ink);
-      background: #ffffff;
+      background: var(--white);
       line-height: 1.45;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+    a { color: inherit; text-decoration: none; }
 
     .site {
       max-width: 1500px;
       margin: 0 auto;
-      background: white;
+      background: #ffffff;
     }
 
     header {
@@ -87,9 +86,7 @@
       color: var(--navy);
     }
 
-    .brand-name span {
-      color: var(--teal);
-    }
+    .brand-name span { color: var(--teal); }
 
     .brand-tagline {
       color: var(--navy);
@@ -131,9 +128,7 @@
       cursor: pointer;
     }
 
-    .btn:hover {
-      transform: translateY(-1px);
-    }
+    .btn:hover { transform: translateY(-1px); }
 
     .btn-primary {
       background: linear-gradient(135deg, var(--teal), var(--teal-dark));
@@ -158,7 +153,7 @@
       grid-template-columns: 36% 64%;
       align-items: center;
       padding: 32px 46px 28px;
-      gap: 8px;
+      gap: 10px;
     }
 
     .hero-copy h1 {
@@ -202,157 +197,17 @@
       margin-right: 8px;
     }
 
-    .hero-art {
-      min-height: 430px;
+    .hero-image {
+      width: 100%;
       border-radius: 30px;
-      background: linear-gradient(135deg, #fff8ed, #eef9f6 55%, #f8fbff);
       overflow: hidden;
-      position: relative;
+      background: linear-gradient(135deg, #fff8ed, #eef9f6);
       box-shadow: inset 0 0 0 1px rgba(11,36,84,.06);
     }
 
-    .speech {
-      position: absolute;
-      top: 34px;
-      left: 38%;
-      transform: rotate(-4deg);
-      color: var(--navy);
-      font-family: "Comic Sans MS", "Bradley Hand", cursive;
-      font-size: 26px;
-      font-weight: 800;
-      z-index: 4;
-    }
-
-    .person {
-      position: absolute;
-      bottom: 92px;
-      width: 150px;
-      height: 210px;
-      border-radius: 76px 76px 24px 24px;
-      z-index: 2;
-    }
-
-    .person.one {
-      left: 11%;
-      background: #5a9c74;
-    }
-
-    .person.two {
-      right: 16%;
-      background: #f2efe6;
-    }
-
-    .head {
-      position: absolute;
-      top: -58px;
-      left: 34px;
-      width: 86px;
-      height: 86px;
-      border-radius: 50%;
-      background: #efbd96;
-      border: 4px solid rgba(11,36,84,.10);
-    }
-
-    .hair {
-      position: absolute;
-      top: -64px;
-      left: 28px;
-      width: 100px;
-      height: 58px;
-      border-radius: 50px 50px 18px 18px;
-      background: #1f2937;
-      z-index: 1;
-    }
-
-    .person.one .hair {
-      top: -60px;
-      left: 36px;
-      width: 82px;
-      height: 34px;
-      border-radius: 44px 44px 8px 8px;
-      background: #3f3f46;
-    }
-
-    .smile {
-      position: absolute;
-      top: 46px;
-      left: 30px;
-      width: 28px;
-      height: 14px;
-      border-bottom: 3px solid #7c3f2a;
-      border-radius: 0 0 28px 28px;
-    }
-
-    .table {
-      position: absolute;
-      left: 7%;
-      right: 5%;
-      bottom: 28px;
-      height: 110px;
-      background: #d99d66;
-      border-radius: 24px;
-      box-shadow: 0 12px 0 #c98750;
-      z-index: 1;
-    }
-
-    .laptop {
-      position: absolute;
-      left: 36%;
-      bottom: 105px;
-      width: 300px;
-      height: 200px;
-      background: #dce2e8;
-      border: 8px solid #333b48;
-      border-radius: 16px;
-      box-shadow: 0 18px 35px rgba(0,0,0,.18);
-      z-index: 3;
-      padding: 18px;
-    }
-
-    .laptop h3 {
-      margin: 0 0 12px;
-      color: var(--navy);
-      font-size: 15px;
-    }
-
-    .screen-row {
-      display: flex;
-      justify-content: space-between;
-      padding: 7px 8px;
-      margin-bottom: 6px;
-      background: white;
-      border-radius: 8px;
-      color: var(--navy);
-      font-size: 13px;
-      font-weight: 800;
-    }
-
-    .check {
-      color: var(--teal);
-    }
-
-    .trust-note {
-      position: absolute;
-      right: 30px;
-      top: 92px;
-      width: 170px;
-      min-height: 220px;
-      background: rgba(255,255,255,.86);
-      border: 1px solid #cde1d4;
-      border-radius: 28px;
-      text-align: center;
-      padding: 28px 18px;
-      box-shadow: 0 18px 45px rgba(11,36,84,.10);
-      color: var(--navy);
-      font-weight: 750;
-      z-index: 2;
-    }
-
-    .trust-note .heart {
-      color: var(--teal);
-      font-size: 42px;
-      line-height: 1;
-      margin-bottom: 16px;
+    .hero-image img {
+      width: 100%;
+      display: block;
     }
 
     .cards {
@@ -423,13 +278,9 @@
       border-right: 1px solid var(--line);
     }
 
-    .trust-item:last-child {
-      border-right: none;
-    }
+    .trust-item:last-child { border-right: none; }
 
-    .trust-icon {
-      font-size: 42px;
-    }
+    .trust-icon { font-size: 42px; }
 
     .trust-item h3 {
       margin: 0 0 5px;
@@ -458,23 +309,17 @@
     }
 
     @media (max-width: 1150px) {
-      header {
-        padding: 18px 24px;
-      }
+      header { padding: 18px 24px; }
 
       nav,
-      .login {
-        display: none;
-      }
+      .login { display: none; }
 
       .hero {
         grid-template-columns: 1fr;
         padding: 34px 24px 20px;
       }
 
-      .hero-art {
-        margin-top: 16px;
-      }
+      .hero-image { margin-top: 16px; }
 
       .cards {
         grid-template-columns: repeat(2, 1fr);
@@ -491,9 +336,7 @@
         border-bottom: 1px solid var(--line);
       }
 
-      .trust-item:last-child {
-        border-bottom: none;
-      }
+      .trust-item:last-child { border-bottom: none; }
 
       footer {
         padding-left: 24px;
@@ -502,83 +345,27 @@
     }
 
     @media (max-width: 680px) {
-      header {
-        min-height: auto;
-      }
+      header { min-height: auto; }
 
-      .brand {
-        min-width: auto;
-      }
+      .brand { min-width: auto; }
 
-      .brand-name {
-        font-size: 31px;
-      }
+      .brand-name { font-size: 31px; }
 
-      .brand-tagline {
-        font-size: 13px;
-      }
+      .brand-tagline { font-size: 13px; }
 
-      .nav-actions .btn-primary {
-        display: none;
-      }
+      .nav-actions .btn-primary { display: none; }
 
-      .hero-copy h1 {
-        font-size: 45px;
-      }
+      .hero-copy h1 { font-size: 45px; }
 
-      .hero-copy p {
-        font-size: 18px;
-      }
+      .hero-copy p { font-size: 18px; }
 
-      .hero-actions {
-        align-items: stretch;
-      }
+      .hero-actions { align-items: stretch; }
 
-      .hero-actions .btn {
-        width: 100%;
-      }
+      .hero-actions .btn { width: 100%; }
 
-      .hero-art {
-        min-height: 360px;
-      }
+      .cards { grid-template-columns: 1fr; }
 
-      .speech,
-      .trust-note {
-        display: none;
-      }
-
-      .person {
-        transform: scale(.72);
-        transform-origin: bottom;
-      }
-
-      .person.one {
-        left: 1%;
-      }
-
-      .person.two {
-        right: -3%;
-      }
-
-      .laptop {
-        width: 220px;
-        height: 160px;
-        left: 28%;
-        bottom: 105px;
-        padding: 12px;
-      }
-
-      .screen-row {
-        font-size: 11px;
-      }
-
-      .cards {
-        grid-template-columns: 1fr;
-      }
-
-      .card {
-        min-height: auto;
-      }
+      .card { min-height: auto; }
     }
   </style>
 </head>
@@ -627,36 +414,8 @@
           </div>
         </div>
 
-        <div class="hero-art" aria-label="Illustration of people using MaiCareNow at a kitchen table">
-          <div class="speech">We finally have<br>a plan. ♡</div>
-
-          <div class="person one">
-            <div class="hair"></div>
-            <div class="head"><div class="smile"></div></div>
-          </div>
-
-          <div class="person two">
-            <div class="hair"></div>
-            <div class="head"><div class="smile"></div></div>
-          </div>
-
-          <div class="laptop">
-            <h3>MaiCareNow</h3>
-            <div class="screen-row"><span>Prescription Savings</span><span class="check">✓</span></div>
-            <div class="screen-row"><span>Financial Assistance</span><span class="check">✓</span></div>
-            <div class="screen-row"><span>Medicare Options</span><span class="check">✓</span></div>
-            <div class="screen-row"><span>Care & Support</span><span class="check">✓</span></div>
-            <div class="screen-row"><span>Next Steps</span><span class="check">✓</span></div>
-          </div>
-
-          <div class="table"></div>
-
-          <aside class="trust-note">
-            <div class="heart">♡</div>
-            <p>Clear guidance.<br>Practical tools.<br>Real support.</p>
-            <hr style="border:0;border-top:1px solid #bcd6d0;margin:22px 0;">
-            <p style="font-family:'Comic Sans MS','Bradley Hand',cursive;font-size:20px;">You’re not alone.</p>
-          </aside>
+        <div class="hero-image">
+          <img src="assets/hero-cartoon.png" alt="Cartoon illustration of people using MaiCareNow to navigate healthcare decisions" />
         </div>
       </section>
 

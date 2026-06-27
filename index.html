@@ -3,1223 +3,526 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MaiCareNow — Clarity When Care Gets Complicated</title>
-  <meta name="description" content="MaiCareNow helps families slow things down, look deeper at care options, and stay aware when life and care decisions become complicated." />
+
+  <title>MaiCareNow — Navigate Healthcare with Confidence</title>
+  <meta name="description" content="MaiCareNow helps people understand healthcare options, find possible savings, and move forward with confidence." />
 
   <style>
     :root {
-      --bg: #071010;
-      --bg-2: #0d1b1b;
-      --ink: #f6efe4;
-      --muted: #c9beb0;
-      --soft: #eadcc8;
-      --gold: #d7a85d;
-      --gold-2: #b98945;
-      --sage: #8fb89b;
-      --teal: #164442;
-      --aqua: #9bc9bc;
-      --rose: #b87979;
-      --line: rgba(231, 204, 156, 0.28);
-      --card: rgba(255, 255, 255, 0.06);
-      --card-2: rgba(255, 255, 255, 0.1);
-      --shadow: 0 24px 80px rgba(0,0,0,0.42);
-      --radius: 26px;
-      --serif: Georgia, "Times New Roman", serif;
-      --sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --navy: #0b2454;
+      --teal: #0b8f83;
+      --teal-dark: #08766d;
+      --ink: #102033;
+      --muted: #59687a;
+      --line: #e3eaf0;
+      --bg: #ffffff;
+      --soft: #f7fbfa;
+      --shadow: 0 16px 40px rgba(11, 36, 84, 0.10);
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
-      font-family: var(--sans);
-      background:
-        radial-gradient(circle at 15% 8%, rgba(215,168,93,0.16), transparent 30%),
-        radial-gradient(circle at 85% 15%, rgba(143,184,155,0.12), transparent 34%),
-        linear-gradient(135deg, #050909 0%, #0b1718 42%, #071010 100%);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       color: var(--ink);
-      overflow-x: hidden;
+      background: var(--bg);
+      line-height: 1.45;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+    a { color: inherit; text-decoration: none; }
 
-    .page {
-      min-height: 100vh;
-    }
-
-    .grain {
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      opacity: .16;
-      z-index: 2;
-      background-image:
-        linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
-      background-size: 44px 44px;
-      mask-image: radial-gradient(circle at center, black, transparent 78%);
-    }
-
-    .nav {
-      width: min(1180px, calc(100% - 40px));
+    .site {
+      max-width: 1500px;
       margin: 0 auto;
-      padding: 28px 0 18px;
+      background: white;
+    }
+
+    header {
+      height: 96px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      position: relative;
-      z-index: 5;
+      padding: 18px 48px;
+      border-bottom: 1px solid var(--line);
+      background: rgba(255,255,255,.94);
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(10px);
     }
 
     .brand {
       display: flex;
       align-items: center;
-      gap: 14px;
+      gap: 12px;
+      min-width: 310px;
     }
 
     .mark {
-      width: 48px;
-      height: 48px;
-      border: 1px solid var(--line);
-      border-radius: 50%;
+      width: 52px;
+      height: 52px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, var(--teal), var(--navy));
+      color: white;
       display: grid;
       place-items: center;
-      color: var(--gold);
-      font-size: 24px;
-      box-shadow: inset 0 0 24px rgba(215,168,93,.08);
+      font-size: 30px;
+      font-weight: 800;
+      box-shadow: 0 10px 24px rgba(15,143,131,.18);
     }
 
     .brand-name {
-      font-family: var(--serif);
-      font-size: clamp(30px, 4vw, 42px);
-      letter-spacing: -1px;
-      line-height: 1;
+      font-size: 39px;
+      font-weight: 850;
+      letter-spacing: -1.6px;
+      line-height: .9;
+      color: var(--navy);
     }
 
-    .brand-name span {
-      color: var(--gold);
-    }
+    .brand-name span { color: var(--teal); }
 
     .tagline {
-      color: var(--gold);
-      letter-spacing: .22em;
-      font-size: 10px;
-      text-transform: uppercase;
-      margin-top: 5px;
+      color: var(--navy);
+      font-size: 16px;
+      font-weight: 650;
+      margin-top: 4px;
     }
 
-    .links {
+    nav {
       display: flex;
-      gap: 34px;
       align-items: center;
-      font-size: 14px;
-      color: rgba(246,239,228,.86);
+      gap: 34px;
+      font-weight: 750;
+      color: var(--navy);
+      font-size: 15px;
     }
 
-    .links a:hover {
-      color: var(--gold);
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 22px;
     }
 
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 12px;
-      border: 1px solid var(--gold);
-      color: var(--ink);
-      background: rgba(215,168,93,.08);
-      padding: 14px 24px;
       border-radius: 999px;
-      font-weight: 650;
-      transition: .25s ease;
-      cursor: pointer;
+      padding: 15px 28px;
+      font-weight: 800;
+      border: 1px solid transparent;
+      transition: 0.2s ease;
+      white-space: nowrap;
     }
 
-    .btn:hover {
-      transform: translateY(-2px);
-      background: rgba(215,168,93,.18);
-      box-shadow: 0 16px 42px rgba(0,0,0,.28);
+    .btn:hover { transform: translateY(-1px); }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--teal), var(--teal-dark));
+      color: white;
+      box-shadow: 0 12px 28px rgba(15,143,131,.22);
     }
 
-    .btn.gold {
-      background: linear-gradient(135deg, #dfb875, #c89145);
-      color: #08100f;
-      border: 0;
+    .btn-navy {
+      background: var(--navy);
+      color: white;
+      box-shadow: 0 12px 28px rgba(11,36,84,.18);
     }
 
-    .menu-dot {
-      display: none;
-      width: 44px;
-      height: 44px;
-      border: 1px solid var(--line);
-      border-radius: 50%;
-      place-items: center;
-      color: var(--gold);
+    .btn-outline {
+      background: white;
+      color: var(--navy);
+      border-color: #c8d6e5;
+    }
+
+    .login {
+      font-weight: 800;
+      color: var(--navy);
     }
 
     .hero {
-      width: min(1180px, calc(100% - 40px));
-      margin: 0 auto;
-      min-height: 690px;
       display: grid;
-      grid-template-columns: 1.05fr .95fr;
-      gap: 44px;
+      grid-template-columns: 37% 63%;
       align-items: center;
-      position: relative;
-      z-index: 3;
-      padding: 54px 0 68px;
+      min-height: 435px;
+      padding: 28px 44px 10px 54px;
+      gap: 10px;
     }
 
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: 30px -100px auto auto;
-      width: 720px;
-      height: 520px;
-      background:
-        radial-gradient(circle at 45% 42%, rgba(215,168,93,.24), transparent 3%),
-        radial-gradient(circle at 68% 34%, rgba(143,184,155,.2), transparent 4%),
-        radial-gradient(circle at 62% 58%, rgba(215,168,93,.18), transparent 3%),
-        radial-gradient(circle at 55% 50%, rgba(155,201,188,.12), transparent 28%),
-        linear-gradient(135deg, rgba(255,255,255,.03), transparent);
-      filter: blur(.2px);
-      opacity: .9;
-      pointer-events: none;
-    }
-
-    .hero-copy {
-      position: relative;
-      z-index: 4;
-    }
-
-    .eyebrow {
-      color: var(--gold);
-      letter-spacing: .25em;
-      text-transform: uppercase;
-      font-size: 12px;
-      margin-bottom: 22px;
-    }
-
-    h1 {
-      font-family: var(--serif);
-      font-size: clamp(58px, 9vw, 104px);
-      line-height: .9;
-      letter-spacing: -4px;
+    .hero-copy h1 {
       margin: 0;
-      font-weight: 500;
+      color: var(--navy);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(44px, 4.8vw, 72px);
+      line-height: .98;
+      letter-spacing: -2px;
     }
 
-    h1 em {
-      color: var(--gold);
-      font-weight: 400;
+    .hero-copy h1 span {
       display: block;
-      font-style: italic;
-      font-size: .78em;
-      margin-top: 10px;
+      color: var(--teal);
+      margin-top: 8px;
     }
 
     .hero-copy p {
-      margin: 34px 0 28px;
-      color: var(--soft);
-      font-size: clamp(18px, 2vw, 22px);
-      line-height: 1.55;
-      max-width: 560px;
-      border-left: 2px solid var(--gold);
-      padding-left: 24px;
+      margin: 24px 0 28px;
+      color: #173052;
+      font-size: 21px;
+      max-width: 570px;
     }
 
-    .hero-art {
-      position: relative;
-      min-height: 520px;
-      border-radius: 36px;
-      overflow: hidden;
-      background:
-        linear-gradient(180deg, rgba(255,255,255,.08), transparent),
-        radial-gradient(circle at 30% 40%, rgba(215,168,93,.18), transparent 24%),
-        linear-gradient(135deg, #122223, #091111);
-      box-shadow: var(--shadow);
-      border: 1px solid rgba(255,255,255,.08);
-    }
-
-    .hero-art::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(120deg, rgba(0,0,0,.06), rgba(255,255,255,.03)),
-        radial-gradient(circle at 70% 20%, rgba(215,168,93,.15), transparent 26%);
-    }
-
-    .desk {
-      position: absolute;
-      inset: auto 0 0;
-      height: 42%;
-      background:
-        linear-gradient(180deg, transparent, rgba(0,0,0,.2)),
-        linear-gradient(90deg, rgba(85,63,45,.45), rgba(21,24,23,.85));
-      border-top: 1px solid rgba(255,255,255,.06);
-    }
-
-    .window {
-      position: absolute;
-      right: 30px;
-      top: 54px;
-      width: 158px;
-      height: 240px;
-      border-radius: 90px 90px 10px 10px;
-      background:
-        linear-gradient(180deg, rgba(239,196,133,.38), rgba(9,16,17,.2)),
-        radial-gradient(circle at 45% 30%, rgba(255,225,166,.7), transparent 6%),
-        radial-gradient(circle at 58% 42%, rgba(255,225,166,.5), transparent 4%),
-        linear-gradient(135deg, #203436, #0c1415);
-      box-shadow: inset 0 0 80px rgba(0,0,0,.42);
-      border: 1px solid rgba(255,255,255,.08);
-      opacity: .82;
-    }
-
-    .vase {
-      position: absolute;
-      left: 38%;
-      top: 34%;
-      width: 96px;
-      height: 126px;
-      background: linear-gradient(140deg, #3b3f34, #111615);
-      border-radius: 48% 48% 40% 40%;
-      box-shadow: 0 24px 60px rgba(0,0,0,.42);
-    }
-
-    .branch {
-      position: absolute;
-      left: 46%;
-      top: 16%;
-      width: 1px;
-      height: 190px;
-      background: rgba(215,168,93,.42);
-      transform: rotate(-15deg);
-      transform-origin: bottom;
-    }
-
-    .branch::before,
-    .branch::after {
-      content: "";
-      position: absolute;
-      width: 54px;
-      height: 18px;
-      border-radius: 50%;
-      background: rgba(143,184,155,.26);
-      filter: blur(.2px);
-    }
-
-    .branch::before {
-      top: 44px;
-      left: 8px;
-      transform: rotate(22deg);
-    }
-
-    .branch::after {
-      top: 84px;
-      left: -46px;
-      transform: rotate(-28deg);
-    }
-
-    .book {
-      position: absolute;
-      left: 30%;
-      bottom: 126px;
-      width: 230px;
-      height: 28px;
-      background: linear-gradient(90deg, #e8dcc8, #b49d7f);
-      border-radius: 3px;
-      box-shadow: 0 20px 42px rgba(0,0,0,.3);
-      transform: rotate(-2deg);
-    }
-
-    .book.two {
-      bottom: 156px;
-      left: 34%;
-      width: 210px;
-      background: linear-gradient(90deg, #45524d, #1c2726);
-    }
-
-    .cup {
-      position: absolute;
-      left: 22%;
-      bottom: 110px;
-      width: 86px;
-      height: 90px;
-      background: linear-gradient(135deg, #111, #303333);
-      border-radius: 0 0 42px 42px;
-      box-shadow: 0 20px 45px rgba(0,0,0,.42);
-    }
-
-    .cup::after {
-      content: "";
-      position: absolute;
-      right: -25px;
-      top: 20px;
-      width: 36px;
-      height: 38px;
-      border: 8px solid #202829;
-      border-left: 0;
-      border-radius: 0 40px 40px 0;
-    }
-
-    .note {
-      position: absolute;
-      right: 118px;
-      top: 128px;
-      width: 128px;
-      min-height: 140px;
-      background: rgba(246,239,228,.76);
-      color: #1b2020;
-      padding: 18px;
-      font-family: var(--serif);
-      font-style: italic;
-      font-size: 18px;
-      line-height: 1.25;
-      transform: rotate(1.4deg);
-      box-shadow: 0 18px 50px rgba(0,0,0,.28);
-    }
-
-    .signal-line {
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-    }
-
-    .signal-line svg {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      opacity: .76;
-    }
-
-    .visibility-card {
-      position: absolute;
-      right: 24px;
-      bottom: 28px;
-      width: min(340px, calc(100% - 48px));
-      padding: 22px;
-      background: rgba(5, 12, 13, .72);
-      border: 1px solid rgba(231,204,156,.25);
-      border-radius: 24px;
-      backdrop-filter: blur(18px);
-      box-shadow: 0 20px 60px rgba(0,0,0,.35);
-    }
-
-    .visibility-card h3 {
-      margin: 0 0 8px;
-      color: var(--gold);
-      letter-spacing: .16em;
-      font-size: 13px;
-      text-transform: uppercase;
-      font-weight: 600;
-    }
-
-    .visibility-card p {
-      color: rgba(246,239,228,.84);
-      margin: 0 0 18px;
-      line-height: 1.5;
-    }
-
-    .status {
+    .hero-actions {
       display: flex;
       align-items: center;
-      gap: 12px;
-      background: rgba(255,255,255,.07);
-      border: 1px solid rgba(255,255,255,.07);
-      border-radius: 14px;
-      padding: 13px 14px;
-      margin: 10px 0;
+      gap: 16px;
+      flex-wrap: wrap;
     }
 
-    .dot {
-      width: 14px;
-      height: 14px;
+    .play {
+      width: 28px;
+      height: 28px;
       border-radius: 50%;
-      flex: 0 0 auto;
-    }
-
-    .green { background: var(--sage); box-shadow: 0 0 18px rgba(143,184,155,.55); }
-    .yellow { background: #f0b052; box-shadow: 0 0 18px rgba(240,176,82,.45); }
-    .red { background: #e45a55; box-shadow: 0 0 18px rgba(228,90,85,.45); }
-
-    .status strong {
-      display: block;
-      font-size: 15px;
-    }
-
-    .status span {
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    .situations {
-      background: var(--soft);
-      color: #111817;
-      position: relative;
-      z-index: 4;
-      padding: 34px 0;
-    }
-
-    .situations-inner {
-      width: min(1180px, calc(100% - 40px));
-      margin: 0 auto;
-    }
-
-    .section-kicker {
-      letter-spacing: .22em;
+      background: var(--navy);
+      color: white;
+      display: inline-grid;
+      place-items: center;
       font-size: 12px;
-      text-transform: uppercase;
-      color: var(--gold-2);
-      margin-bottom: 20px;
+      margin-right: 8px;
+    }
+
+    .hero-image-wrap {
+      width: 100%;
+      height: 100%;
+      min-height: 410px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      border-radius: 24px;
+      background: linear-gradient(135deg, #fff8ed, #f0faf7);
+    }
+
+    .hero-image-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+
+    .cards {
+      padding: 24px 44px 12px;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      min-height: 295px;
+      border-radius: 18px;
+      overflow: hidden;
+      background: #f8fbff;
+      box-shadow: inset 0 0 0 1px rgba(11,36,84,.06);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card-img {
+      height: 155px;
+      display: grid;
+      place-items: center;
+      font-size: 76px;
+      background: linear-gradient(135deg, #eff9ff, #f8fbff);
+    }
+
+    .card:nth-child(2) .card-img { background: linear-gradient(135deg, #fff4dd, #fffaf0); }
+    .card:nth-child(3) .card-img { background: linear-gradient(135deg, #f4eefb, #fbf7ff); }
+    .card:nth-child(4) .card-img { background: linear-gradient(135deg, #eef8f3, #fbfffd); }
+    .card:nth-child(5) .card-img { background: linear-gradient(135deg, #fff0e5, #fffaf7); }
+
+    .card-body {
+      padding: 18px 22px 22px;
+    }
+
+    .card h3 {
+      margin: 0 0 10px;
+      color: var(--navy);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 23px;
+      line-height: 1.05;
+      text-align: center;
+    }
+
+    .card p {
+      margin: 0;
+      color: #23364f;
+      font-size: 15.5px;
+    }
+
+    .trust-row {
+      margin: 0 44px 12px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      min-height: 92px;
+      display: grid;
+      grid-template-columns: 1.15fr 1.15fr 1.2fr 1.25fr;
+      overflow: hidden;
+      box-shadow: 0 8px 22px rgba(11,36,84,.06);
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 18px 28px;
+      border-right: 1px solid var(--line);
+    }
+
+    .trust-item:last-child {
+      border-right: none;
+      justify-content: center;
+      color: var(--navy);
+      font-family: "Comic Sans MS", "Bradley Hand", cursive;
+      font-size: 31px;
       font-weight: 700;
     }
 
-    .situation-grid {
-      display: grid;
-      grid-template-columns: repeat(7, 1fr);
-      gap: 14px;
+    .trust-icon {
+      font-size: 34px;
     }
 
-    .situation {
-      min-height: 128px;
-      border: 1px solid rgba(10,16,15,.12);
-      border-radius: 16px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      gap: 12px;
-      padding: 16px;
-      background: rgba(255,255,255,.32);
-      transition: .25s ease;
+    .trust-item h4 {
+      margin: 0 0 4px;
+      color: var(--navy);
+      font-size: 16px;
     }
 
-    .situation:hover {
-      transform: translateY(-5px);
-      background: white;
-      box-shadow: 0 20px 45px rgba(0,0,0,.08);
-    }
-
-    .situation .icon {
-      font-size: 25px;
-    }
-
-    .situation span {
-      font-size: 14px;
-      line-height: 1.35;
-    }
-
-    .quote-strip {
-      margin-top: 22px;
-      display: grid;
-      grid-template-columns: 1fr .85fr;
-      gap: 28px;
-      align-items: center;
-    }
-
-    .quote-strip p {
+    .trust-item p {
       margin: 0;
-      font-family: var(--serif);
-      font-size: clamp(24px, 3vw, 34px);
-      line-height: 1.2;
-      color: #16201e;
-    }
-
-    .quote-strip small {
-      color: #53615d;
-      line-height: 1.6;
-      font-size: 15px;
-    }
-
-    .pillars {
-      width: min(1180px, calc(100% - 40px));
-      margin: 82px auto;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1px;
-      background: rgba(231,204,156,.18);
-      border: 1px solid rgba(231,204,156,.16);
-      border-radius: 26px;
-      overflow: hidden;
-      position: relative;
-      z-index: 3;
-    }
-
-    .pillar {
-      padding: 34px 28px;
-      background: rgba(8,18,18,.8);
-      min-height: 260px;
-    }
-
-    .pillar .round {
-      width: 48px;
-      height: 48px;
-      display: grid;
-      place-items: center;
-      border-radius: 50%;
-      border: 1px solid var(--line);
-      color: var(--gold);
-      margin-bottom: 24px;
-      font-size: 22px;
-      background: rgba(255,255,255,.03);
-    }
-
-    .pillar h3 {
-      margin: 0 0 12px;
-      font-family: var(--serif);
-      font-size: 28px;
-      font-weight: 500;
-    }
-
-    .pillar p {
-      color: var(--muted);
-      line-height: 1.6;
-      margin: 0 0 22px;
-    }
-
-    .learn {
-      color: var(--gold);
+      color: #2d3d55;
       font-size: 14px;
-      display: inline-flex;
-      gap: 10px;
-      align-items: center;
     }
 
-    .feature {
-      width: min(1180px, calc(100% - 40px));
-      margin: 90px auto;
-      display: grid;
-      grid-template-columns: .9fr 1.1fr;
-      gap: 44px;
-      align-items: center;
-    }
-
-    .feature-card {
-      background: rgba(255,255,255,.06);
-      border: 1px solid rgba(255,255,255,.09);
-      border-radius: 34px;
-      padding: 38px;
-      box-shadow: var(--shadow);
-    }
-
-    .feature h2,
-    .cta h2 {
-      font-family: var(--serif);
-      font-size: clamp(44px, 6vw, 72px);
-      line-height: .98;
-      letter-spacing: -2px;
-      margin: 0 0 22px;
-      font-weight: 500;
-    }
-
-    .feature p {
-      color: var(--muted);
-      font-size: 18px;
-      line-height: 1.7;
-    }
-
-    .insight-list {
-      display: grid;
-      gap: 16px;
-      margin-top: 28px;
-    }
-
-    .insight {
-      display: grid;
-      grid-template-columns: 42px 1fr;
-      gap: 16px;
-      padding: 18px;
+    .story-strip {
+      margin: 12px 44px 34px;
       border-radius: 18px;
-      border: 1px solid rgba(255,255,255,.08);
-      background: rgba(255,255,255,.05);
+      background: linear-gradient(90deg, #fff8e8, #edf8f4);
+      padding: 16px 24px;
+      color: var(--navy);
+      text-align: center;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 24px;
+      font-weight: 800;
     }
 
-    .insight b {
-      color: var(--ink);
-      display: block;
-      margin-bottom: 4px;
+    .section {
+      padding: 42px 54px;
+      background: var(--soft);
+      border-top: 1px solid var(--line);
     }
 
-    .insight span {
+    .section-inner {
+      max-width: 1050px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .section h2 {
+      margin: 0 0 12px;
+      color: var(--navy);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 38px;
+    }
+
+    .section p {
+      margin: 0 auto 24px;
+      max-width: 760px;
+      color: #304058;
+      font-size: 18px;
+    }
+
+    footer {
+      padding: 28px 54px;
+      border-top: 1px solid var(--line);
       color: var(--muted);
-      line-height: 1.45;
-    }
-
-    .visual-panel {
-      min-height: 520px;
-      border-radius: 34px;
-      background:
-        linear-gradient(135deg, rgba(246,239,228,.9), rgba(221,206,184,.82)),
-        radial-gradient(circle at 80% 20%, rgba(215,168,93,.22), transparent 28%);
-      color: #121817;
-      position: relative;
-      overflow: hidden;
-      box-shadow: var(--shadow);
-      padding: 38px;
-    }
-
-    .visual-panel::before {
-      content: "";
-      position: absolute;
-      inset: 40px -40px -60px auto;
-      width: 420px;
-      height: 420px;
-      border: 1px solid rgba(13,27,27,.2);
-      border-radius: 50%;
-    }
-
-    .visual-panel::after {
-      content: "";
-      position: absolute;
-      inset: auto -100px -160px auto;
-      width: 520px;
-      height: 520px;
-      background:
-        repeating-radial-gradient(circle, rgba(22,68,66,.15) 0 1px, transparent 1px 20px);
-      opacity: .65;
-    }
-
-    .visual-panel h3 {
-      font-family: var(--serif);
-      font-size: 44px;
-      line-height: 1;
-      margin: 0 0 20px;
-      max-width: 420px;
-    }
-
-    .mini-board {
-      position: relative;
-      z-index: 2;
-      margin-top: 42px;
-      display: grid;
-      gap: 14px;
-      max-width: 460px;
-    }
-
-    .mini-row {
-      display: flex;
-      justify-content: space-between;
-      gap: 18px;
-      align-items: center;
-      background: rgba(255,255,255,.54);
-      border: 1px solid rgba(13,27,27,.1);
-      padding: 16px 18px;
-      border-radius: 16px;
-    }
-
-    .mini-row span {
-      color: #4a5651;
-    }
-
-    .timeline {
-      margin-top: 28px;
-      display: flex;
-      gap: 8px;
-      align-items: center;
-      color: #45534e;
       font-size: 14px;
     }
 
-    .timeline i {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--gold-2);
-    }
-
-    .timeline b {
-      height: 1px;
-      flex: 1;
-      background: rgba(13,27,27,.18);
-    }
-
-    .cta {
-      width: min(1180px, calc(100% - 40px));
-      margin: 100px auto 48px;
-      padding: clamp(34px, 5vw, 70px);
-      border: 1px solid rgba(231,204,156,.2);
-      border-radius: 38px;
-      background:
-        radial-gradient(circle at 78% 22%, rgba(215,168,93,.18), transparent 30%),
-        linear-gradient(135deg, rgba(255,255,255,.08), rgba(255,255,255,.03));
-      box-shadow: var(--shadow);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .cta p {
-      color: var(--muted);
-      font-size: 19px;
-      line-height: 1.7;
-      max-width: 720px;
-    }
-
-    .footer {
-      width: min(1180px, calc(100% - 40px));
-      margin: 0 auto;
-      padding: 34px 0 50px;
-      color: rgba(246,239,228,.58);
-      display: flex;
-      justify-content: space-between;
-      gap: 22px;
-      border-top: 1px solid rgba(255,255,255,.08);
-      font-size: 13px;
-    }
-
-    @media (max-width: 980px) {
-      .links {
-        display: none;
-      }
-
-      .menu-dot {
-        display: grid;
-      }
-
-      .hero,
-      .feature {
-        grid-template-columns: 1fr;
-      }
-
+    @media (max-width: 1150px) {
+      header { padding: 18px 24px; }
+      nav, .login { display: none; }
       .hero {
-        padding-top: 28px;
-      }
-
-      .hero-art {
-        min-height: 560px;
-      }
-
-      .situation-grid,
-      .pillars {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .quote-strip {
         grid-template-columns: 1fr;
+        padding: 34px 24px 10px;
       }
+      .hero-image-wrap { min-height: auto; }
+      .cards { grid-template-columns: repeat(2, 1fr); padding: 20px 24px; }
+      .trust-row { grid-template-columns: 1fr; margin: 0 24px 12px; }
+      .trust-item { border-right: none; border-bottom: 1px solid var(--line); }
+      .trust-item:last-child { border-bottom: none; }
+      .story-strip { margin: 12px 24px 30px; }
     }
 
-    @media (max-width: 640px) {
-      .nav,
-      .hero,
-      .situations-inner,
-      .pillars,
-      .feature,
-      .cta,
-      .footer {
-        width: min(100% - 28px, 1180px);
-      }
-
-      .brand-name {
-        font-size: 30px;
-      }
-
-      .tagline {
-        font-size: 8px;
-      }
-
-      h1 {
-        letter-spacing: -2px;
-      }
-
-      .hero-copy p {
-        padding-left: 16px;
-      }
-
-      .hero-art {
-        min-height: 520px;
-      }
-
-      .note,
-      .window {
-        opacity: .55;
-      }
-
-      .visibility-card {
-        left: 18px;
-        right: 18px;
-        width: auto;
-      }
-
-      .situation-grid,
-      .pillars {
-        grid-template-columns: 1fr;
-      }
-
-      .feature-card,
-      .visual-panel {
-        padding: 26px;
-      }
-
-      .footer {
-        flex-direction: column;
-      }
+    @media (max-width: 680px) {
+      header { height: auto; }
+      .brand-name { font-size: 31px; }
+      .tagline { font-size: 13px; }
+      .nav-actions .btn-primary { display: none; }
+      .hero-copy h1 { font-size: 46px; }
+      .hero-copy p { font-size: 18px; }
+      .hero-actions { align-items: stretch; }
+      .btn { width: 100%; }
+      .cards { grid-template-columns: 1fr; }
+      .card { min-height: auto; }
+      .trust-item:last-child { font-size: 26px; }
+      .story-strip { font-size: 20px; }
     }
-
-    /* Ambient Motion Layer - subtle cinematic movement */
-    .ambient-layer {
-      position: fixed;
-      inset: 0;
-      overflow: hidden;
-      pointer-events: none;
-      z-index: 1;
-    }
-
-    .ambient-orb {
-      position: absolute;
-      width: 420px;
-      height: 420px;
-      border-radius: 50%;
-      filter: blur(60px);
-      opacity: .22;
-      animation: drift 18s ease-in-out infinite alternate;
-    }
-
-    .ambient-orb.one {
-      left: -120px;
-      top: 12%;
-      background: rgba(215, 168, 93, .55);
-    }
-
-    .ambient-orb.two {
-      right: -140px;
-      top: 36%;
-      background: rgba(143, 184, 155, .38);
-      animation-duration: 22s;
-      animation-delay: -4s;
-    }
-
-    .ambient-orb.three {
-      left: 42%;
-      bottom: -220px;
-      background: rgba(155, 201, 188, .28);
-      animation-duration: 26s;
-      animation-delay: -8s;
-    }
-
-    .ambient-particle {
-      position: absolute;
-      width: 4px;
-      height: 4px;
-      border-radius: 50%;
-      background: rgba(215, 168, 93, .55);
-      box-shadow: 0 0 18px rgba(215, 168, 93, .45);
-      opacity: .34;
-      animation: floatParticle 14s linear infinite;
-    }
-
-    .ambient-particle:nth-child(4) { left: 18%; top: 78%; animation-delay: 0s; }
-    .ambient-particle:nth-child(5) { left: 33%; top: 68%; animation-delay: -3s; }
-    .ambient-particle:nth-child(6) { left: 62%; top: 74%; animation-delay: -6s; }
-    .ambient-particle:nth-child(7) { left: 78%; top: 64%; animation-delay: -9s; }
-    .ambient-particle:nth-child(8) { left: 88%; top: 82%; animation-delay: -12s; }
-
-    @keyframes drift {
-      0% { transform: translate3d(0, 0, 0) scale(1); }
-      100% { transform: translate3d(70px, -55px, 0) scale(1.12); }
-    }
-
-    @keyframes floatParticle {
-      0% { transform: translateY(40px) translateX(0); opacity: 0; }
-      20% { opacity: .35; }
-      80% { opacity: .22; }
-      100% { transform: translateY(-560px) translateX(42px); opacity: 0; }
-    }
-
-    .hero-art,
-    .feature-card,
-    .visual-panel,
-    .cta,
-    .pillars {
-      position: relative;
-      z-index: 3;
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .ambient-orb,
-      .ambient-particle { animation: none; }
-    }
-
   </style>
 </head>
 
 <body>
-  <div class="grain"></div>
-
-  <div class="ambient-layer" aria-hidden="true">
-    <div class="ambient-orb one"></div>
-    <div class="ambient-orb two"></div>
-    <div class="ambient-orb three"></div>
-    <div class="ambient-particle"></div>
-    <div class="ambient-particle"></div>
-    <div class="ambient-particle"></div>
-    <div class="ambient-particle"></div>
-    <div class="ambient-particle"></div>
-  </div>
-
-
-  <main class="page">
-    <nav class="nav" aria-label="Main navigation">
+  <div class="site">
+    <header>
       <a href="#" class="brand" aria-label="MaiCareNow home">
-        <div class="mark">✦</div>
+        <div class="mark">♡</div>
         <div>
-          <div class="brand-name">MaiCare<span>Now</span></div>
-          <div class="tagline">Clarity. Visibility. Peace of mind.</div>
+          <div class="brand-name">Mai<span>Care</span>Now</div>
+          <div class="tagline">Navigate healthcare with confidence</div>
         </div>
       </a>
 
-      <div class="links">
-        <a href="#what-we-do">What We Do</a>
+      <nav aria-label="Main navigation">
         <a href="#how">How It Works</a>
-        <a href="#insights">Insights</a>
-        <a href="#about">About</a>
-        <a href="intake.html" class="btn gold">Tell Me What’s Going On</a>
+        <a href="#help">What We Help With</a>
+        <a href="#resources">Resources</a>
+        <a href="#about">About Us</a>
+        <a href="#blog">Blog</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a class="btn btn-primary" href="https://tally.so/r/7RMJy9">Get Started</a>
+        <a class="login" href="#">Log In ◎</a>
       </div>
+    </header>
 
-      <a href="intake.html" class="menu-dot" aria-label="Get started">→</a>
-    </nav>
-
-    <section class="hero">
-      <div class="hero-copy">
-        <div class="eyebrow">Clarity when care gets complicated</div>
-        <h1>Something changed.<em>Now what?</em></h1>
-        <p>
-          When life starts shifting, it can be hard to know what matters most.
-          MaiCareNow helps families slow things down, look at the real situation,
-          and decide what needs attention next.
-        </p>
-        <a class="btn" href="intake.html">Tell Me What’s Going On <span>→</span></a>
-      </div>
-
-      <div class="hero-art" aria-label="Cinematic care visibility illustration">
-        <div class="window"></div>
-        <div class="branch"></div>
-        <div class="vase"></div>
-        <div class="book"></div>
-        <div class="book two"></div>
-        <div class="cup"></div>
-        <div class="note">The hard part is knowing what to pay attention to.</div>
-        <div class="desk"></div>
-
-        <div class="signal-line">
-          <svg viewBox="0 0 600 520" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M70 360 C170 190, 245 430, 335 210 S475 80, 535 180" stroke="rgba(215,168,93,.54)" stroke-width="1"/>
-            <path d="M90 260 C210 120, 255 320, 370 250 S430 410, 550 290" stroke="rgba(143,184,155,.34)" stroke-width="1"/>
-            <circle cx="182" cy="275" r="4" fill="#d7a85d"/>
-            <circle cx="325" cy="212" r="4" fill="#d7a85d"/>
-            <circle cx="428" cy="140" r="4" fill="#8fb89b"/>
-          </svg>
-        </div>
-
-        <aside class="visibility-card">
-          <h3>Care Visibility</h3>
-          <p>Not watching all day. Just knowing when something needs attention.</p>
-
-          <div class="status">
-            <div class="dot green"></div>
-            <div>
-              <strong>Daily rhythm</strong>
-              <span>Looks steady</span>
-            </div>
+    <main>
+      <section class="hero">
+        <div class="hero-copy">
+          <h1>
+            Healthcare decisions are hard.
+            <span>Knowing where to start shouldn’t be.</span>
+          </h1>
+          <p>
+            MaiCareNow helps people understand options, find possible savings,
+            and move forward with confidence.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-navy" href="https://tally.so/r/7RMJy9">Get Your Personalized Report</a>
+            <a class="btn btn-outline" href="#how"><span class="play">▶</span>See How It Works</a>
           </div>
+        </div>
 
-          <div class="status">
-            <div class="dot yellow"></div>
-            <div>
-              <strong>Medication question</strong>
-              <span>Worth checking</span>
-            </div>
+        <div class="hero-image-wrap">
+          <img src="maicarenow-homepage-illustration.jpeg" alt="MaiCareNow illustrated healthcare navigation homepage" />
+        </div>
+      </section>
+
+      <section class="cards" id="help">
+        <article class="card">
+          <div class="card-img">💊🐷</div>
+          <div class="card-body">
+            <h3>Lower Prescription Costs</h3>
+            <p>Find possible ways to save on medications and discover programs that may help.</p>
           </div>
+        </article>
 
-          <div class="status">
-            <div class="dot red"></div>
-            <div>
-              <strong>Recent fall</strong>
-              <span>Check-in needed</span>
-            </div>
+        <article class="card">
+          <div class="card-img">📁💛</div>
+          <div class="card-body">
+            <h3>Financial Assistance Programs</h3>
+            <p>Explore assistance programs, benefits, and resources you may qualify for.</p>
           </div>
-        </aside>
-      </div>
-    </section>
+        </article>
 
-    <section class="situations" id="how">
-      <div class="situations-inner">
-        <div class="section-kicker">Where should we start?</div>
+        <article class="card">
+          <div class="card-img">☕🏡</div>
+          <div class="card-body">
+            <h3>Care & Support Options</h3>
+            <p>Understand care choices for yourself or a loved one, at home or in the community.</p>
+          </div>
+        </article>
 
-        <div class="situation-grid">
-          <a href="intake.html" class="situation"><div class="icon">⌂</div><span>Mom may not be safe living alone</span></a>
-          <a href="intake.html" class="situation"><div class="icon">✚</div><span>The hospital discharge feels rushed</span></a>
-          <a href="intake.html" class="situation"><div class="icon">⌕</div><span>We need to compare care options</span></a>
-          <a href="intake.html" class="situation"><div class="icon">◎</div><span>Memory changes are becoming harder to ignore</span></a>
-          <a href="intake.html" class="situation"><div class="icon">⌁</div><span>I live far away and need better visibility</span></a>
-          <a href="intake.html" class="situation"><div class="icon">✣</div><span>There are too many moving pieces</span></a>
-          <a href="intake.html" class="situation"><div class="icon">?</div><span>I honestly do not know where to start</span></a>
+        <article class="card">
+          <div class="card-img">✅🖊️</div>
+          <div class="card-body">
+            <h3>Guidance for What’s Next</h3>
+            <p>Get clear next steps, important questions to ask, and guidance you can trust.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-img">💻🪴</div>
+          <div class="card-body">
+            <h3>All in One Place</h3>
+            <p>Your information, resources, and care plan—organized and easy to access.</p>
+          </div>
+        </article>
+      </section>
+
+      <section class="trust-row">
+        <div class="trust-item">
+          <div class="trust-icon">🛡️</div>
+          <div>
+            <h4>Independent & Unbiased</h4>
+            <p>We work for you, not insurance companies or pharmacies.</p>
+          </div>
         </div>
 
-        <div class="quote-strip">
-          <p>Most families notice something is changing before they know what to call it.</p>
-          <small>
-            That is usually where the stress begins. MaiCareNow helps sort through what is happening,
-            what can wait, and what should not be missed.
-          </small>
-        </div>
-      </div>
-    </section>
-
-    <section class="pillars" id="what-we-do">
-      <article class="pillar">
-        <div class="round">◌</div>
-        <h3>Look Deeper</h3>
-        <p>We go beyond ratings to help families understand facility patterns, practical fit, and questions worth asking.</p>
-        <a class="learn" href="#insights">Learn more →</a>
-      </article>
-
-      <article class="pillar">
-        <div class="round">▥</div>
-        <h3>See What Changed</h3>
-        <p>Falls, missed medications, confusion, hospital visits, or silence from a facility can all tell part of the story.</p>
-        <a class="learn" href="#insights">Learn more →</a>
-      </article>
-
-      <article class="pillar">
-        <div class="round">☷</div>
-        <h3>Get Organized</h3>
-        <p>Contacts, appointments, papers, notes, updates, and family roles are easier when everything has a place.</p>
-        <a class="learn" href="intake.html">Start here →</a>
-      </article>
-
-      <article class="pillar">
-        <div class="round">◇</div>
-        <h3>Know the Next Step</h3>
-        <p>Sometimes the most helpful thing is not another opinion. It is a clear next step.</p>
-        <a class="learn" href="intake.html">Let’s look at it →</a>
-      </article>
-    </section>
-
-    <section class="feature" id="insights">
-      <div class="feature-card">
-        <div class="eyebrow">Facility Insights</div>
-        <h2>Before choosing a place, look beneath the surface.</h2>
-        <p>
-          A nice tour and a good rating do not always tell the whole story.
-          MaiCareNow helps families look more carefully at care options, practical fit,
-          public information where available, and the questions to ask before making a big decision.
-        </p>
-
-        <div class="insight-list">
-          <div class="insight"><div>⌕</div><div><b>Public information review</b><span>Inspection, complaint, staffing, ownership, and other available indicators.</span></div></div>
-          <div class="insight"><div>◷</div><div><b>Practical fit</b><span>Location, care needs, family access, transition issues, and daily-life realities.</span></div></div>
-          <div class="insight"><div>?</div><div><b>Tour questions</b><span>What to ask before the decision is made — not after something feels wrong.</span></div></div>
-        </div>
-      </div>
-
-      <div class="visual-panel">
-        <div class="section-kicker">Care Visibility</div>
-        <h3>Stay aware without constantly worrying.</h3>
-        <p>
-          A care visibility plan helps define what “normal” looks like, what changes are worth checking,
-          who should be contacted, and when something should be escalated.
-        </p>
-
-        <div class="mini-board">
-          <div class="mini-row"><strong>Daily rhythm</strong><span>Looks steady</span></div>
-          <div class="mini-row"><strong>Medication routine</strong><span>Check-in needed</span></div>
-          <div class="mini-row"><strong>Falls or ER visits</strong><span>Do not ignore</span></div>
-          <div class="mini-row"><strong>Family update</strong><span>Weekly touchpoint</span></div>
+        <div class="trust-item">
+          <div class="trust-icon">🔒</div>
+          <div>
+            <h4>Private & Secure</h4>
+            <p>Your information is protected and never shared.</p>
+          </div>
         </div>
 
-        <div class="timeline">
-          <span>Notice</span><b></b><i></i><b></b><span>Check</span><b></b><i></i><b></b><span>Follow up</span>
+        <div class="trust-item">
+          <div class="trust-icon">👥</div>
+          <div>
+            <h4>Real People. Real Support.</h4>
+            <p>We combine technology with compassionate guidance.</p>
+          </div>
         </div>
-      </div>
-    </section>
 
-    <section class="feature" id="about">
-      <div class="visual-panel">
-        <div class="section-kicker">Family Coordination</div>
-        <h3>Less scattered. More clear.</h3>
-        <p>
-          Families often have pieces of the picture spread across texts, emails, hospital papers,
-          facility calls, medication lists, and memory. We help bring the pieces together.
-        </p>
-
-        <div class="mini-board">
-          <div class="mini-row"><strong>Care contacts</strong><span>Who to call</span></div>
-          <div class="mini-row"><strong>Medication list</strong><span>Current version</span></div>
-          <div class="mini-row"><strong>Provider questions</strong><span>Ready before the call</span></div>
-          <div class="mini-row"><strong>Next steps</strong><span>Clear ownership</span></div>
+        <div class="trust-item">
+          You’re not alone. ♡
         </div>
-      </div>
+      </section>
 
-      <div class="feature-card">
-        <div class="eyebrow">Independent and practical</div>
-        <h2>Not a referral funnel.</h2>
-        <p>
-          MaiCareNow is not a medical provider, law firm, insurance agency, or commission-based placement service.
-          The purpose is simple: help families understand the situation, ask better questions,
-          compare options more thoughtfully, and move forward with less confusion.
-        </p>
-        <p>
-          Depending on what is going on, support may include a care situation review,
-          facility insights, care option comparison, family coordination, and a practical visibility plan.
-        </p>
-        <a class="btn" href="intake.html">Tell Me What’s Going On →</a>
-      </div>
-    </section>
+      <section class="story-strip">
+        Real people. Real situations. Real guidance when it matters most. ♡
+      </section>
 
-    <section class="cta">
-      <div class="eyebrow">Start with what is happening</div>
-      <h2>Let’s slow this down and look at it together.</h2>
-      <p>
-        Start with a simple intake. Tell me what is going on, what changed, and what you are trying to figure out.
-        From there, we can identify what needs attention and what the next step should be.
-      </p>
-      <a class="btn gold" href="intake.html">Start the Conversation →</a>
-    </section>
+      <section class="section" id="how">
+        <div class="section-inner">
+          <h2>Start with one simple report.</h2>
+          <p>
+            Tell us what you’re dealing with. MaiCareNow helps organize the situation,
+            identify possible options, and provide practical next steps.
+          </p>
+          <a class="btn btn-primary" href="https://tally.so/r/7RMJy9">Start Now</a>
+        </div>
+      </section>
+    </main>
 
-    <footer class="footer">
-      <div>© <span id="year"></span> MaiCareNow. Care is personal. Clarity helps.</div>
-      <div>
-        <a href="privacy.html">Privacy</a> ·
-        <a href="intake.html">Intake</a> ·
-        <a href="mailto:mai@maicarenow.com">mai@maicarenow.com</a>
-      </div>
+    <footer>
+      <strong>MaiCareNow</strong> helps people navigate healthcare decisions with more clarity and confidence.
+      <br><br>
+      MaiCareNow does not provide medical, legal, insurance, or financial advice. Information is for educational and navigation support only.
     </footer>
-  </main>
-
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-
-    const cards = document.querySelectorAll(".situation, .pillar, .feature-card, .visual-panel, .cta");
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.animate(
-            [
-              { opacity: 0, transform: "translateY(18px)" },
-              { opacity: 1, transform: "translateY(0)" }
-            ],
-            { duration: 650, easing: "cubic-bezier(.2,.8,.2,1)", fill: "forwards" }
-          );
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.12 });
-
-    cards.forEach(card => {
-      card.style.opacity = 0;
-      observer.observe(card);
-    });
-  </script>
+  </div>
 </body>
 </html>

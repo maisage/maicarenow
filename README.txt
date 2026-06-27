@@ -1,8 +1,17 @@
-# MaiCareNow Homepage Update
+MaiCareNow GitHub Upload Files
 
-Upload these files to the root of your GitHub Pages repository:
+Upload these files/folders to the root of your MaiCareNow GitHub Pages repository:
 
-- index.html
-- assets/maicarenow-homepage-mockup.png
+1. index.html
+2. style.css
+3. assets/hero-illustration.png
+4. assets/logo.svg
 
-Keep the assets folder name exactly as shown.
+This version intentionally includes only:
+- Header/navigation
+- Hero section
+- Five feature cards
+- Trust bar
+- Small footer disclaimer
+
+No extra bottom call-to-action section is included.

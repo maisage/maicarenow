@@ -1,0 +1,16 @@
+MaiCareNow Responsive Font Fix
+
+Upload these two files to the ROOT of your GitHub repository, replacing the existing files:
+
+- how-it-works.html
+- prescription-costs.html
+
+What changed:
+- Large headings now use responsive clamp() sizing.
+- iPad/tablet font sizes are reduced.
+- Tablet layout has better spacing.
+- Cards and sections are less oversized on medium screens.
+
+Test after upload:
+https://maicarenow.com/how-it-works.html
+https://maicarenow.com/prescription-costs.html

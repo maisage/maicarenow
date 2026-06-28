@@ -1,34 +1,17 @@
-MaiCareNow Exact Homepage Package
+Upload all contents of this ZIP to the ROOT of your GitHub Pages repository.
 
-This package uses the selected illustrated homepage image as the actual home page visual.
-That is the safest way to match the design you approved.
-
-Upload all files and the assets folder to the ROOT of the GitHub Pages repository.
-
-Files included:
-- index.html
-- how-it-works.html
-- services.html
-- resources.html
-- about.html
-- blog.html
-- login.html
-- contact.html
-- intake.html
-- thank-you.html
-- privacy.html
-- terms.html
-- 404.html
-- assets/style.css
-- assets/maicarenow-homepage.png
+This refresh includes:
+- Correct homepage image
+- Working Get Started page with Tally form https://tally.so/r/7RMJy9
+- Responsive How It Works page
+- Lower Prescription Costs page
+- Services page linked to /prescription-costs.html
+- All supporting pages
 
 Important:
-1. Replace the old files in GitHub with these files.
-2. Make sure assets/maicarenow-homepage.png uploads successfully.
-3. Open intake.html and replace the Tally placeholder with your Tally embed code.
-4. In Tally, redirect submissions to:
-   https://maicarenow.com/thank-you.html
+Do not upload the folder itself. Upload the contents so index.html, services.html, prescription-costs.html, etc. are visible at the repository root.
 
-Note:
-The homepage image includes the visual header and buttons.
-Transparent clickable link zones are layered over the image for navigation.
+Test after upload:
+https://maicarenow.com/services.html
+https://maicarenow.com/prescription-costs.html
+https://maicarenow.com/intake.html

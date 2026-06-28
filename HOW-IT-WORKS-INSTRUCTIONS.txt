@@ -1,0 +1,7 @@
+MaiCareNow How It Works Cartoon Page
+
+Upload how-it-works.html to the ROOT of your GitHub repository.
+This replaces only the existing how-it-works.html file.
+
+Test after upload:
+https://maicarenow.com/how-it-works.html

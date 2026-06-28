@@ -4,44 +4,486 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>How It Works | MaiCareNow</title>
-  <meta name="description" content="MaiCareNow helps people understand healthcare options, find possible savings, and move forward with confidence.">
-  <link rel="stylesheet" href="assets/style.css">
+  <meta name="description" content="See how MaiCareNow helps families understand care options, possible savings, and next steps.">
+  <style>
+    :root{
+      --navy:#06265d;
+      --teal:#008b85;
+      --teal-dark:#00746f;
+      --ink:#071b3f;
+      --muted:#405070;
+      --line:#dfe7ef;
+      --soft-blue:#eef8ff;
+      --soft-gold:#fff7e5;
+      --soft-lav:#f6f3fb;
+      --soft-green:#f2fbf7;
+      --soft-peach:#fff0e3;
+      --white:#fff;
+      --skin:#efb781;
+      --dark:#1b2432;
+      --shadow:0 14px 34px rgba(6,38,93,.08);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+      color:var(--ink);
+      background:#fff;
+    }
+    a{text-decoration:none;color:inherit}
+    .header{
+      border-bottom:1px solid var(--line);
+      background:#fff;
+    }
+    .nav{
+      max-width:1180px;
+      margin:0 auto;
+      padding:18px 22px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:18px;
+    }
+    .logo{
+      font-weight:900;
+      font-size:30px;
+      color:var(--navy);
+      letter-spacing:-.04em;
+    }
+    .logo span{color:var(--teal)}
+    .navlinks{
+      display:flex;
+      gap:20px;
+      align-items:center;
+      color:var(--navy);
+      font-weight:800;
+      font-size:14px;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      background:var(--teal);
+      color:#fff;
+      border-radius:999px;
+      padding:12px 18px;
+      font-weight:900;
+    }
+    .btn:hover{background:var(--teal-dark)}
+    main{
+      max-width:1180px;
+      margin:0 auto;
+      padding:52px 22px 78px;
+    }
+    .hero{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:34px;
+      align-items:center;
+      margin-bottom:34px;
+    }
+    .eyebrow{
+      display:inline-flex;
+      padding:8px 13px;
+      border-radius:999px;
+      background:#e8f7f5;
+      color:var(--teal-dark);
+      font-weight:900;
+      font-size:14px;
+      margin-bottom:18px;
+    }
+    h1{
+      font-family:Georgia,"Times New Roman",serif;
+      color:var(--navy);
+      font-size:56px;
+      line-height:1.03;
+      letter-spacing:-.04em;
+      margin:0 0 18px;
+    }
+    h1 span{color:var(--teal)}
+    p{
+      color:var(--muted);
+      font-size:19px;
+      line-height:1.62;
+      margin:0;
+    }
+    .hero-actions{
+      margin-top:26px;
+      display:flex;
+      gap:13px;
+      flex-wrap:wrap;
+    }
+    .btn-navy{background:var(--navy)}
+    .btn-outline{
+      background:#fff;
+      color:var(--navy);
+      border:1px solid #bdcce0;
+    }
+
+    /* Hero cartoon */
+    .hero-art{
+      min-height:360px;
+      border-radius:24px;
+      background:linear-gradient(135deg,#fff7e7,#eef9f7);
+      border:1px solid var(--line);
+      position:relative;
+      overflow:hidden;
+      box-shadow:var(--shadow);
+    }
+    .circle-bg{
+      position:absolute;
+      width:260px;
+      height:260px;
+      border-radius:50%;
+      background:rgba(0,139,133,.12);
+      right:-60px;
+      top:-40px;
+    }
+    .desk{
+      position:absolute;
+      left:46px;
+      right:42px;
+      bottom:48px;
+      height:82px;
+      background:#d69b62;
+      border:4px solid var(--dark);
+      border-radius:18px 18px 35px 35px;
+    }
+    .laptop{
+      position:absolute;
+      left:150px;
+      bottom:88px;
+      width:250px;
+      height:160px;
+      background:#fff;
+      border:5px solid var(--dark);
+      border-radius:13px;
+      z-index:4;
+    }
+    .laptop:after{
+      content:"";
+      position:absolute;
+      left:-35px;
+      right:-35px;
+      bottom:-34px;
+      height:30px;
+      background:#30343d;
+      border-radius:8px 8px 18px 18px;
+    }
+    .screen-title{
+      color:var(--navy);
+      font-weight:900;
+      margin:12px 16px 9px;
+      font-size:15px;
+    }
+    .screen-row{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      margin:9px 16px;
+      color:var(--navy);
+      font-size:13px;
+      font-weight:800;
+    }
+    .check{
+      margin-left:auto;
+      width:18px;height:18px;border-radius:50%;
+      background:var(--teal);color:white;
+      display:flex;align-items:center;justify-content:center;
+      font-size:11px;
+    }
+    .person{
+      position:absolute;
+      width:150px;
+      height:230px;
+      left:52px;
+      bottom:58px;
+      z-index:3;
+    }
+    .hair{
+      position:absolute;
+      left:40px;
+      top:0;
+      width:82px;
+      height:48px;
+      background:#151720;
+      border:3px solid var(--dark);
+      border-radius:50px 50px 20px 22px;
+    }
+    .head{
+      position:absolute;
+      left:48px;
+      top:18px;
+      width:66px;
+      height:72px;
+      background:var(--skin);
+      border:3px solid var(--dark);
+      border-radius:48%;
+    }
+    .body{
+      position:absolute;
+      left:22px;
+      top:90px;
+      width:116px;
+      height:120px;
+      background:#3b8756;
+      border:3px solid var(--dark);
+      border-radius:54px 54px 24px 24px;
+    }
+    .arm{
+      position:absolute;
+      left:95px;
+      top:142px;
+      width:95px;
+      height:25px;
+      background:var(--skin);
+      border:3px solid var(--dark);
+      border-radius:999px;
+      transform:rotate(16deg);
+    }
+    .bubble{
+      position:absolute;
+      background:#fff;
+      border:3px solid var(--dark);
+      border-radius:18px;
+      padding:10px 13px;
+      color:var(--navy);
+      font-weight:900;
+      box-shadow:7px 7px 0 rgba(6,38,93,.08);
+      z-index:6;
+    }
+    .b1{left:54px;top:30px}
+    .b2{right:48px;bottom:54px;background:#fff7e5}
+    .b3{right:55px;top:78px;background:#f2fbf7}
+
+    .steps{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:18px;
+      margin-top:18px;
+    }
+    .step{
+      border-radius:18px;
+      padding:22px 18px 20px;
+      min-height:375px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      box-shadow:0 10px 24px rgba(6,38,93,.06);
+    }
+    .step:nth-child(1){background:var(--soft-blue)}
+    .step:nth-child(2){background:var(--soft-gold)}
+    .step:nth-child(3){background:var(--soft-lav)}
+    .step:nth-child(4){background:var(--soft-green)}
+    .num{
+      width:38px;height:38px;border-radius:50%;
+      background:var(--navy);
+      color:white;
+      display:flex;align-items:center;justify-content:center;
+      font-weight:900;
+      margin:0 auto 12px;
+    }
+    .step h3{
+      color:var(--navy);
+      text-align:center;
+      font-size:22px;
+      line-height:1.2;
+      margin:0 0 12px;
+    }
+    .step p{
+      color:#061b3d;
+      font-size:16px;
+      line-height:1.48;
+      text-align:left;
+    }
+    .step-art{
+      height:150px;
+      position:relative;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      margin:8px 0 12px;
+    }
+
+    /* Mini illustrations */
+    .phone{
+      width:82px;height:130px;background:#fff;border:4px solid var(--dark);border-radius:18px;position:relative;
+    }
+    .phone:before{content:"";position:absolute;left:13px;right:13px;top:24px;height:38px;background:#e8f7f5;border-radius:9px}
+    .phone:after{content:"Start";position:absolute;bottom:22px;left:15px;color:var(--navy);font-weight:900}
+    .notes{
+      width:135px;height:105px;background:#fff;border:3px solid var(--dark);border-radius:9px;transform:rotate(-6deg);padding:22px 12px 0;font-weight:900;color:var(--navy);position:relative;
+    }
+    .notes:before{content:"What changed?";position:absolute;top:8px;left:13px;font-size:13px;color:var(--teal)}
+    .notes div{height:8px;background:#dfe7ef;border-radius:99px;margin:12px 0}
+    .folder{
+      width:142px;height:92px;background:#ffd46e;border:3px solid var(--dark);border-radius:10px;position:relative;
+    }
+    .folder:before{content:"Options";position:absolute;left:13px;top:-34px;width:82px;height:52px;background:#fff;border:3px solid var(--dark);border-radius:7px;transform:rotate(-7deg);display:flex;align-items:center;justify-content:center;font-weight:900;color:var(--navy)}
+    .clipboard{
+      width:122px;height:142px;background:#fff;border:3px solid var(--dark);border-radius:9px;position:relative;padding:38px 12px 0;transform:rotate(5deg);
+    }
+    .clipboard:before{content:"Next Steps";position:absolute;top:13px;left:18px;font-weight:900;color:var(--navy)}
+    .clipboard div{font-size:13px;font-weight:800;margin-bottom:12px;color:var(--navy)}
+    .report{
+      width:150px;height:120px;background:#fff;border:3px solid var(--dark);border-radius:10px;position:relative;padding:18px 14px;
+    }
+    .report:before{content:"MaiCareNow";color:var(--teal);font-weight:900}
+    .report div{height:9px;background:#dfe7ef;border-radius:99px;margin:13px 0}
+    .heart{position:absolute;right:-18px;top:-20px;color:#ef6f70;font-size:45px;font-family:Georgia,serif}
+
+    .band{
+      margin-top:36px;
+      background:#edf6f3;
+      border-radius:18px;
+      padding:28px;
+      display:grid;
+      grid-template-columns:1fr auto;
+      gap:18px;
+      align-items:center;
+    }
+    .band h2{
+      font-family:Georgia,"Times New Roman",serif;
+      color:var(--navy);
+      font-size:34px;
+      line-height:1.1;
+      margin:0 0 8px;
+    }
+    .band p{font-size:17px}
+    .footer{
+      border-top:1px solid var(--line);
+      padding:26px 22px;
+      color:var(--muted);
+      font-size:14px;
+      background:#fff;
+    }
+    .footer-inner{
+      max-width:1180px;
+      margin:0 auto;
+      display:flex;
+      justify-content:space-between;
+      gap:20px;
+      flex-wrap:wrap;
+    }
+    .footer a{color:var(--navy);font-weight:800}
+
+    @media(max-width:950px){
+      .navlinks{display:none}
+      .hero{grid-template-columns:1fr}
+      .steps{grid-template-columns:1fr 1fr}
+      h1{font-size:44px}
+    }
+    @media(max-width:650px){
+      main{padding:38px 18px 60px}
+      .steps{grid-template-columns:1fr}
+      .hero-art{min-height:330px}
+      .laptop{transform:scale(.75);left:115px}
+      .person{transform:scale(.75);left:16px}
+      .bubble{font-size:13px}
+      .b3{display:none}
+      .band{grid-template-columns:1fr}
+      h1{font-size:38px}
+      p{font-size:17px}
+    }
+  </style>
 </head>
 <body>
+  <header class="header">
+    <div class="nav">
+      <a class="logo" href="/index.html">Mai<span>Care</span>Now</a>
+      <nav class="navlinks">
+        <a href="/how-it-works.html">How It Works</a>
+        <a href="/services.html">What We Help With</a>
+        <a href="/resources.html">Resources</a>
+        <a href="/about.html">About Us</a>
+        <a href="/blog.html">Blog</a>
+        <a class="btn" href="/intake.html">Get Started</a>
+        <a href="/login.html">Log In</a>
+      </nav>
+    </div>
+  </header>
 
-<header class="page-header">
-  <div class="nav">
-    <a class="logo" href="index.html">Mai<span>Care</span>Now</a>
-    <nav class="nav-links">
-      <a href="how-it-works.html">How It Works</a>
-      <a href="services.html">What We Help With</a>
-      <a href="resources.html">Resources</a>
-      <a href="about.html">About Us</a>
-      <a href="blog.html">Blog</a>
-      <a class="button" href="intake.html">Get Started</a>
-      <a href="login.html">Log In</a>
-    </nav>
-  </div>
-</header>
+  <main>
+    <section class="hero">
+      <div>
+        <div class="eyebrow">See how it works</div>
+        <h1>A clearer path when care decisions feel <span>overwhelming.</span></h1>
+        <p>MaiCareNow starts with what changed, organizes the situation, and helps you understand practical next steps without sending you down a hundred confusing rabbit holes.</p>
+        <div class="hero-actions">
+          <a class="btn btn-navy" href="/intake.html">Start Your Intake</a>
+          <a class="btn btn-outline" href="/services.html">What We Help With</a>
+        </div>
+      </div>
 
+      <div class="hero-art" aria-label="MaiCareNow illustrated care planning scene">
+        <div class="circle-bg"></div>
+        <div class="bubble b1">What changed?</div>
+        <div class="bubble b3">Options</div>
+        <div class="bubble b2">Next step ✓</div>
+        <div class="person"><div class="hair"></div><div class="head"></div><div class="body"></div><div class="arm"></div></div>
+        <div class="desk"></div>
+        <div class="laptop">
+          <div class="screen-title">♡ MaiCareNow</div>
+          <div class="screen-row">Care concerns <span class="check">✓</span></div>
+          <div class="screen-row">Possible savings <span class="check">✓</span></div>
+          <div class="screen-row">Support options <span class="check">✓</span></div>
+          <div class="screen-row">Next steps <span class="check">✓</span></div>
+        </div>
+      </div>
+    </section>
 
-<main class="page">
-  <section class="hero-small">
-    <h1>How It Works</h1>
-    <p>A simple process that helps families organize the situation and move forward with more confidence.</p>
-  </section>
-  <section class="grid">
-    <article class="card"><h3>1. Share what changed</h3><p>Tell us what happened, what you are worried about, and what you need help understanding.</p></article><article class="card"><h3>2. We organize the options</h3><p>MaiCareNow looks at medications, assistance programs, care support, benefits, and next steps.</p></article><article class="card"><h3>3. Receive your report</h3><p>You receive a practical care guidance report with clear questions, resources, and suggested next steps.</p></article>
-  </section>
-</main>
+    <section class="steps">
+      <article class="step">
+        <div>
+          <div class="num">1</div>
+          <h3>Start with a simple intake</h3>
+          <div class="step-art"><div class="phone"></div></div>
+        </div>
+        <p>Tell us who needs help, what changed, and what you are trying to figure out. The goal is to start simple, not overwhelm you.</p>
+      </article>
 
+      <article class="step">
+        <div>
+          <div class="num">2</div>
+          <h3>We organize what matters</h3>
+          <div class="step-art"><div class="notes"><div></div><div></div><div></div></div></div>
+        </div>
+        <p>We look at the whole situation: safety, medications, costs, insurance questions, care support, and family concerns.</p>
+      </article>
 
-<footer class="footer">
-  <div class="footer-inner">
-    <div><strong>MaiCareNow</strong><br>Navigate healthcare with confidence.</div>
-    <div><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="contact.html">Contact</a></div>
-  </div>
-</footer>
+      <article class="step">
+        <div>
+          <div class="num">3</div>
+          <h3>Review possible options</h3>
+          <div class="step-art"><div class="folder"></div></div>
+        </div>
+        <p>MaiCareNow helps identify possible savings, assistance programs, care resources, and questions to ask before deciding.</p>
+      </article>
 
+      <article class="step">
+        <div>
+          <div class="num">4</div>
+          <h3>Receive your guidance report</h3>
+          <div class="step-art"><div class="report"><span class="heart">♡</span><div></div><div></div><div></div></div></div>
+        </div>
+        <p>Your report gives you a clearer view of the situation and practical next steps you can use with family, providers, or care resources.</p>
+      </article>
+    </section>
+
+    <section class="band">
+      <div>
+        <h2>Ready to start?</h2>
+        <p>The intake only takes a few minutes and connects directly to your MaiCareNow request.</p>
+      </div>
+      <a class="btn btn-navy" href="/intake.html">Get Your Personalized Report</a>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div><strong>MaiCareNow</strong><br>Navigate healthcare with confidence.</div>
+      <div><a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a> · <a href="/contact.html">Contact</a></div>
+    </div>
+  </footer>
 </body>
 </html>

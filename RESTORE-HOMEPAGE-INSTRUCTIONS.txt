@@ -1,0 +1,14 @@
+MaiCareNow Restore Homepage
+
+Upload these files to the ROOT of your GitHub repository:
+
+- index.html
+- assets/style.css
+- assets/maicarenow-homepage.png
+
+This restores the homepage back to the exact illustrated image version you liked.
+It keeps the Lower Prescription Costs card linked to:
+/prescription-costs.html
+
+Important:
+Upload the CONTENTS of this ZIP, not the folder itself.

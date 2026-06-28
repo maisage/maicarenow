@@ -1,28 +1,34 @@
-MaiCareNow GitHub Upload Package
+MaiCareNow Exact Homepage Package
 
-Upload all files and the assets folder to the ROOT of your GitHub Pages repository.
+This package uses the selected illustrated homepage image as the actual home page visual.
+That is the safest way to match the design you approved.
 
-Included pages:
+Upload all files and the assets folder to the ROOT of the GitHub Pages repository.
+
+Files included:
 - index.html
 - how-it-works.html
 - services.html
 - resources.html
 - about.html
 - blog.html
-- intake.html
-- thank-you.html
 - login.html
 - contact.html
+- intake.html
+- thank-you.html
 - privacy.html
 - terms.html
 - 404.html
 - assets/style.css
+- assets/maicarenow-homepage.png
 
-Tally setup:
-1. Open intake.html in GitHub.
-2. Replace the placeholder form box with your Tally embed code.
-3. In Tally, set redirect after submission to:
+Important:
+1. Replace the old files in GitHub with these files.
+2. Make sure assets/maicarenow-homepage.png uploads successfully.
+3. Open intake.html and replace the Tally placeholder with your Tally embed code.
+4. In Tally, redirect submissions to:
    https://maicarenow.com/thank-you.html
 
 Note:
-assets/homepage-design-reference.png is included as the visual reference for the homepage direction you liked.
+The homepage image includes the visual header and buttons.
+Transparent clickable link zones are layered over the image for navigation.

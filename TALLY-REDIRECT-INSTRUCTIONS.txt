@@ -1,0 +1,19 @@
+How to connect your Tally form to the MaiCareNow Thank You page
+
+1. Upload thank-you.html to your GitHub repository in the same place as index.html.
+2. Commit the file.
+3. Wait for GitHub Pages to update.
+4. Your thank-you page should be available at:
+   https://maicarenow.com/thank-you.html
+
+Then in Tally:
+
+1. Open your MaiCareNow intake form.
+2. Click Settings.
+3. Go to Thank You Page / After Submission.
+4. Choose Redirect on completion.
+5. Paste this URL:
+   https://maicarenow.com/thank-you.html
+6. Save and Publish the form.
+
+You do not need to change your website embed code if the existing form ID stays the same.

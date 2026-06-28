@@ -1,17 +1,14 @@
-Prescription Link Fix
+Upload all contents of this ZIP to the ROOT of your GitHub Pages repository.
 
-Upload these files to the ROOT of your GitHub repository:
-- index.html
-- services.html
-- prescription-costs.html
-- assets/style.css
-- assets/maicarenow-homepage.png
+This version rebuilds the homepage as real HTML/CSS instead of a single image.
+Fixes:
+- Home page layout/content stays aligned with the approved design.
+- Lower Prescription Costs card on the home page is a real link.
+- Services page also links to /prescription-costs.html.
+- Get Started includes your live Tally form:
+  https://tally.so/r/7RMJy9
 
-What this fixes:
-- Homepage Lower Prescription Costs card now links to /prescription-costs.html
-- Mobile homepage includes a Lower Prescription Costs link
-- Services page Lower Prescription Costs card links to /prescription-costs.html
-- Prescription page is included again
-
-Important:
-Upload the CONTENTS of this ZIP, not the folder.
+Test after upload:
+https://maicarenow.com/
+https://maicarenow.com/prescription-costs.html
+https://maicarenow.com/intake.html

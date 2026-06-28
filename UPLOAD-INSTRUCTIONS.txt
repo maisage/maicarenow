@@ -1,17 +1,17 @@
-Upload all contents of this ZIP to the ROOT of your GitHub Pages repository.
+Prescription Link Fix
 
-This refresh includes:
-- Correct homepage image
-- Working Get Started page with Tally form https://tally.so/r/7RMJy9
-- Responsive How It Works page
-- Lower Prescription Costs page
-- Services page linked to /prescription-costs.html
-- All supporting pages
+Upload these files to the ROOT of your GitHub repository:
+- index.html
+- services.html
+- prescription-costs.html
+- assets/style.css
+- assets/maicarenow-homepage.png
+
+What this fixes:
+- Homepage Lower Prescription Costs card now links to /prescription-costs.html
+- Mobile homepage includes a Lower Prescription Costs link
+- Services page Lower Prescription Costs card links to /prescription-costs.html
+- Prescription page is included again
 
 Important:
-Do not upload the folder itself. Upload the contents so index.html, services.html, prescription-costs.html, etc. are visible at the repository root.
-
-Test after upload:
-https://maicarenow.com/services.html
-https://maicarenow.com/prescription-costs.html
-https://maicarenow.com/intake.html
+Upload the CONTENTS of this ZIP, not the folder.

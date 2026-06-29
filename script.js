@@ -1,0 +1,1 @@
+document.addEventListener("DOMContentLoaded",()=>{const b=document.querySelector(".hero-board");if(b)b.setAttribute("aria-label","Interactive MaiCareNow homepage story hero");});

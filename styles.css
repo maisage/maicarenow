@@ -464,33 +464,6 @@ If your actual hero image is slightly different, adjust only these values.
   }
 }
 
-/* === MaiCareNow first two card hotspot fix === */
-/* Fixes only the first two bottom homepage click zones. */
-
-/* 1. Your Story Starts Here -> Tally intake form */
-.link-story {
-  left: 2.8%;
-  top: 64.8%;
-  width: 11.2%;
-  height: 29.2%;
-}
-
-/* 2. How It Works -> how-it-works.html */
-.link-how-card {
-  left: 14.6%;
-  top: 64.8%;
-  width: 11.2%;
-  height: 29.2%;
-}
-
-/* Temporary visible hover feedback for testing alignment */
-.link-story:hover,
-.link-how-card:hover {
-  background: rgba(47, 143, 58, 0.16);
-  outline: 3px solid rgba(47, 143, 58, 0.75);
-  box-shadow: 0 0 0 8px rgba(47, 143, 58, 0.10);
-}
-
 /* === MaiCareNow story page: Start With Your Story === */
 .story-page {
   padding: clamp(18px, 3vw, 40px) 0 clamp(38px, 6vw, 76px);
@@ -866,4 +839,83 @@ If your actual hero image is slightly different, adjust only these values.
   .story-closing .btn {
     justify-self: stretch;
   }
+}
+
+/* === MaiCareNow FINAL eight-card hotspot map === */
+/* Locked homepage link map. Do not remove unless redesigning the homepage. */
+
+/* Disable old/small/top overlay zones */
+.link-home-logo,
+.link-get-started,
+.link-see-how,
+.link-how-top,
+.link-benefit-1,
+.link-benefit-2,
+.link-benefit-3,
+.link-benefit-4 {
+  display: none !important;
+}
+
+/* Bottom story card row — 8 cards left to right */
+.link-story {
+  left: 2.1%;
+  top: 64.2%;
+  width: 11.3%;
+  height: 29.5%;
+}
+
+.link-how-card {
+  left: 14.0%;
+  top: 64.2%;
+  width: 11.3%;
+  height: 29.5%;
+}
+
+.link-rx {
+  left: 25.9%;
+  top: 64.2%;
+  width: 11.3%;
+  height: 29.5%;
+}
+
+.link-independent {
+  left: 37.8%;
+  top: 64.2%;
+  width: 11.3%;
+  height: 29.5%;
+}
+
+.link-reports {
+  left: 49.7%;
+  top: 64.2%;
+  width: 11.3%;
+  height: 29.5%;
+}
+
+.link-resources {
+  left: 61.6%;
+  top: 64.2%;
+  width: 11.3%;
+  height: 29.5%;
+}
+
+.link-about {
+  left: 73.5%;
+  top: 64.2%;
+  width: 11.3%;
+  height: 29.5%;
+}
+
+.link-contact {
+  left: 85.4%;
+  top: 64.2%;
+  width: 11.3%;
+  height: 29.5%;
+}
+
+/* Keep visible hover feedback while testing */
+.hero-link:hover {
+  background: rgba(47, 143, 58, 0.16);
+  outline: 3px solid rgba(47, 143, 58, 0.75);
+  box-shadow: 0 0 0 8px rgba(47, 143, 58, 0.10);
 }

@@ -565,3 +565,30 @@ If your actual hero image is slightly different, adjust only these values.
   outline: 3px solid rgba(47, 143, 58, 0.75);
   box-shadow: 0 0 0 8px rgba(47, 143, 58, 0.10);
 }
+
+/* === MaiCareNow third and fourth card hotspot fix === */
+/* Fixes only:
+   3) Lower Prescription Costs -> lower-prescription-costs.html
+   4) Care Reports -> care-reports.html
+*/
+
+.link-rx {
+  left: 34.4%;
+  top: 64.5%;
+  width: 14.4%;
+  height: 28.8%;
+}
+
+.link-reports {
+  left: 50.0%;
+  top: 64.5%;
+  width: 14.4%;
+  height: 28.8%;
+}
+
+.link-rx:hover,
+.link-reports:hover {
+  background: rgba(47, 143, 58, 0.16);
+  outline: 3px solid rgba(47, 143, 58, 0.75);
+  box-shadow: 0 0 0 8px rgba(47, 143, 58, 0.10);
+}

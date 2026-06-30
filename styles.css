@@ -204,20 +204,7 @@ If your actual hero image is slightly different, adjust only these values.
 */
 
 /* Main Get Started button area in hero */
-.link-get-started {
-  left: 8%;
-  top: 45%;
-  width: 17%;
-  height: 7%;
-}
 
-/* See How It Works button area */
-.link-see-how {
-  left: 27%;
-  top: 45%;
-  width: 17%;
-  height: 7%;
-}
 
 /* Lower Prescription Costs card */
 .link-rx {

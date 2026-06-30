@@ -374,9 +374,7 @@ If your actual hero image is slightly different, adjust only these values.
 }
 
 /* === MaiCareNow navigation spacing fix === */
-.site-header {
-  min-height: 72px;
-}
+.site-header { min-height: 72px; }
 
 .nav {
   min-height: 72px;
@@ -391,9 +389,7 @@ If your actual hero image is slightly different, adjust only these values.
   line-height: 1.05;
 }
 
-.logo-mark {
-  flex: 0 0 auto;
-}
+.logo-mark { flex: 0 0 auto; }
 
 .logo-word {
   display: inline-block;
@@ -428,6 +424,84 @@ If your actual hero image is slightly different, adjust only these values.
   justify-content: center;
 }
 
+/* === MaiCareNow FINAL eight-card hotspot map === */
+/* Only the bottom story cards are clickable overlays. Top/small hero overlays are disabled. */
+
+.link-home-logo,
+.link-get-started,
+.link-see-how,
+.link-how-top,
+.link-benefit-1,
+.link-benefit-2,
+.link-benefit-3,
+.link-benefit-4 {
+  display: none !important;
+}
+
+/* Bottom card row — 8 cards, left to right */
+.link-story {
+  left: 2.1%;
+  top: 64.2%;
+  width: 11.3%;
+  height: 29.5%;
+}
+
+.link-how-card {
+  left: 14.0%;
+  top: 64.2%;
+  width: 11.3%;
+  height: 29.5%;
+}
+
+.link-rx {
+  left: 25.9%;
+  top: 64.2%;
+  width: 11.3%;
+  height: 29.5%;
+}
+
+.link-independent {
+  left: 37.8%;
+  top: 64.2%;
+  width: 11.3%;
+  height: 29.5%;
+}
+
+.link-reports {
+  left: 49.7%;
+  top: 64.2%;
+  width: 11.3%;
+  height: 29.5%;
+}
+
+.link-resources {
+  left: 61.6%;
+  top: 64.2%;
+  width: 11.3%;
+  height: 29.5%;
+}
+
+.link-about {
+  left: 73.5%;
+  top: 64.2%;
+  width: 11.3%;
+  height: 29.5%;
+}
+
+.link-contact {
+  left: 85.4%;
+  top: 64.2%;
+  width: 11.3%;
+  height: 29.5%;
+}
+
+/* Clear hover feedback while testing */
+.hero-link:hover {
+  background: rgba(47, 143, 58, 0.16);
+  outline: 3px solid rgba(47, 143, 58, 0.75);
+  box-shadow: 0 0 0 8px rgba(47, 143, 58, 0.10);
+}
+
 @media (max-width: 1000px) {
   .nav {
     align-items: flex-start;
@@ -441,154 +515,15 @@ If your actual hero image is slightly different, adjust only these values.
     padding-bottom: 6px;
   }
 
-  .nav-links a {
-    min-height: 36px;
-  }
+  .nav-links a { min-height: 36px; }
 }
 
 @media (max-width: 640px) {
-  .site-header {
-    position: sticky;
-  }
+  .site-header { position: sticky; }
 
-  .nav {
-    gap: 10px;
-  }
+  .nav { gap: 10px; }
 
-  .logo {
-    font-size: 1.35rem;
-  }
+  .logo { font-size: 1.35rem; }
 
-  .logo small {
-    font-size: 0.72rem;
-  }
-}
-
-/* === MaiCareNow first two card hotspot fix === */
-/* Fixes only the first two bottom homepage click zones. */
-
-/* 1. Your Story Starts Here -> Tally intake form */
-.link-story {
-  left: 2.8%;
-  top: 64.8%;
-  width: 11.2%;
-  height: 29.2%;
-}
-
-/* 2. How It Works -> how-it-works.html */
-.link-how-card {
-  left: 14.6%;
-  top: 64.8%;
-  width: 11.2%;
-  height: 29.2%;
-}
-
-/* Temporary visible hover feedback for testing alignment */
-.link-story:hover,
-.link-how-card:hover {
-  background: rgba(47, 143, 58, 0.16);
-  outline: 3px solid rgba(47, 143, 58, 0.75);
-  box-shadow: 0 0 0 8px rgba(47, 143, 58, 0.10);
-}
-
-/* === MaiCareNow FINAL six-card hotspot map === */
-/* Six bottom homepage blocks, left to right:
-   1) Your Story Starts Here -> Tally
-   2) How It Works -> how-it-works.html
-   3) Lower Prescription Costs -> lower-prescription-costs.html
-   4) Care Reports -> care-reports.html
-   5) Resources You Can Trust -> resources.html
-   6) About MaiCareNow -> about.html
-*/
-
-/* Keep optional home-logo hotspot small and out of the card row */
-.link-home-logo {
-  left: 3%;
-  top: 3%;
-  width: 16%;
-  height: 6%;
-}
-
-/* Bottom card row */
-.link-story {
-  left: 3.2%;
-  top: 64.5%;
-  width: 14.4%;
-  height: 28.8%;
-}
-
-.link-how-card {
-  left: 18.8%;
-  top: 64.5%;
-  width: 14.4%;
-  height: 28.8%;
-}
-
-.link-rx {
-  left: 34.4%;
-  top: 64.5%;
-  width: 14.4%;
-  height: 28.8%;
-}
-
-.link-reports {
-  left: 50.0%;
-  top: 64.5%;
-  width: 14.4%;
-  height: 28.8%;
-}
-
-.link-resources {
-  left: 65.6%;
-  top: 64.5%;
-  width: 14.4%;
-  height: 28.8%;
-}
-
-.link-about {
-  left: 81.2%;
-  top: 64.5%;
-  width: 14.4%;
-  height: 28.8%;
-}
-
-/* Disable any old top-button hotspot classes if they still exist in cached HTML */
-.link-get-started,
-.link-see-how,
-.link-how-top {
-  display: none !important;
-}
-
-/* Testing hover highlight */
-.hero-link:hover {
-  background: rgba(47, 143, 58, 0.16);
-  outline: 3px solid rgba(47, 143, 58, 0.75);
-  box-shadow: 0 0 0 8px rgba(47, 143, 58, 0.10);
-}
-
-/* === MaiCareNow third and fourth card hotspot fix === */
-/* Fixes only:
-   3) Lower Prescription Costs -> lower-prescription-costs.html
-   4) Care Reports -> care-reports.html
-*/
-
-.link-rx {
-  left: 34.4%;
-  top: 64.5%;
-  width: 14.4%;
-  height: 28.8%;
-}
-
-.link-reports {
-  left: 50.0%;
-  top: 64.5%;
-  width: 14.4%;
-  height: 28.8%;
-}
-
-.link-rx:hover,
-.link-reports:hover {
-  background: rgba(47, 143, 58, 0.16);
-  outline: 3px solid rgba(47, 143, 58, 0.75);
-  box-shadow: 0 0 0 8px rgba(47, 143, 58, 0.10);
+  .logo small { font-size: 0.72rem; }
 }

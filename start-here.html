@@ -1,384 +1,99 @@
-<!-- IMPORTANT:
-Replace asset image paths below if your homepage images use different names.
-Examples:
-assets/mai-guide.png
-assets/family-care.png
-assets/care-path.png
--->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Your Story Starts Here | MaiCareNow</title>
-
-  <link rel="stylesheet" href="style.css" />
-
   <style>
-    .story-page {
-      background: #fff7ec;
-      min-height: 100vh;
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: #fff8ed;
+      font-family: Arial, sans-serif;
     }
-
-    .story-hero {
-      max-width: 1180px;
+    .page-wrap {
+      width: 100%;
+      max-width: 1600px;
       margin: 0 auto;
-      padding: 56px 22px 32px;
-      display: grid;
-      grid-template-columns: 1.05fr .95fr;
-      gap: 34px;
-      align-items: center;
+      position: relative;
     }
-
-    .story-eyebrow {
-      display: inline-block;
-      background: #e7fbf6;
-      color: #1f6f69;
-      border: 2px solid #bdece3;
-      padding: 8px 14px;
-      border-radius: 999px;
-      font-weight: 700;
-      margin-bottom: 14px;
-    }
-
-    .story-hero h1 {
-      font-size: clamp(2.35rem, 5vw, 4.6rem);
-      line-height: .98;
-      color: #17324d;
-      margin: 0 0 18px;
-    }
-
-    .story-hero p {
-      font-size: clamp(1.05rem, 2vw, 1.25rem);
-      color: #334155;
-      max-width: 650px;
-    }
-
-    .story-actions {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-      margin-top: 22px;
-    }
-
-    .story-btn {
-      background: #ff8f70;
-      color: white;
-      padding: 15px 24px;
-      border-radius: 999px;
-      text-decoration: none;
-      font-weight: 800;
-      box-shadow: 0 10px 20px rgba(255, 143, 112, .25);
-    }
-
-    .story-btn.alt {
-      background: #3fb8ad;
-      box-shadow: 0 10px 20px rgba(63, 184, 173, .22);
-    }
-
-    .story-illustration-card {
-      background: #fff;
-      border: 3px solid #17324d;
-      border-radius: 34px;
-      padding: 22px;
-      box-shadow: 10px 10px 0 #bdece3;
-      transform: rotate(1deg);
-    }
-
-    .story-illustration-card img {
+    .page-image {
       width: 100%;
       display: block;
-      border-radius: 24px;
+    }
+    .hotspot {
+      position: absolute;
+      display: block;
+      border-radius: 18px;
+      text-indent: -9999px;
+      overflow: hidden;
+    }
+    .hotspot:focus-visible {
+      outline: 4px solid #ff8f70;
+      outline-offset: 4px;
+      background: rgba(255,143,112,.12);
+    }
+    .hotspot:hover {
+      background: rgba(63,184,173,.08);
     }
 
-    .story-section {
-      max-width: 1180px;
-      margin: 0 auto;
-      padding: 38px 22px;
-    }
+    /* Clickable story blocks based on the illustration layout */
+    .ask-1 { left: 2.8%; top: 46.5%; width: 29.8%; height: 16.5%; }
+    .ask-2 { left: 33.5%; top: 46.5%; width: 29.8%; height: 16.5%; }
+    .ask-3 { left: 64.5%; top: 46.5%; width: 32.7%; height: 16.5%; }
+    .next-section { left: 2%; top: 64.5%; width: 62.5%; height: 24%; }
+    .privacy { left: 65%; top: 64.5%; width: 32.8%; height: 24%; }
+    .cta { left: 53.5%; top: 92.2%; width: 24%; height: 5.2%; border-radius: 999px; }
 
-    .story-section h2 {
-      color: #17324d;
-      text-align: center;
-      font-size: clamp(2rem, 4vw, 3.2rem);
-      margin-bottom: 28px;
+    .fallback-links {
+      max-width: 900px;
+      margin: 18px auto 36px;
+      padding: 0 18px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
     }
-
-    .story-card-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-    }
-
-    .story-card {
-      background: #fff;
-      border: 2px solid #f1d9bd;
-      border-radius: 30px;
-      padding: 24px;
-      box-shadow: 0 12px 26px rgba(23, 50, 77, .08);
-      text-align: center;
-    }
-
-    .story-card img {
-      width: 110px;
-      height: 110px;
-      object-fit: contain;
-      margin-bottom: 12px;
-    }
-
-    .story-card h3 {
-      color: #17324d;
-      font-size: 1.35rem;
-      margin: 6px 0 8px;
-    }
-
-    .story-card p {
-      color: #475569;
-      margin: 0;
-    }
-
-    .story-path {
-      background: #ffffff;
-      border: 3px solid #bdece3;
-      border-radius: 34px;
-      padding: 28px;
-      box-shadow: 8px 8px 0 #ffe1d6;
-    }
-
-    .story-step {
-      display: grid;
-      grid-template-columns: 58px 1fr;
-      gap: 16px;
-      align-items: start;
-      padding: 18px 0;
-      border-bottom: 1px dashed #d8c7b4;
-    }
-
-    .story-step:last-child {
-      border-bottom: none;
-    }
-
-    .story-number {
-      width: 48px;
-      height: 48px;
-      background: #3fb8ad;
-      color: white;
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
-      font-weight: 900;
-      border: 2px solid #17324d;
-    }
-
-    .story-step h3 {
-      margin: 0 0 4px;
-      color: #17324d;
-    }
-
-    .story-step p {
-      margin: 0;
-      color: #475569;
-    }
-
-    .trust-box {
-      background: #e7fbf6;
-      border: 3px solid #bdece3;
-      border-radius: 34px;
-      padding: 32px;
-      display: grid;
-      grid-template-columns: 160px 1fr;
-      gap: 24px;
-      align-items: center;
-    }
-
-    .trust-box img {
-      width: 150px;
-      max-width: 100%;
-    }
-
-    .trust-box h2 {
-      text-align: left;
-      margin: 0 0 10px;
-    }
-
-    .final-story-cta {
-      max-width: 1040px;
-      margin: 40px auto 70px;
+    .fallback-links a {
       background: #17324d;
       color: white;
-      border-radius: 38px;
-      padding: 46px 24px;
-      text-align: center;
-      border: 3px solid #17324d;
-      box-shadow: 10px 10px 0 #ffcfbf;
+      padding: 11px 16px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 14px;
     }
 
-    .final-story-cta h2 {
-      font-size: clamp(2rem, 4vw, 3.2rem);
-      margin: 0 0 10px;
-    }
-
-    .final-story-cta p {
-      max-width: 680px;
-      margin: 0 auto 22px;
-      color: #eef6f5;
-    }
-
-    @media (max-width: 850px) {
-      .story-hero,
-      .trust-box {
-        grid-template-columns: 1fr;
-        text-align: center;
+    @media (max-width: 700px) {
+      .page-wrap {
+        overflow-x: auto;
       }
-
-      .story-hero p {
-        margin-left: auto;
-        margin-right: auto;
+      .page-image {
+        min-width: 920px;
       }
-
-      .story-actions {
-        justify-content: center;
-      }
-
-      .story-card-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .trust-box h2 {
-        text-align: center;
-      }
-
-      .story-illustration-card {
-        transform: none;
-        box-shadow: 6px 6px 0 #bdece3;
+      .hotspot {
+        min-width: 1px;
       }
     }
   </style>
 </head>
+<body>
+  <main class="page-wrap" aria-label="Your Story Starts Here page">
+    <img class="page-image" src="assets/start-here-illustration.png" alt="Your Story Starts Here illustrated MaiCareNow page explaining what we ask, what happens next, information privacy, and how to start a free assessment." />
 
-<body class="story-page">
-
-  <header class="site-header">
-    <a class="logo" href="index.html">MaiCareNow</a>
-    <nav class="site-nav">
-      <a href="index.html">Home</a>
-      <a href="start-here.html">Start Here</a>
-      <a href="how-it-works.html">How It Works</a>
-      <a href="lower-prescription-costs.html">Prescription Savings</a>
-    </nav>
-  </header>
-
-  <main>
-
-    <section class="story-hero">
-      <div>
-        <span class="story-eyebrow">Start with your situation</span>
-        <h1>Your Story Starts Here</h1>
-        <p>
-          When someone you love needs help, it can feel like too many decisions are coming at you at once.
-          MaiCareNow helps you slow things down, explain what is happening, and find the next practical step.
-        </p>
-        <p>
-          Start by telling Mai a little about your situation. Then we’ll help organize your care questions,
-          possible savings, and support options.
-        </p>
-
-        <div class="story-actions">
-          <a class="story-btn" href="https://tally.so/r/7RMJy9" target="_blank">Start My Free Assessment</a>
-          <a class="story-btn alt" href="how-it-works.html">See How It Works</a>
-        </div>
-      </div>
-
-      <div class="story-illustration-card">
-        <img src="assets/mai-guide.png" alt="Mai guiding a family through care decisions">
-      </div>
-    </section>
-
-    <section class="story-section">
-      <h2>What We’ll Ask</h2>
-
-      <div class="story-card-grid">
-        <div class="story-card">
-          <img src="assets/family-care.png" alt="">
-          <h3>Tell us what’s happening</h3>
-          <p>Who needs help? What changed? What are you most worried about right now?</p>
-        </div>
-
-        <div class="story-card">
-          <img src="assets/care-notes.png" alt="">
-          <h3>Share a few details</h3>
-          <p>Medication, insurance, doctors, location, and the kind of support your family may need.</p>
-        </div>
-
-        <div class="story-card">
-          <img src="assets/care-path.png" alt="">
-          <h3>Let Mai guide you</h3>
-          <p>MaiCareNow helps organize the situation into clearer options and next steps.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="story-section">
-      <h2>What Happens Next</h2>
-
-      <div class="story-path">
-        <div class="story-step">
-          <div class="story-number">1</div>
-          <div>
-            <h3>Complete the assessment</h3>
-            <p>Answer simple questions so MaiCareNow can understand what kind of help may be needed.</p>
-          </div>
-        </div>
-
-        <div class="story-step">
-          <div class="story-number">2</div>
-          <div>
-            <h3>Mai reviews your information</h3>
-            <p>Your answers help create a clearer picture of care needs, medication concerns, cost questions, and family priorities.</p>
-          </div>
-        </div>
-
-        <div class="story-step">
-          <div class="story-number">3</div>
-          <div>
-            <h3>You receive a practical roadmap</h3>
-            <p>We organize possible care options, local resources, prescription savings ideas, and questions to ask providers.</p>
-          </div>
-        </div>
-
-        <div class="story-step">
-          <div class="story-number">4</div>
-          <div>
-            <h3>Optional follow-up support</h3>
-            <p>You may choose a follow-up conversation to walk through your options and decide what to do next.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="story-section">
-      <div class="trust-box">
-        <img src="assets/privacy-shield.png" alt="Privacy and trust illustration">
-        <div>
-          <h2>Your Information Matters</h2>
-          <p>
-            We only ask for information needed to understand your situation.
-            MaiCareNow is here to guide families — not overwhelm them, pressure them, or sell their information.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section class="final-story-cta">
-      <h2>Ready to begin?</h2>
-      <p>
-        Take the first step toward a clearer healthcare plan for yourself or someone you love.
-      </p>
-      <a class="story-btn" href="https://tally.so/r/7RMJy9" target="_blank">Start My Free Assessment</a>
-    </section>
-
+    <a class="hotspot ask-1" href="https://tally.so/r/7RMJy9" target="_blank" rel="noopener">Tell us what is happening</a>
+    <a class="hotspot ask-2" href="https://tally.so/r/7RMJy9" target="_blank" rel="noopener">Share a few details</a>
+    <a class="hotspot ask-3" href="how-it-works.html">Let Mai guide you</a>
+    <a class="hotspot next-section" href="how-it-works.html">What happens next</a>
+    <a class="hotspot privacy" href="privacy.html">Your information matters</a>
+    <a class="hotspot cta" href="https://tally.so/r/7RMJy9" target="_blank" rel="noopener">Start My Free Assessment</a>
   </main>
 
+  <nav class="fallback-links" aria-label="Page links">
+    <a href="index.html">Back Home</a>
+    <a href="how-it-works.html">See How It Works</a>
+    <a href="lower-prescription-costs.html">Lower Prescription Costs</a>
+    <a href="https://tally.so/r/7RMJy9" target="_blank" rel="noopener">Start Assessment</a>
+  </nav>
 </body>
 </html>

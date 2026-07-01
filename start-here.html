@@ -13,7 +13,7 @@
     }
     .page-wrap {
       width: 100%;
-      max-width: 1600px;
+      max-width: 1536px;
       margin: 0 auto;
       position: relative;
     }
@@ -24,29 +24,36 @@
     .hotspot {
       position: absolute;
       display: block;
-      border-radius: 18px;
       text-indent: -9999px;
       overflow: hidden;
+      border-radius: 14px;
     }
     .hotspot:focus-visible {
       outline: 4px solid #ff8f70;
       outline-offset: 4px;
       background: rgba(255,143,112,.12);
     }
-    .hotspot:hover {
-      background: rgba(63,184,173,.08);
-    }
+    .hotspot:hover { background: rgba(63,184,173,.08); }
 
-    /* Clickable story blocks based on the illustration layout */
-    .ask-1 { left: 2.8%; top: 46.5%; width: 29.8%; height: 16.5%; }
-    .ask-2 { left: 33.5%; top: 46.5%; width: 29.8%; height: 16.5%; }
-    .ask-3 { left: 64.5%; top: 46.5%; width: 32.7%; height: 16.5%; }
-    .next-section { left: 2%; top: 64.5%; width: 62.5%; height: 24%; }
-    .privacy { left: 65%; top: 64.5%; width: 32.8%; height: 24%; }
-    .cta { left: 53.5%; top: 92.2%; width: 24%; height: 5.2%; border-radius: 999px; }
+    /* Top navigation built into the illustration */
+    .logo { left: 1.5%; top: 1.2%; width: 22%; height: 6%; }
+    .home { left: 49.5%; top: 2%; width: 5%; height: 4%; }
+    .start { left: 55.5%; top: 2%; width: 7%; height: 4%; }
+    .how { left: 64%; top: 2%; width: 8.5%; height: 4%; }
+    .prescription { left: 74.5%; top: 2%; width: 11.5%; height: 4%; }
+    .faqs { left: 87%; top: 2%; width: 4%; height: 4%; }
+    .about { left: 92%; top: 2%; width: 6.5%; height: 4%; }
+
+    /* Main story blocks */
+    .ask { left: 1.5%; top: 53.5%; width: 29.5%; height: 27%; }
+    .next { left: 32%; top: 53.5%; width: 37%; height: 27%; }
+    .privacy { left: 70%; top: 53.5%; width: 28.5%; height: 27%; }
+    .cta { left: 47%; top: 84.6%; width: 26%; height: 7%; border-radius: 999px; }
+    .privacy-footer { left: 51%; top: 97%; width: 8%; height: 2.5%; }
+    .terms-footer { left: 60%; top: 97%; width: 8%; height: 2.5%; }
 
     .fallback-links {
-      max-width: 900px;
+      max-width: 920px;
       margin: 18px auto 36px;
       padding: 0 18px;
       display: flex;
@@ -64,35 +71,37 @@
       font-size: 14px;
     }
 
-    @media (max-width: 700px) {
-      .page-wrap {
-        overflow-x: auto;
-      }
-      .page-image {
-        min-width: 920px;
-      }
-      .hotspot {
-        min-width: 1px;
-      }
+    @media (max-width: 760px) {
+      .page-wrap { overflow-x: auto; }
+      .page-image { min-width: 980px; }
     }
   </style>
 </head>
 <body>
   <main class="page-wrap" aria-label="Your Story Starts Here page">
-    <img class="page-image" src="assets/start-here-illustration.png" alt="Your Story Starts Here illustrated MaiCareNow page explaining what we ask, what happens next, information privacy, and how to start a free assessment." />
+    <img class="page-image" src="assets/start-here-illustration.png" alt="Your Story Starts Here MaiCareNow illustrated page with navigation, family hero image, what we'll ask, what happens next, privacy message, and one start assessment button at the bottom." />
 
-    <a class="hotspot ask-1" href="https://tally.so/r/7RMJy9" target="_blank" rel="noopener">Tell us what is happening</a>
-    <a class="hotspot ask-2" href="https://tally.so/r/7RMJy9" target="_blank" rel="noopener">Share a few details</a>
-    <a class="hotspot ask-3" href="how-it-works.html">Let Mai guide you</a>
-    <a class="hotspot next-section" href="how-it-works.html">What happens next</a>
+    <a class="hotspot logo" href="index.html">MaiCareNow home</a>
+    <a class="hotspot home" href="index.html">Home</a>
+    <a class="hotspot start" href="start-here.html">Start Here</a>
+    <a class="hotspot how" href="how-it-works.html">How It Works</a>
+    <a class="hotspot prescription" href="lower-prescription-costs.html">Prescription Savings</a>
+    <a class="hotspot faqs" href="faq.html">FAQs</a>
+    <a class="hotspot about" href="about-mai.html">About Mai</a>
+
+    <a class="hotspot ask" href="https://tally.so/r/7RMJy9" target="_blank" rel="noopener">What we will ask</a>
+    <a class="hotspot next" href="how-it-works.html">What happens next</a>
     <a class="hotspot privacy" href="privacy.html">Your information matters</a>
     <a class="hotspot cta" href="https://tally.so/r/7RMJy9" target="_blank" rel="noopener">Start My Free Assessment</a>
+    <a class="hotspot privacy-footer" href="privacy.html">Privacy Policy</a>
+    <a class="hotspot terms-footer" href="terms.html">Terms of Use</a>
   </main>
 
   <nav class="fallback-links" aria-label="Page links">
-    <a href="index.html">Back Home</a>
-    <a href="how-it-works.html">See How It Works</a>
-    <a href="lower-prescription-costs.html">Lower Prescription Costs</a>
+    <a href="index.html">Home</a>
+    <a href="how-it-works.html">How It Works</a>
+    <a href="lower-prescription-costs.html">Prescription Savings</a>
+    <a href="about-mai.html">About Mai</a>
     <a href="https://tally.so/r/7RMJy9" target="_blank" rel="noopener">Start Assessment</a>
   </nav>
 </body>

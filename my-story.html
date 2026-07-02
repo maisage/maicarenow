@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Story | MaiCareNow</title>
+  <meta name="description" content="Why Mai started MaiCareNow — a personal healthcare navigation story shaped by 30+ years in technology and family caregiving." />
+  <style>
+    :root {
+      --bg: #fff8ec;
+      --navy: #123456;
+      --teal: #159d9a;
+      --coral: #ff6f59;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--navy);
+    }
+
+    .page-shell {
+      width: min(100%, 1180px);
+      margin: 0 auto;
+      padding: 0;
+      position: relative;
+    }
+
+    .story-art {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .hotspot {
+      position: absolute;
+      display: block;
+      z-index: 5;
+      text-indent: -9999px;
+      overflow: hidden;
+      border-radius: 10px;
+    }
+
+    .hotspot:focus-visible {
+      outline: 3px solid var(--coral);
+      outline-offset: 3px;
+      text-indent: 0;
+      background: rgba(255,255,255,.85);
+      color: var(--navy);
+      font-weight: 700;
+      padding: 6px;
+      overflow: visible;
+    }
+
+    /* Hotspots are percentage-based against the full illustration */
+    .nav-home { left: 37%; top: 1.3%; width: 7%; height: 2.4%; }
+    .nav-start { left: 46%; top: 1.3%; width: 9%; height: 2.4%; }
+    .nav-how { left: 57%; top: 1.3%; width: 10%; height: 2.4%; }
+    .nav-rx { left: 69%; top: 1.3%; width: 13%; height: 2.4%; }
+    .nav-faq { left: 84%; top: 1.3%; width: 6%; height: 2.4%; }
+    .nav-story { left: 92%; top: 1.3%; width: 7%; height: 2.4%; }
+    .cta-bottom { left: 56%; top: 94.3%; width: 29%; height: 3.8%; border-radius: 999px; }
+    .privacy { left: 52%; top: 98.15%; width: 10%; height: 1.4%; }
+    .terms { left: 64%; top: 98.15%; width: 9%; height: 1.4%; }
+
+    .mobile-links {
+      display: none;
+      padding: 18px;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .mobile-links a {
+      background: white;
+      color: var(--navy);
+      text-decoration: none;
+      font-weight: 700;
+      border: 1px solid rgba(18,52,86,.15);
+      border-radius: 999px;
+      padding: 10px 14px;
+    }
+
+    .mobile-links .primary {
+      background: var(--coral);
+      color: white;
+    }
+
+    @media (max-width: 700px) {
+      .page-shell { padding: 0; }
+      .mobile-links { display: flex; }
+      .hotspot { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page-shell" aria-label="My Story page">
+    <img class="story-art" src="assets/my-story-illustration.png" alt="Illustrated My Story page for MaiCareNow explaining why Mai started MaiCareNow, including 30 plus years in technology, family caregiving, compassion, guidance, trust, and an invitation to start a free assessment." />
+
+    <a class="hotspot nav-home" href="index.html">Home</a>
+    <a class="hotspot nav-start" href="start-here.html">Start Here</a>
+    <a class="hotspot nav-how" href="how-it-works.html">How It Works</a>
+    <a class="hotspot nav-rx" href="lower-prescription-costs.html">Prescription Savings</a>
+    <a class="hotspot nav-faq" href="faq.html">FAQs</a>
+    <a class="hotspot nav-story" href="my-story.html">My Story</a>
+    <a class="hotspot cta-bottom" href="https://tally.so/r/7RMJy9" target="_blank" rel="noopener">Start My Free Assessment</a>
+    <a class="hotspot privacy" href="privacy.html">Privacy Policy</a>
+    <a class="hotspot terms" href="terms.html">Terms of Use</a>
+
+    <nav class="mobile-links" aria-label="Mobile page links">
+      <a href="index.html">Home</a>
+      <a href="start-here.html">Start Here</a>
+      <a href="how-it-works.html">How It Works</a>
+      <a href="lower-prescription-costs.html">Prescription Savings</a>
+      <a href="faq.html">FAQs</a>
+      <a class="primary" href="https://tally.so/r/7RMJy9" target="_blank" rel="noopener">Start My Free Assessment</a>
+    </nav>
+  </main>
+</body>
+</html>

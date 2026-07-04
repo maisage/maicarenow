@@ -903,3 +903,82 @@ If your actual hero image is slightly different, adjust only these values.
 .begin-final h2{margin:0;color:var(--navy);font-size:clamp(1.45rem,3vw,2.25rem);line-height:1.08;letter-spacing:-.035em}.begin-final p{margin:8px 0 0;color:var(--muted);font-size:clamp(.98rem,1.5vw,1.12rem);font-weight:700;line-height:1.4}
 @media(max-width:980px){.begin-grid{grid-template-columns:1fr}.begin-illustration{order:-1}.begin-step-grid{grid-template-columns:1fr}.begin-final{grid-template-columns:1fr}}
 @media(max-width:620px){.begin-hero{border-radius:24px}.begin-grid{padding:18px}.begin-illustration{min-height:340px}.begin-card{left:8%;top:9%;width:58%}.begin-actions .btn,.begin-final .btn{width:100%}}
+
+/* === MaiCareNow FINAL eight-card hotspot map === */
+/* LOCKED homepage hotspot map. This must stay at the bottom of styles.css. */
+
+/* Disable old/small/top overlay zones */
+.link-home-logo,
+.link-get-started,
+.link-see-how,
+.link-how-top,
+.link-benefit-1,
+.link-benefit-2,
+.link-benefit-3,
+.link-benefit-4 {
+  display: none !important;
+}
+
+/* Bottom story card row — 8 cards left to right */
+.link-story {
+  left: 2.1%;
+  top: 64.2%;
+  width: 11.3%;
+  height: 29.5%;
+}
+
+.link-how-card {
+  left: 14.0%;
+  top: 64.2%;
+  width: 11.3%;
+  height: 29.5%;
+}
+
+.link-rx {
+  left: 25.9%;
+  top: 64.2%;
+  width: 11.3%;
+  height: 29.5%;
+}
+
+.link-independent {
+  left: 37.8%;
+  top: 64.2%;
+  width: 11.3%;
+  height: 29.5%;
+}
+
+.link-reports {
+  left: 49.7%;
+  top: 64.2%;
+  width: 11.3%;
+  height: 29.5%;
+}
+
+.link-resources {
+  left: 61.6%;
+  top: 64.2%;
+  width: 11.3%;
+  height: 29.5%;
+}
+
+.link-about {
+  left: 73.5%;
+  top: 64.2%;
+  width: 11.3%;
+  height: 29.5%;
+}
+
+.link-contact {
+  left: 85.4%;
+  top: 64.2%;
+  width: 11.3%;
+  height: 29.5%;
+}
+
+/* Keep visible hover feedback while testing */
+.hero-link:hover {
+  background: rgba(47, 143, 58, 0.16);
+  outline: 3px solid rgba(47, 143, 58, 0.75);
+  box-shadow: 0 0 0 8px rgba(47, 143, 58, 0.10);
+}

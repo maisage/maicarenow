@@ -1,0 +1,35 @@
+MaiCareNow Standardized HTML Upload Package
+
+Upload all HTML files in this package to the ROOT of the website-updates branch.
+Allow GitHub to replace files with the same names.
+
+DO NOT replace:
+- index.html
+- styles.css
+- js/site.js
+- any PNG/JPG image
+
+Files included:
+- start-here.html
+- how-it-works.html
+- lower-prescription-costs.html
+- independent-living.html
+- care-reports.html
+- resources.html
+- about-mai.html
+- contact.html
+- faq.html
+- privacy.html
+- terms.html
+- 404.html
+
+After upload:
+1. Confirm the branch says website-updates.
+2. Test every page on desktop, iPad, and phone.
+3. Verify the mobile menu.
+4. Verify every image loads.
+5. Verify the Tally assessment opens.
+6. Do not merge into main until all checks pass.
+
+Privacy and Terms are practical launch drafts and should be reviewed against
+MaiCareNow's actual intake and data-handling process before public launch.

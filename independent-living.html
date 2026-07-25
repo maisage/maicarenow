@@ -1,71 +1,179 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Independent Living & Technology | MaiCareNow</title>
-  <meta name="description" content="Technology options that support independent living.">
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <header class="site-header">
-    <div class="container nav">
-      <a class="logo" href="index.html" aria-label="MaiCareNow home">
-        <span class="logo-mark">♡</span>
-        <span class="logo-word">MaiCare<span>Now</span><small>Your trusted guide through life’s healthcare decisions.</small></span>
+  <!doctype html>
+  <html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="description" content="Explore practical technology, support, and planning ideas that may help someone remain safe and independent.">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="author" content="Lindsey Inc.">
+    <title>Independent Living & Technology | MaiCareNow</title>
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="styles.css">
+
+<style>
+  .story-page {
+    width: 100%;
+    overflow: hidden;
+    background: #ffffff;
+  }
+
+  .story-page-art {
+    width: min(var(--content-width), 100%);
+    margin: 0 auto;
+  }
+
+  .story-page-art img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .page-text {
+    width: min(900px, calc(100% - 40px));
+    margin: 44px auto;
+  }
+
+  .page-card {
+    background: #fff;
+    border: 1px solid #dbe5f2;
+    border-radius: 24px;
+    padding: clamp(22px, 4vw, 38px);
+    box-shadow: 0 12px 30px rgba(9, 38, 91, .08);
+  }
+
+  .page-card + .page-card { margin-top: 18px; }
+
+  .page-card h1,
+  .page-card h2 {
+    color: #0b2c63;
+    line-height: 1.15;
+    margin-top: 0;
+  }
+
+  .page-card p,
+  .page-card li {
+    color: #42516d;
+    line-height: 1.7;
+  }
+
+  .page-card a:not(.button) {
+    color: #1262d6;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .page-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 22px;
+  }
+
+  .faq-list details {
+    border-top: 1px solid #dbe5f2;
+    padding: 18px 0;
+  }
+
+  .faq-list details:first-child {
+    border-top: 0;
+    padding-top: 0;
+  }
+
+  .faq-list summary {
+    cursor: pointer;
+    color: #0b2c63;
+    font-size: 1.08rem;
+    font-weight: 800;
+    line-height: 1.4;
+  }
+
+  @media (max-width: 700px) {
+    .story-page-art { width: 100%; }
+    .page-text { width: min(100% - 28px, 900px); margin: 26px auto; }
+  }
+</style>
+
+  </head>
+<body data-page="independent-living">
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="index.html" aria-label="MaiCareNow home">
+      <span class="brand-mark" aria-hidden="true">♡</span>
+      <span class="brand-copy">
+        <span class="brand-name">
+          <span class="brand-mai">Mai</span><span class="brand-care">Care</span><span class="brand-now">Now</span>
+        </span>
+        <span class="brand-tagline">Your trusted guide through life’s healthcare decisions.</span>
+      </span>
+    </a>
+
+    <button class="menu-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="primary-navigation">
+      <span class="menu-label">Menu</span>
+      <span class="menu-icon" aria-hidden="true"></span>
+    </button>
+
+    <nav id="primary-navigation" class="primary-nav" aria-label="Primary navigation">
+      <a href="index.html">Home</a>
+  <a href="how-it-works.html">How It Works</a>
+  <a href="lower-prescription-costs.html">Lower Rx Costs</a>
+  <a href="resources.html">Resources</a>
+  <a href="about-mai.html">About Us</a>
+    </nav>
+  </div>
+</header>
+<main id="main-content">
+  <section class="story-page" aria-label="Independent Living & Technology">
+    <div class="story-page-art">
+      <img src="assets/illustrations/independent-living.png" alt="Illustrated guide to independent living and helpful technology for safety, connection, and everyday support." fetchpriority="high">
+    </div>
+  </section>
+<section class="standard-cta" aria-labelledby="cta-title">
+  <div class="cta-copy">
+    <p class="eyebrow">Independence can look different for every family.</p>
+    <h2 id="cta-title">Need help deciding what may be useful?</h2>
+    <p>Share what has changed and what matters most. I will help you organize the options without pushing a one-size-fits-all answer.</p>
+    <div class="cta-actions">
+      <a class="button button-primary" href="start-here.html">
+        Start Your Story <span aria-hidden="true">→</span>
       </a>
-      <nav class="nav-links" aria-label="Main navigation">
-        <a href="index.html">Home</a>
-        <a href="how-it-works.html">How It Works</a>
-        <a href="lower-prescription-costs.html">Lower Rx Costs</a>
-        <a href="care-reports.html">Care Reports</a>
-        <a href="resources.html">Resources</a>
-        <a href="about-mai.html">About Us</a>
-        <a href="start-here.html">Your Story Starts Here</a>
-      </nav>
+      <a class="text-link" href="resources.html">
+        Explore Trusted Resources <span aria-hidden="true">→</span>
+      </a>
     </div>
-  </header>
+  </div>
 
-  <main class="site independent-living-main">
-    <div class="container">
-      <div class="art-wrap">
-        <img
-          class="page-art"
-          src="assets/illustrations/independent-living.png"
-          alt="Independent Living & Technology page illustration"
-        >
-
-        <a class="hotspot cta-main" href="https://tally.so/r/7RMJy9" target="_blank" rel="noopener">
-          Start My Free Assessment
-        </a>
-        <a class="hotspot privacy" href="privacy.html">Privacy Policy</a>
-        <a class="hotspot terms" href="terms.html">Terms of Use</a>
-      </div>
+  <div class="mai-signoff">
+    <div class="speech-bubble">
+      <strong>Hi, I’m Mai.</strong>
+      <span>I’m here to help.</span>
     </div>
-
-    <div class="container mobile-story-links">
-      <div class="mobile-grid">
-        <a class="mobile-link" href="index.html">Home<span>→</span></a>
-        <a class="mobile-link" href="start-here.html">Start Your Story<span>→</span></a>
-        <a class="mobile-link" href="how-it-works.html">How It Works<span>→</span></a>
-        <a class="mobile-link" href="lower-prescription-costs.html">Lower Prescription Costs<span>→</span></a>
-        <a class="mobile-link active" href="independent-living.html">Independent Living & Technology<span>→</span></a>
-        <a class="mobile-link" href="care-reports.html">Care Reports & Guidance<span>→</span></a>
-        <a class="mobile-link" href="resources.html">Resources You Can Trust<span>→</span></a>
-        <a class="mobile-link" href="about-mai.html">About MaiCareNow<span>→</span></a>
-        <a class="mobile-link" href="contact.html">Get Support & Contact Us<span>→</span></a>
-        <a class="mobile-link" href="https://tally.so/r/7RMJy9" target="_blank" rel="noopener">Start My Free Assessment<span>→</span></a>
-      </div>
-    </div>
+    <img
+      src="assets/mai-photo.jpg"
+      alt="Mai, founder of MaiCareNow"
+      width="520"
+      height="520"
+      loading="lazy">
+  </div>
+</section>
   </main>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p>© 2026 MaiCareNow. All rights reserved.</p>
+    <nav aria-label="Footer navigation">
+      <a href="faq.html">FAQs</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</footer>
 
-  <footer class="footer">
-    <div class="container">
-      <div>© 2026 MaiCareNow. All rights reserved.</div>
-      <div>Guidance. Clarity. Support.</div>
-    </div>
-  </footer>
-
-  <script src="script.js"></script>
+<script src="js/site.js"></script>
 </body>
 </html>

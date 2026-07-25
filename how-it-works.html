@@ -1,15 +1,132 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>How It Works | MaiCareNow</title><meta name="description" content="How MaiCareNow works in five simple steps."><link rel="stylesheet" href="styles.css"><style>
-.nav-logo{left:1%;top:1%;width:18%;height:4%}.nav-home{left:26%;top:2%;width:5%;height:3%}.nav-start{left:33%;top:2%;width:7%;height:3%}.nav-how{left:42%;top:2%;width:9%;height:3%}.nav-rx{left:52%;top:2%;width:13%;height:3%}.nav-independent{left:66%;top:2%;width:10%;height:3%}.nav-care{left:75%;top:2%;width:11%;height:3%}.nav-resources{left:83%;top:2%;width:8%;height:3%}.nav-faq{left:86%;top:2%;width:5%;height:3%}.nav-story{left:91%;top:2%;width:6%;height:3%}.nav-contact{left:48%;top:97%;width:7%;height:2%}.cta-main{left:51%;top:92%;width:27%;height:5%;border-radius:999px}.privacy{left:42%;top:97.5%;width:8%;height:1.7%}.terms{left:51%;top:97.5%;width:8%;height:1.7%}
-.cta-main{left:50%;top:91.5%;width:25%;height:4.2%}.nav-independent,.nav-care,.nav-resources,.nav-contact{display:none}</style></head><body><main class="site"><div class="art-wrap"><img class="page-art" src="assets/illustrations/how-it-works.png" alt="How It Works page illustration">
-<a class="hotspot nav-logo" href="index.html">MaiCareNow</a>
-<a class="hotspot nav-home" href="index.html">Home</a>
-<a class="hotspot nav-start" href="start-here.html">Start Here</a>
-<a class="hotspot nav-how" href="how-it-works.html">How It Works</a>
-<a class="hotspot nav-rx" href="lower-prescription-costs.html">Prescription Savings</a>
-<a class="hotspot nav-independent" href="independent-living.html">Independent Living</a>
-<a class="hotspot nav-care" href="care-reports.html">Care Reports & Guidance</a>
-<a class="hotspot nav-resources" href="resources.html">Resources You Can Trust</a>
-<a class="hotspot nav-faq" href="faq.html">FAQs</a>
-<a class="hotspot nav-story" href="about-mai.html">About Mai</a>
-<a class="hotspot nav-contact" href="contact.html">Contact</a>
-<a class="hotspot cta-main" href="https://tally.so/r/7RMJy9" target="_blank" rel="noopener">Start My Free Assessment</a><a class="hotspot privacy" href="privacy.html">Privacy Policy</a><a class="hotspot terms" href="terms.html">Terms of Use</a></div><nav class="mobile-links"><a href="index.html">Home</a><a href="start-here.html">Start Here</a><a href="about-mai.html">About Mai</a><a href="how-it-works.html">How It Works</a><a href="lower-prescription-costs.html">Prescription Savings</a><a href="independent-living.html">Independent Living</a><a href="care-reports.html">Care Reports</a><a href="resources.html">Resources</a><a href="contact.html">Contact</a><a href="https://tally.so/r/7RMJy9" target="_blank">Assessment</a></nav></main></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="See how MaiCareNow helps families organize healthcare information, understand options, and move forward with confidence.">
+  <meta name="theme-color" content="#ffffff">
+  <title>How It Works | MaiCareNow</title>
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    /* Page-specific layout only. Shared header, CTA, footer, and mobile menu
+       continue to come from styles.css. */
+    .story-page {
+      width: 100%;
+      overflow: hidden;
+      background: #ffffff;
+    }
+
+    .story-page-art {
+      width: min(var(--content-width), 100%);
+      margin: 0 auto;
+    }
+
+    .story-page-art img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    @media (max-width: 700px) {
+      .story-page-art {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body data-page="how-it-works">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html" aria-label="MaiCareNow home">
+        <span class="brand-mark" aria-hidden="true">♡</span>
+        <span class="brand-copy">
+          <span class="brand-name">
+            <span class="brand-mai">Mai</span><span class="brand-care">Care</span><span class="brand-now">Now</span>
+          </span>
+          <span class="brand-tagline">Your trusted guide through life’s healthcare decisions.</span>
+        </span>
+      </a>
+
+      <button class="menu-toggle"
+              type="button"
+              aria-expanded="false"
+              aria-controls="primary-navigation">
+        <span class="menu-label">Menu</span>
+        <span class="menu-icon" aria-hidden="true"></span>
+      </button>
+
+      <nav id="primary-navigation" class="primary-nav" aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a href="how-it-works.html" aria-current="page">How It Works</a>
+        <a href="lower-prescription-costs.html">Lower Rx Costs</a>
+        <a href="resources.html">Resources</a>
+        <a href="about-mai.html">About Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="story-page" aria-label="How MaiCareNow works">
+      <div class="story-page-art">
+        <img
+          src="assets/illustrations/how-it-works.png"
+          alt="Illustrated explanation of the MaiCareNow process, including sharing your story, review and research, a complimentary conversation, personalized guidance, and trusted support."
+          width="1024"
+          height="1536"
+          fetchpriority="high">
+      </div>
+    </section>
+
+    <section class="standard-cta" aria-labelledby="cta-title">
+      <div class="cta-copy">
+        <p class="eyebrow">You do not have to figure it out alone.</p>
+        <h2 id="cta-title">Ready to share what is happening?</h2>
+        <p>
+          Tell me a little about your situation. I will review it personally
+          and help you understand what options may make sense.
+        </p>
+
+        <div class="cta-actions">
+          <a class="button button-primary" href="start-here.html">
+            Start Your Story <span aria-hidden="true">→</span>
+          </a>
+          <a class="text-link" href="resources.html">
+            Explore trusted resources <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="mai-signoff">
+        <div class="speech-bubble">
+          <strong>Hi, I’m Mai.</strong>
+          <span>I’m here to help.</span>
+        </div>
+
+        <img
+          src="assets/mai-photo.jpg"
+          alt="Mai, founder of MaiCareNow"
+          width="520"
+          height="520"
+          loading="lazy">
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p>© 2026 MaiCareNow. All rights reserved.</p>
+
+      <nav aria-label="Footer navigation">
+        <a href="privacy.html">Privacy</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="js/site.js"></script>
+</body>
+</html>

@@ -371,12 +371,12 @@ a {
 
 .standard-cta {
   width: min(1120px, calc(100% - 40px));
-  margin: 30px auto 0;
-  padding: 24px 30px;
+  margin: 20px auto 0;
+  padding: 14px 22px;
   display: grid;
-  grid-template-columns: minmax(0, 1.45fr) minmax(220px, 0.55fr);
+  grid-template-columns: minmax(0, 1fr) 150px;
   align-items: center;
-  gap: 28px;
+  gap: 18px;
   overflow: hidden;
   border: 1px solid #e2dbea;
   border-radius: 24px;
@@ -395,7 +395,7 @@ a {
 .cta-copy h2 {
   margin: 0;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(27px, 3vw, 40px);
+  font-size: clamp(22px, 2.3vw, 31px);
   line-height: 1.08;
   letter-spacing: -0.6px;
 }
@@ -404,11 +404,11 @@ a {
   max-width: 720px;
   margin: 10px 0 0;
   color: #31446c;
-  font-size: clamp(15px, 1.25vw, 18px);
+  font-size: clamp(14px, 1.05vw, 16px);
 }
 
 .cta-actions {
-  margin-top: 18px;
+  margin-top: 12px;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
@@ -442,7 +442,7 @@ a {
 
 .mai-signoff {
   position: relative;
-  min-height: 205px;
+  min-height: 132px;
   display: flex;
   align-items: flex-end;
   justify-content: flex-end;
@@ -451,7 +451,7 @@ a {
 .mai-signoff img {
   position: relative;
   z-index: 2;
-  width: min(185px, 72%);
+  width: min(118px, 82%);
   aspect-ratio: 1 / 1;
   object-fit: cover;
   object-position: center 20%;
@@ -465,8 +465,8 @@ a {
   z-index: 3;
   left: 0;
   top: 4px;
-  width: min(165px, 55%);
-  padding: 12px 14px;
+  width: 108px;
+  padding: 8px 9px;
   display: flex;
   flex-direction: column;
   gap: 3px;
@@ -476,7 +476,7 @@ a {
   background: white;
   text-align: center;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(14px, 1.35vw, 17px);
+  font-size: 12px;
   box-shadow: 0 10px 25px rgba(16, 43, 99, 0.08);
 }
 
@@ -651,9 +651,9 @@ a {
   }
 
   .standard-cta {
-    width: calc(100% - 24px);
-    margin-top: 22px;
-    padding: 22px 18px 0;
+    width: calc(100% - 20px);
+    margin-top: 16px;
+    padding: 14px 14px 0;
     grid-template-columns: 1fr;
     gap: 0;
     text-align: center;
@@ -670,20 +670,20 @@ a {
 
   .mai-signoff {
     width: 100%;
-    min-height: 215px;
+    min-height: 145px;
     justify-content: center;
   }
 
   .mai-signoff img {
-    width: min(170px, 58vw);
+    width: min(112px, 34vw);
   }
 
   .speech-bubble {
     left: max(0px, calc(50% - 170px));
     top: 8px;
-    width: 135px;
-    padding: 11px;
-    font-size: 14px;
+    width: 100px;
+    padding: 8px;
+    font-size: 12px;
   }
 
   .footer-inner {
@@ -725,5 +725,34 @@ a {
   *::before,
   *::after {
     transition: none !important;
+  }
+}
+
+
+/* Final compact CTA override */
+.standard-cta {
+  min-height: 0;
+}
+
+.cta-copy h2 {
+  margin-bottom: 0;
+}
+
+.cta-copy > p:not(.eyebrow) {
+  line-height: 1.45;
+}
+
+.button {
+  min-height: 40px;
+  padding: 9px 16px;
+}
+
+@media (max-width: 700px) {
+  .standard-cta {
+    border-radius: 18px;
+  }
+
+  .mai-signoff {
+    margin-top: 4px;
   }
 }

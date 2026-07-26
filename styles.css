@@ -756,3 +756,267 @@ a {
     margin-top: 4px;
   }
 }
+
+
+/* ---------- Compact Mai closing block ---------- */
+
+.compact-mai-bottom {
+  width: min(1120px, calc(100% - 40px));
+  margin: 18px auto 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 330px;
+  align-items: end;
+  gap: 22px;
+}
+
+.compact-mai-card {
+  min-height: 150px;
+  padding: 20px 24px;
+  display: grid;
+  grid-template-columns: 92px minmax(0, 1fr);
+  align-items: center;
+  gap: 20px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #f5f1fb 0%, #f2f7fb 100%);
+  border: 1px solid #e3ddeb;
+  box-shadow: 0 8px 20px rgba(16, 43, 99, 0.06);
+}
+
+.compact-mai-icon {
+  width: 82px;
+  height: 82px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: #ffffff;
+  background: linear-gradient(135deg, #8f3b8c, #6f2f82);
+  font: 700 48px/1 Georgia, "Times New Roman", serif;
+}
+
+.compact-mai-copy h2 {
+  margin: 0;
+  color: #102b63;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(24px, 2.2vw, 34px);
+  line-height: 1.08;
+}
+
+.compact-mai-copy p {
+  max-width: 650px;
+  margin: 8px 0 0;
+  color: #31446c;
+  font-size: clamp(14px, 1.1vw, 17px);
+  line-height: 1.5;
+}
+
+.compact-mai-actions {
+  margin-top: 13px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+}
+
+.compact-mai-primary,
+.compact-mai-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-decoration: none;
+  font-weight: 800;
+}
+
+.compact-mai-primary {
+  min-height: 40px;
+  padding: 8px 18px;
+  border-radius: 8px;
+  color: #ffffff;
+  background: linear-gradient(135deg, #8f3b8c, #6f2f82);
+  box-shadow: 0 6px 14px rgba(111, 47, 130, 0.18);
+}
+
+.compact-mai-secondary {
+  color: #1769d2;
+  text-underline-offset: 4px;
+}
+
+.compact-mai-person {
+  position: relative;
+  min-height: 150px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.compact-mai-person img {
+  position: relative;
+  z-index: 2;
+  width: 170px;
+  height: 170px;
+  object-fit: cover;
+  object-position: center 18%;
+  border-radius: 50% 50% 14% 50%;
+  border: 4px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 10px 24px rgba(16, 43, 99, 0.14);
+}
+
+.compact-mai-bubble {
+  position: absolute;
+  z-index: 3;
+  left: 0;
+  top: 8px;
+  width: 155px;
+  min-height: 105px;
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  border: 2px solid #bcc8d6;
+  border-radius: 50%;
+  background: #ffffff;
+  color: #102b63;
+  text-align: center;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 16px;
+  line-height: 1.2;
+  box-shadow: 0 8px 18px rgba(16, 43, 99, 0.07);
+}
+
+.compact-mai-bubble::after {
+  content: "";
+  position: absolute;
+  right: -18px;
+  bottom: 25px;
+  width: 34px;
+  height: 22px;
+  background: #ffffff;
+  clip-path: polygon(0 0, 100% 50%, 0 100%);
+}
+
+.compact-privacy-strip {
+  width: 100%;
+  min-height: 36px;
+  margin-top: 0;
+  padding: 8px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: #2c6a57;
+  background: #edf8f4;
+  border-top: 1px solid #d6ebe3;
+  font-size: 13px;
+  text-align: center;
+}
+
+.compact-mai-primary:focus-visible,
+.compact-mai-secondary:focus-visible {
+  outline: 3px solid rgba(23, 105, 210, 0.34);
+  outline-offset: 4px;
+  border-radius: 8px;
+}
+
+@media (max-width: 900px) {
+  .compact-mai-bottom {
+    grid-template-columns: minmax(0, 1fr) 260px;
+  }
+
+  .compact-mai-person img {
+    width: 145px;
+    height: 145px;
+  }
+
+  .compact-mai-bubble {
+    width: 130px;
+    min-height: 92px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 700px) {
+  .compact-mai-bottom {
+    width: calc(100% - 24px);
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .compact-mai-card {
+    min-height: 0;
+    padding: 18px;
+    grid-template-columns: 64px minmax(0, 1fr);
+    gap: 14px;
+    text-align: left;
+  }
+
+  .compact-mai-icon {
+    width: 58px;
+    height: 58px;
+    font-size: 34px;
+  }
+
+  .compact-mai-copy h2 {
+    font-size: 22px;
+  }
+
+  .compact-mai-actions {
+    gap: 10px 16px;
+  }
+
+  .compact-mai-person {
+    min-height: 135px;
+    justify-content: flex-end;
+  }
+
+  .compact-mai-person img {
+    width: 122px;
+    height: 122px;
+  }
+
+  .compact-mai-bubble {
+    left: auto;
+    right: 118px;
+    top: 16px;
+    width: 120px;
+    min-height: 82px;
+    padding: 10px;
+    font-size: 13px;
+  }
+
+  .compact-privacy-strip {
+    padding: 7px 12px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 430px) {
+  .compact-mai-card {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .compact-mai-icon {
+    margin: 0 auto;
+  }
+
+  .compact-mai-actions {
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .compact-mai-primary,
+  .compact-mai-secondary {
+    width: 100%;
+  }
+
+  .compact-mai-person {
+    justify-content: center;
+  }
+
+  .compact-mai-bubble {
+    left: 6px;
+    right: auto;
+  }
+}

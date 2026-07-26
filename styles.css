@@ -1,12 +1,11 @@
-/* MaiCareNow — responsive shared stylesheet
-   Homepage blueprint preserved; compact standard CTA applied site-wide. */
+/* MaiCareNow — final responsive shared stylesheet
+   Preserves the approved homepage blueprint and supports the standardized
+   interior-page header, artwork, mobile menu, hotspots, and simple footer. */
 
 :root {
   --navy: #102b63;
   --blue: #1769d2;
   --green: #198a4b;
-  --teal: #0a827d;
-  --purple: #8f3b8c;
   --white: #ffffff;
   --soft: #f6f9fc;
   --border: #dce5ef;
@@ -47,7 +46,7 @@ a {
   z-index: 9999;
   padding: 10px 14px;
   border-radius: 8px;
-  color: #fff;
+  color: #ffffff;
   background: var(--navy);
   transform: translateY(-150%);
 }
@@ -91,7 +90,7 @@ a {
   display: grid;
   place-items: center;
   border-radius: 16px;
-  color: white;
+  color: #ffffff;
   background: linear-gradient(145deg, #1671d9 0%, #118d8c 55%, #48a942 100%);
   box-shadow: var(--shadow);
   font: 700 37px/1 Arial, sans-serif;
@@ -176,9 +175,8 @@ a {
 .primary-nav a:focus-visible,
 .menu-toggle:focus-visible,
 .hotspot:focus-visible,
-.button:focus-visible,
-.text-link:focus-visible,
-.site-footer a:focus-visible {
+.assessment-link a:focus-visible,
+.simple-footer a:focus-visible {
   outline: 3px solid rgba(23, 105, 210, 0.34);
   outline-offset: 4px;
   border-radius: 6px;
@@ -227,7 +225,7 @@ a {
   top: 7px;
 }
 
-/* ---------- Approved homepage visual ---------- */
+/* ---------- Approved homepage artwork ---------- */
 
 .homepage-visual {
   width: 100%;
@@ -261,7 +259,7 @@ a {
   box-shadow: inset 0 0 0 3px rgba(23, 105, 210, 0.23);
 }
 
-/* Homepage hotspots based on the approved 1536 × 1024 artwork */
+/* Homepage hero hotspots */
 .hero-start {
   left: 2.5%;
   top: 43.5%;
@@ -276,6 +274,7 @@ a {
   height: 6.5%;
 }
 
+/* Homepage bottom-row card hotspots */
 .card-story {
   left: 1.8%;
   top: 58.7%;
@@ -348,12 +347,12 @@ a {
   font-weight: 700;
 }
 
-/* ---------- Standardized interior page artwork ---------- */
+/* ---------- Interior page artwork ---------- */
 
 .story-page {
   width: 100%;
   overflow: hidden;
-  background: #fff;
+  background: #ffffff;
 }
 
 .story-page-art {
@@ -362,170 +361,167 @@ a {
 }
 
 .story-page-art img {
-  display: block;
   width: 100%;
   height: auto;
 }
 
-/* ---------- Compact standard bottom CTA ---------- */
+/* ---------- Real Start Here assessment button ---------- */
 
-.standard-cta {
+.assessment-link {
   width: min(1120px, calc(100% - 40px));
-  margin: 20px auto 0;
-  padding: 14px 22px;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) 150px;
-  align-items: center;
-  gap: 18px;
-  overflow: hidden;
-  border: 1px solid #e2dbea;
-  border-radius: 24px;
-  background:
-    radial-gradient(circle at 85% 30%, rgba(25, 138, 75, 0.10), transparent 34%),
-    linear-gradient(135deg, #f7f2fb 0%, #f5faf9 100%);
-  box-shadow: var(--shadow);
-}
-
-.eyebrow {
-  margin: 0 0 7px;
-  color: var(--green);
-  font-weight: 800;
-}
-
-.cta-copy h2 {
-  margin: 0;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(22px, 2.3vw, 31px);
-  line-height: 1.08;
-  letter-spacing: -0.6px;
-}
-
-.cta-copy > p:not(.eyebrow) {
-  max-width: 720px;
-  margin: 10px 0 0;
-  color: #31446c;
-  font-size: clamp(14px, 1.05vw, 16px);
-}
-
-.cta-actions {
-  margin-top: 12px;
+  margin: 14px auto 18px;
   display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 12px 20px;
+  justify-content: center;
 }
 
-.button {
+.assessment-link a {
+  min-height: 44px;
+  padding: 10px 20px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  min-height: 46px;
-  padding: 11px 20px;
+  gap: 8px;
+  border-radius: 999px;
+  color: #ffffff;
+  background: #7b347f;
+  box-shadow: 0 7px 16px rgba(123, 52, 127, 0.18);
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.assessment-link a:hover {
+  background: #672b6b;
+}
+
+/* ---------- Simple Privacy / Contact footer ---------- */
+
+.site-footer.simple-footer {
+  margin-top: 0;
+  color: #2c6a57;
+  background: #edf8f4;
+  border-top: 1px solid #d6ebe3;
+}
+
+.simple-footer .footer-inner {
+  width: min(1120px, calc(100% - 32px));
+  min-height: 42px;
+  margin: 0 auto;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.simple-footer .footer-inner nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+}
+
+.simple-footer .footer-inner a {
+  color: #2c6a57;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.simple-footer .footer-inner a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* Hide obsolete CTA systems if any old markup remains accidentally. */
+.standard-cta,
+.closing-cta,
+.compact-mai-bottom,
+.compact-privacy-strip,
+.micro-cta {
+  display: none !important;
+}
+
+/* ---------- Text-led pages such as FAQ / Privacy / Terms / 404 ---------- */
+
+.page-text {
+  width: min(900px, calc(100% - 40px));
+  margin: 44px auto;
+}
+
+.page-card {
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: clamp(22px, 4vw, 38px);
+  box-shadow: 0 12px 30px rgba(9, 38, 91, 0.08);
+}
+
+.page-card + .page-card {
+  margin-top: 18px;
+}
+
+.page-card h1,
+.page-card h2 {
+  margin-top: 0;
+  color: var(--navy);
+  line-height: 1.15;
+}
+
+.page-card p,
+.page-card li {
+  color: #42516d;
+  line-height: 1.7;
+}
+
+.page-card a {
+  color: var(--blue);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.page-actions {
+  margin-top: 22px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.button {
+  min-height: 42px;
+  padding: 9px 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 999px;
   text-decoration: none;
   font-weight: 800;
 }
 
 .button-primary {
-  color: white;
-  background: linear-gradient(135deg, #8f3b8c, #6e2f83);
-  box-shadow: 0 9px 20px rgba(111, 47, 131, 0.2);
+  color: #ffffff !important;
+  background: #7b347f;
+  text-decoration: none !important;
 }
 
-.text-link {
-  color: var(--blue);
-  text-decoration-thickness: 2px;
-  text-underline-offset: 4px;
-  font-weight: 800;
+.faq-list details {
+  border-top: 1px solid var(--border);
+  padding: 18px 0;
 }
 
-.mai-signoff {
-  position: relative;
-  min-height: 132px;
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-end;
+.faq-list details:first-child {
+  border-top: 0;
+  padding-top: 0;
 }
 
-.mai-signoff img {
-  position: relative;
-  z-index: 2;
-  width: min(118px, 82%);
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  object-position: center 20%;
-  border: 5px solid rgba(255, 255, 255, 0.86);
-  border-radius: 50% 50% 18% 50%;
-  box-shadow: 0 14px 30px rgba(16, 43, 99, 0.18);
-}
-
-.speech-bubble {
-  position: absolute;
-  z-index: 3;
-  left: 0;
-  top: 4px;
-  width: 108px;
-  padding: 8px 9px;
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-  border: 2px solid #bcc8d6;
-  border-radius: 50%;
+.faq-list summary {
+  cursor: pointer;
   color: var(--navy);
-  background: white;
-  text-align: center;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 12px;
-  box-shadow: 0 10px 25px rgba(16, 43, 99, 0.08);
+  font-size: 1.08rem;
+  font-weight: 800;
+  line-height: 1.4;
 }
 
-.speech-bubble::after {
-  content: "";
-  position: absolute;
-  right: -16px;
-  bottom: 28px;
-  width: 30px;
-  height: 20px;
-  background: white;
-  clip-path: polygon(0 0, 100% 50%, 0 100%);
-}
-
-/* ---------- Footer ---------- */
-
-.site-footer {
-  margin-top: 28px;
-  color: white;
-  background: var(--navy);
-}
-
-.footer-inner {
-  width: min(1280px, calc(100% - 40px));
-  min-height: 76px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 22px;
-}
-
-.footer-inner p {
-  margin: 0;
-}
-
-.footer-inner nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 18px 22px;
-}
-
-.footer-inner a {
-  color: white;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 4px;
-}
-
-/* ---------- iPad / tablets ---------- */
+/* ---------- Tablet / iPad ---------- */
 
 @media (max-width: 1080px) {
   .header-inner {
@@ -567,7 +563,7 @@ a {
     flex-direction: column;
     align-items: stretch;
     gap: 0;
-    background: white;
+    background: #ffffff;
     border-bottom: 1px solid var(--border);
     box-shadow: var(--shadow);
   }
@@ -594,13 +590,9 @@ a {
     height: 3px;
     transform-origin: left;
   }
-
-  .standard-cta {
-    grid-template-columns: minmax(0, 1fr) 250px;
-  }
 }
 
-/* ---------- iPhone / small screens ---------- */
+/* ---------- Phone ---------- */
 
 @media (max-width: 700px) {
   .header-inner {
@@ -650,69 +642,47 @@ a {
     border-radius: 8px;
   }
 
-  .standard-cta {
-    width: calc(100% - 20px);
-    margin-top: 16px;
-    padding: 14px 14px 0;
-    grid-template-columns: 1fr;
-    gap: 0;
-    text-align: center;
+  .assessment-link {
+    width: calc(100% - 24px);
+    margin: 12px auto 14px;
   }
 
-  .cta-copy > p:not(.eyebrow) {
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .cta-actions {
-    justify-content: center;
-  }
-
-  .mai-signoff {
+  .assessment-link a {
     width: 100%;
-    min-height: 145px;
-    justify-content: center;
+    min-height: 42px;
+    padding: 9px 16px;
+    font-size: 14px;
   }
 
-  .mai-signoff img {
-    width: min(112px, 34vw);
+  .simple-footer .footer-inner {
+    min-height: 40px;
   }
 
-  .speech-bubble {
-    left: max(0px, calc(50% - 170px));
-    top: 8px;
-    width: 100px;
-    padding: 8px;
+  .simple-footer .footer-inner nav {
+    gap: 18px;
+  }
+
+  .simple-footer .footer-inner a {
     font-size: 12px;
   }
 
-  .footer-inner {
-    width: calc(100% - 28px);
-    padding: 20px 0;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
+  .page-text {
+    width: min(100% - 28px, 900px);
+    margin: 26px auto;
   }
 }
 
 @media (max-width: 420px) {
-  .standard-cta {
-    border-radius: 20px;
+  .fallback-links {
+    grid-template-columns: 1fr;
   }
 
-  .cta-actions {
+  .page-actions {
     flex-direction: column;
   }
 
-  .button,
-  .text-link {
+  .button {
     width: 100%;
-  }
-
-  .speech-bubble {
-    left: 0;
-    top: 8px;
-    width: 130px;
   }
 }
 
@@ -729,146 +699,75 @@ a {
 }
 
 
-/* Final compact CTA override */
-.standard-cta {
-  min-height: 0;
-}
+/* ---------- Standard homepage footer used on every page ---------- */
 
-.cta-copy h2 {
-  margin-bottom: 0;
-}
-
-.cta-copy > p:not(.eyebrow) {
-  line-height: 1.45;
-}
-
-.button {
-  min-height: 40px;
-  padding: 9px 16px;
-}
-
-@media (max-width: 700px) {
-  .standard-cta {
-    border-radius: 18px;
-  }
-
-  .mai-signoff {
-    margin-top: 4px;
-  }
-}
-
-
-/* ---------- Final simple footer ---------- */
-
-/* Retire all earlier CTA components. */
-.closing-cta,
-.compact-mai-bottom,
-.compact-privacy-strip,
-.micro-cta {
-  display: none !important;
-}
-
-.site-footer.simple-footer {
+.site-footer {
   margin-top: 0;
-  color: #2c6a57;
-  background: #edf8f4;
-  border-top: 1px solid #d6ebe3;
+  color: #ffffff;
+  background: #102b63;
+  border-top: 0;
 }
 
-.simple-footer .footer-inner {
-  width: min(1120px, calc(100% - 32px));
-  min-height: 42px;
+.footer-inner {
+  width: min(1280px, calc(100% - 40px));
+  min-height: 76px;
   margin: 0 auto;
   padding: 0;
   display: flex;
   align-items: center;
-  justify-content: center;
-}
-
-.simple-footer .footer-inner nav {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   gap: 22px;
 }
 
-.simple-footer .footer-inner a {
-  color: #2c6a57;
-  font-size: 13px;
+.footer-inner p {
+  margin: 0;
+  color: #ffffff;
+  font-size: 14px;
+}
+
+.footer-inner nav {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 18px 22px;
+}
+
+.footer-inner a {
+  color: #ffffff;
+  font-size: 14px;
   font-weight: 700;
   text-decoration: none;
 }
 
-.simple-footer .footer-inner a:hover {
+.footer-inner a:hover {
   text-decoration: underline;
-  text-underline-offset: 3px;
+  text-underline-offset: 4px;
 }
 
-.simple-footer .footer-inner a:focus-visible {
-  outline: 3px solid rgba(23, 105, 210, 0.34);
-  outline-offset: 3px;
+.footer-inner a:focus-visible {
+  outline: 3px solid rgba(255, 255, 255, 0.45);
+  outline-offset: 4px;
   border-radius: 4px;
 }
 
 @media (max-width: 700px) {
-  .simple-footer .footer-inner {
-    min-height: 40px;
-    padding: 0;
-    flex-direction: row;
+  .footer-inner {
+    width: calc(100% - 28px);
+    min-height: 68px;
+    padding: 16px 0;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    text-align: center;
   }
 
-  .simple-footer .footer-inner nav {
-    gap: 18px;
-  }
-
-  .simple-footer .footer-inner a {
+  .footer-inner p,
+  .footer-inner a {
     font-size: 12px;
   }
-}
 
-
-/* ---------- Start Here assessment link ---------- */
-
-.assessment-link {
-  display: flex;
-  justify-content: center;
-  padding: 14px 16px 18px;
-}
-
-.assessment-link a {
-  min-height: 42px;
-  padding: 10px 20px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 999px;
-  color: #ffffff;
-  background: #7b347f;
-  box-shadow: 0 7px 16px rgba(111, 47, 131, 0.18);
-  text-decoration: none;
-  font-size: 15px;
-  font-weight: 800;
-}
-
-.assessment-link a:hover {
-  background: #672b6b;
-}
-
-.assessment-link a:focus-visible {
-  outline: 3px solid rgba(23, 105, 210, 0.34);
-  outline-offset: 3px;
-}
-
-@media (max-width: 700px) {
-  .assessment-link {
-    padding: 10px 12px 14px;
-  }
-
-  .assessment-link a {
-    width: 100%;
-    max-width: 340px;
-    min-height: 40px;
-    padding: 9px 16px;
-    font-size: 14px;
+  .footer-inner nav {
+    justify-content: center;
+    gap: 16px 20px;
   }
 }

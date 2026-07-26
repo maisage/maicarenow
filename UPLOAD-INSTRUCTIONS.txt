@@ -1,6 +1,6 @@
-MaiCareNow Simple Footer Update
+MaiCareNow — Homepage Footer Standardization
 
-Upload these files to the ROOT of the website-updates branch:
+Upload these INDIVIDUAL files to the ROOT of the website-updates branch:
 
 - styles.css
 - start-here.html
@@ -11,13 +11,19 @@ Upload these files to the ROOT of the website-updates branch:
 - resources.html
 - about-mai.html
 - contact.html
+- faq.html
+- privacy.html
+- terms.html
+- 404.html
 
-Allow GitHub to replace the existing versions.
+Allow GitHub to replace files with the same names.
 
-This update:
-- removes all large, compact, slim, and micro CTA sections;
-- leaves the page image as the final page-specific visual;
-- adds only a small Privacy and Contact footer;
-- leaves index.html, images, and js/site.js unchanged.
+This package:
+- gives every page the exact same footer structure used by the homepage;
+- uses the navy footer;
+- shows © 2026 MaiCareNow. All rights reserved.;
+- includes Privacy and Contact links only;
+- preserves the real Start Here Tally assessment button;
+- does not change index.html, images, or js/site.js.
 
-The small Mai closing strip must be included inside each page PNG itself.
+Do not upload the ZIP itself. Unzip first, then upload the individual files.

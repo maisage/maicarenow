@@ -1,150 +1,148 @@
-  <!doctype html>
-  <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <meta name="description" content="Begin the MaiCareNow intake process and share what has changed, what concerns you, and what kind of guidance would help.">
-    <meta name="theme-color" content="#ffffff">
-    <meta name="author" content="Lindsey Inc.">
-    <title>Your Story Starts Here | MaiCareNow</title>
-    <link rel="icon" href="favicon.ico" sizes="any">
-    <link rel="icon" href="favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="styles.css">
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="Begin the MaiCareNow intake process and share what has changed, what concerns you, and what kind of guidance would help.">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="author" content="Lindsey Inc.">
+  <title>Your Story Starts Here | MaiCareNow</title>
 
-<style>
-  .story-page {
-    width: 100%;
-    overflow: hidden;
-    background: #ffffff;
-  }
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
 
-  .story-page-art {
-    width: min(var(--content-width), 100%);
-    margin: 0 auto;
-  }
+  <style>
+    .story-page {
+      width: 100%;
+      overflow: hidden;
+      background: #ffffff;
+    }
 
-  .story-page-art img {
-    display: block;
-    width: 100%;
-    height: auto;
-  }
+    .story-page-art {
+      width: min(var(--content-width), 100%);
+      margin: 0 auto;
+    }
 
-  .page-text {
-    width: min(900px, calc(100% - 40px));
-    margin: 44px auto;
-  }
+    .story-page-art img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
 
-  .page-card {
-    background: #fff;
-    border: 1px solid #dbe5f2;
-    border-radius: 24px;
-    padding: clamp(22px, 4vw, 38px);
-    box-shadow: 0 12px 30px rgba(9, 38, 91, .08);
-  }
+    .assessment-link {
+      width: min(1120px, calc(100% - 40px));
+      margin: 14px auto 18px;
+      display: flex;
+      justify-content: center;
+    }
 
-  .page-card + .page-card { margin-top: 18px; }
+    .assessment-link a {
+      min-height: 44px;
+      padding: 10px 20px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      border-radius: 999px;
+      color: #ffffff;
+      background: #7b347f;
+      box-shadow: 0 7px 16px rgba(123, 52, 127, 0.18);
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 800;
+    }
 
-  .page-card h1,
-  .page-card h2 {
-    color: #0b2c63;
-    line-height: 1.15;
-    margin-top: 0;
-  }
+    .assessment-link a:hover {
+      background: #672b6b;
+    }
 
-  .page-card p,
-  .page-card li {
-    color: #42516d;
-    line-height: 1.7;
-  }
+    .assessment-link a:focus-visible {
+      outline: 3px solid rgba(23, 105, 210, 0.34);
+      outline-offset: 4px;
+    }
 
-  .page-card a:not(.button) {
-    color: #1262d6;
-    text-decoration: underline;
-    text-underline-offset: 3px;
-  }
+    @media (max-width: 700px) {
+      .story-page-art {
+        width: 100%;
+      }
 
-  .page-actions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    margin-top: 22px;
-  }
+      .assessment-link {
+        width: calc(100% - 24px);
+        margin: 12px auto 14px;
+      }
 
-  .faq-list details {
-    border-top: 1px solid #dbe5f2;
-    padding: 18px 0;
-  }
+      .assessment-link a {
+        width: 100%;
+        min-height: 42px;
+        padding: 9px 16px;
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
 
-  .faq-list details:first-child {
-    border-top: 0;
-    padding-top: 0;
-  }
-
-  .faq-list summary {
-    cursor: pointer;
-    color: #0b2c63;
-    font-size: 1.08rem;
-    font-weight: 800;
-    line-height: 1.4;
-  }
-
-  @media (max-width: 700px) {
-    .story-page-art { width: 100%; }
-    .page-text { width: min(100% - 28px, 900px); margin: 26px auto; }
-  }
-</style>
-
-  </head>
 <body data-page="start-here">
-<a class="skip-link" href="#main-content">Skip to main content</a>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
 
-<header class="site-header">
-  <div class="header-inner">
-    <a class="brand" href="index.html" aria-label="MaiCareNow home">
-      <span class="brand-mark" aria-hidden="true">♡</span>
-      <span class="brand-copy">
-        <span class="brand-name">
-          <span class="brand-mai">Mai</span><span class="brand-care">Care</span><span class="brand-now">Now</span>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html" aria-label="MaiCareNow home">
+        <span class="brand-mark" aria-hidden="true">♡</span>
+
+        <span class="brand-copy">
+          <span class="brand-name">
+            <span class="brand-mai">Mai</span><span class="brand-care">Care</span><span class="brand-now">Now</span>
+          </span>
+
+          <span class="brand-tagline">
+            Your trusted guide through life’s healthcare decisions.
+          </span>
         </span>
-        <span class="brand-tagline">Your trusted guide through life’s healthcare decisions.</span>
-      </span>
-    </a>
+      </a>
 
-    <button class="menu-toggle"
-            type="button"
-            aria-expanded="false"
-            aria-controls="primary-navigation">
-      <span class="menu-label">Menu</span>
-      <span class="menu-icon" aria-hidden="true"></span>
-    </button>
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="primary-navigation">
+        <span class="menu-label">Menu</span>
+        <span class="menu-icon" aria-hidden="true"></span>
+      </button>
 
-    <nav id="primary-navigation" class="primary-nav" aria-label="Primary navigation">
-      <a href="index.html">Home</a>
-  <a href="how-it-works.html">How It Works</a>
-  <a href="lower-prescription-costs.html">Lower Rx Costs</a>
-  <a href="resources.html">Resources</a>
-  <a href="about-mai.html">About Us</a>
-    </nav>
-  </div>
-</header>
-<main id="main-content">
-  <section class="story-page" aria-label="Your Story Starts Here">
-    <div class="story-page-art">
-      <img src="assets/illustrations/your-story-starts-here.png" alt="Illustrated introduction to the MaiCareNow free assessment and what happens after you share your story." fetchpriority="high">
+      <nav id="primary-navigation" class="primary-nav" aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a href="how-it-works.html">How It Works</a>
+        <a href="lower-prescription-costs.html">Lower Rx Costs</a>
+        <a href="resources.html">Resources</a>
+        <a href="about-mai.html">About Us</a>
+      </nav>
     </div>
-  </section>
+  </header>
 
-  <div class="assessment-link">
-    <a
-      href="https://tally.so/r/7RMJy9"
-      target="_blank"
-      rel="noopener">
-      Open My Free Assessment <span aria-hidden="true">→</span>
-    </a>
-  </div>
-</main>
-<footer class="site-footer simple-footer">
+  <main id="main-content">
+    <section class="story-page" aria-label="Your Story Starts Here">
+      <div class="story-page-art">
+        <img
+          src="assets/illustrations/your-story-starts-here.png"
+          alt="Illustrated introduction to the MaiCareNow free assessment, including what information will be requested and what happens next."
+          fetchpriority="high">
+      </div>
+    </section>
+
+    <div class="assessment-link">
+      <a
+        href="https://tally.so/r/7RMJy9"
+        target="_blank"
+        rel="noopener">
+        Open My Free Assessment <span aria-hidden="true">→</span>
+      </a>
+    </div>
+  </main>
+<footer class="site-footer">
   <div class="footer-inner">
+    <p>© 2026 MaiCareNow. All rights reserved.</p>
+
     <nav aria-label="Footer navigation">
       <a href="privacy.html">Privacy</a>
       <a href="contact.html">Contact</a>

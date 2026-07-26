@@ -1,15 +1,8 @@
-MaiCareNow Standardized HTML Upload Package
+MaiCareNow Simple Footer Update
 
-Upload all HTML files in this package to the ROOT of the website-updates branch.
-Allow GitHub to replace files with the same names.
+Upload these files to the ROOT of the website-updates branch:
 
-DO NOT replace:
-- index.html
 - styles.css
-- js/site.js
-- any PNG/JPG image
-
-Files included:
 - start-here.html
 - how-it-works.html
 - lower-prescription-costs.html
@@ -18,18 +11,13 @@ Files included:
 - resources.html
 - about-mai.html
 - contact.html
-- faq.html
-- privacy.html
-- terms.html
-- 404.html
 
-After upload:
-1. Confirm the branch says website-updates.
-2. Test every page on desktop, iPad, and phone.
-3. Verify the mobile menu.
-4. Verify every image loads.
-5. Verify the Tally assessment opens.
-6. Do not merge into main until all checks pass.
+Allow GitHub to replace the existing versions.
 
-Privacy and Terms are practical launch drafts and should be reviewed against
-MaiCareNow's actual intake and data-handling process before public launch.
+This update:
+- removes all large, compact, slim, and micro CTA sections;
+- leaves the page image as the final page-specific visual;
+- adds only a small Privacy and Contact footer;
+- leaves index.html, images, and js/site.js unchanged.
+
+The small Mai closing strip must be included inside each page PNG itself.

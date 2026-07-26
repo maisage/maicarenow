@@ -761,7 +761,6 @@ a {
 /* ---------- Final simple footer ---------- */
 
 /* Retire all earlier CTA components. */
-.standard-cta,
 .closing-cta,
 .compact-mai-bottom,
 .compact-privacy-strip,
@@ -826,21 +825,50 @@ a {
     font-size: 12px;
   }
 }
+
+
+/* ---------- Start Here assessment link ---------- */
+
 .assessment-link {
   display: flex;
   justify-content: center;
-  padding: 12px 16px;
+  padding: 14px 16px 18px;
 }
 
 .assessment-link a {
   min-height: 42px;
-  padding: 9px 18px;
+  padding: 10px 20px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   border-radius: 999px;
   color: #ffffff;
   background: #7b347f;
+  box-shadow: 0 7px 16px rgba(111, 47, 131, 0.18);
   text-decoration: none;
+  font-size: 15px;
   font-weight: 800;
+}
+
+.assessment-link a:hover {
+  background: #672b6b;
+}
+
+.assessment-link a:focus-visible {
+  outline: 3px solid rgba(23, 105, 210, 0.34);
+  outline-offset: 3px;
+}
+
+@media (max-width: 700px) {
+  .assessment-link {
+    padding: 10px 12px 14px;
+  }
+
+  .assessment-link a {
+    width: 100%;
+    max-width: 340px;
+    min-height: 40px;
+    padding: 9px 16px;
+    font-size: 14px;
+  }
 }

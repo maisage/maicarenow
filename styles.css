@@ -826,3 +826,21 @@ a {
     font-size: 12px;
   }
 }
+.assessment-link {
+  display: flex;
+  justify-content: center;
+  padding: 12px 16px;
+}
+
+.assessment-link a {
+  min-height: 42px;
+  padding: 9px 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  color: #ffffff;
+  background: #7b347f;
+  text-decoration: none;
+  font-weight: 800;
+}

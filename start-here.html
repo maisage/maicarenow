@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="description" content="Begin the MaiCareNow intake process and share what has changed, what concerns you, and what kind of guidance would help.">
+  <meta name="description" content="Share what has changed and begin the MaiCareNow free assessment.">
   <meta name="theme-color" content="#ffffff">
   <meta name="author" content="Lindsey Inc.">
   <title>Your Story Starts Here | MaiCareNow</title>
@@ -11,72 +11,271 @@
   <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
+  <script src="https://tally.so/widgets/embed.js"></script>
 
   <style>
-    .story-page {
+    .start-page {
       width: 100%;
-      overflow: hidden;
       background: #ffffff;
     }
 
-    .story-page-art {
-      width: min(var(--content-width), 100%);
-      margin: 0 auto;
+    .start-shell {
+      width: min(960px, calc(100% - 32px));
+      margin: 24px auto 0;
     }
 
-    .story-page-art img {
-      display: block;
+    /* Use the current illustration as two visual slices:
+       hero above the real form, and "what happens next" below it. */
+    .start-hero-art,
+    .start-next-art {
       width: 100%;
-      height: auto;
+      background-image: url("assets/illustrations/your-story-starts-here.png");
+      background-repeat: no-repeat;
+      background-size: 100% auto;
+      border-radius: 20px;
     }
 
-    .assessment-link {
-      width: min(1120px, calc(100% - 40px));
-      margin: 14px auto 18px;
+    .start-hero-art {
+      aspect-ratio: 1024 / 430;
+      background-position: center top;
+    }
+
+    .start-next-art {
+      aspect-ratio: 1024 / 500;
+      margin-top: 18px;
+      background-position: center bottom;
+    }
+
+    .story-intake {
+      margin-top: 18px;
+      padding: clamp(22px, 4vw, 38px);
+      border: 1px solid #dfe5ee;
+      border-radius: 24px;
+      background: #ffffff;
+      box-shadow: 0 12px 30px rgba(16, 43, 99, 0.08);
+    }
+
+    .form-heading {
+      display: grid;
+      grid-template-columns: 74px minmax(0, 1fr);
+      align-items: start;
+      gap: 18px;
+      margin-bottom: 24px;
+    }
+
+    .form-heading-icon {
+      width: 68px;
+      height: 68px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      color: #ffffff;
+      background: linear-gradient(135deg, #9d3aa0, #742e7b);
+      font-size: 34px;
+      line-height: 1;
+    }
+
+    .form-heading h1 {
+      margin: 0;
+      color: #102b63;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(28px, 3vw, 42px);
+      line-height: 1.1;
+    }
+
+    .form-heading p {
+      margin: 7px 0 0;
+      color: #2d3955;
+      font-size: clamp(15px, 1.4vw, 18px);
+      line-height: 1.55;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 24px 34px;
+      padding: clamp(18px, 3vw, 28px);
+      border: 1px solid #e5e9f0;
+      border-radius: 18px;
+      background: #fdfefe;
+    }
+
+    .field,
+    fieldset {
+      min-width: 0;
+    }
+
+    .field label,
+    fieldset legend {
+      display: block;
+      margin-bottom: 9px;
+      color: #18243e;
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 1.4;
+    }
+
+    .required {
+      color: #e84b45;
+    }
+
+    select,
+    textarea {
+      width: 100%;
+      border: 1px solid #cfd8e5;
+      border-radius: 10px;
+      color: #18243e;
+      background: #ffffff;
+      font: inherit;
+    }
+
+    select {
+      min-height: 48px;
+      padding: 0 44px 0 14px;
+    }
+
+    textarea {
+      min-height: 260px;
+      padding: 14px;
+      resize: vertical;
+      line-height: 1.5;
+    }
+
+    select:focus,
+    textarea:focus,
+    input[type="checkbox"]:focus-visible {
+      outline: 3px solid rgba(123, 52, 127, 0.22);
+      outline-offset: 2px;
+      border-color: #7b347f;
+    }
+
+    fieldset {
+      margin: 0;
+      padding: 0;
+      border: 0;
+    }
+
+    .checkbox-list {
+      display: grid;
+      gap: 11px;
+    }
+
+    .checkbox-list label {
+      display: grid;
+      grid-template-columns: 22px minmax(0, 1fr);
+      align-items: start;
+      gap: 10px;
+      margin: 0;
+      color: #25324c;
+      font-weight: 500;
+    }
+
+    .checkbox-list input {
+      width: 19px;
+      height: 19px;
+      margin: 2px 0 0;
+      accent-color: #7b347f;
+    }
+
+    .form-note {
+      margin: 18px 0 0;
+      color: #47546b;
+      font-size: 13px;
+      line-height: 1.55;
+    }
+
+    .form-actions {
+      margin-top: 20px;
       display: flex;
       justify-content: center;
     }
 
-    .assessment-link a {
-      min-height: 44px;
-      padding: 10px 20px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
+    .form-actions button {
+      min-height: 46px;
+      padding: 10px 22px;
+      border: 0;
       border-radius: 999px;
       color: #ffffff;
-      background: #7b347f;
-      box-shadow: 0 7px 16px rgba(123, 52, 127, 0.18);
-      text-decoration: none;
-      font-size: 15px;
-      font-weight: 800;
+      background: linear-gradient(135deg, #8f3b8c, #6f2f82);
+      box-shadow: 0 8px 18px rgba(111, 47, 130, 0.20);
+      font: 800 15px/1.2 Arial, Helvetica, sans-serif;
+      cursor: pointer;
     }
 
-    .assessment-link a:hover {
+    .form-actions button:hover {
       background: #672b6b;
     }
 
-    .assessment-link a:focus-visible {
-      outline: 3px solid rgba(23, 105, 210, 0.34);
+    .form-actions button:focus-visible {
+      outline: 3px solid rgba(23, 105, 210, 0.35);
       outline-offset: 4px;
     }
 
+    .simple-footer {
+      margin-top: 0;
+    }
+
+    @media (max-width: 800px) {
+      .start-shell {
+        width: min(760px, calc(100% - 24px));
+      }
+
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      textarea {
+        min-height: 190px;
+      }
+    }
+
     @media (max-width: 700px) {
-      .story-page-art {
-        width: 100%;
+      .start-shell {
+        width: calc(100% - 16px);
+        margin-top: 12px;
       }
 
-      .assessment-link {
-        width: calc(100% - 24px);
-        margin: 12px auto 14px;
+      .start-hero-art {
+        aspect-ratio: 1024 / 460;
       }
 
-      .assessment-link a {
-        width: 100%;
-        min-height: 42px;
-        padding: 9px 16px;
+      .start-next-art {
+        aspect-ratio: 1024 / 540;
+      }
+
+      .story-intake {
+        margin-top: 12px;
+        padding: 18px 14px;
+        border-radius: 18px;
+      }
+
+      .form-heading {
+        grid-template-columns: 54px minmax(0, 1fr);
+        gap: 12px;
+      }
+
+      .form-heading-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 25px;
+      }
+
+      .form-heading h1 {
+        font-size: 26px;
+      }
+
+      .form-grid {
+        padding: 15px;
+        gap: 20px;
+      }
+
+      .field label,
+      fieldset legend {
         font-size: 14px;
+      }
+
+      .form-actions button {
+        width: 100%;
       }
     }
   </style>
@@ -89,23 +288,15 @@
     <div class="header-inner">
       <a class="brand" href="index.html" aria-label="MaiCareNow home">
         <span class="brand-mark" aria-hidden="true">♡</span>
-
         <span class="brand-copy">
           <span class="brand-name">
             <span class="brand-mai">Mai</span><span class="brand-care">Care</span><span class="brand-now">Now</span>
           </span>
-
-          <span class="brand-tagline">
-            Your trusted guide through life’s healthcare decisions.
-          </span>
+          <span class="brand-tagline">Your trusted guide through life’s healthcare decisions.</span>
         </span>
       </a>
 
-      <button
-        class="menu-toggle"
-        type="button"
-        aria-expanded="false"
-        aria-controls="primary-navigation">
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">
         <span class="menu-label">Menu</span>
         <span class="menu-icon" aria-hidden="true"></span>
       </button>
@@ -120,36 +311,163 @@
     </div>
   </header>
 
-  <main id="main-content">
-    <section class="story-page" aria-label="Your Story Starts Here">
-      <div class="story-page-art">
-        <img
-          src="assets/illustrations/your-story-starts-here.png"
-          alt="Illustrated introduction to the MaiCareNow free assessment, including what information will be requested and what happens next."
-          fetchpriority="high">
-      </div>
-    </section>
+  <main id="main-content" class="start-page">
+    <div class="start-shell">
+      <section class="start-hero-art" aria-label="Your Story Starts Here introduction"></section>
 
-    <div class="assessment-link">
-      <a
-        href="https://tally.so/r/7RMJy9"
-        target="_blank"
-        rel="noopener">
-        Open My Free Assessment <span aria-hidden="true">→</span>
-      </a>
+      <form id="story-intake" class="story-intake">
+        <div class="form-heading">
+          <div class="form-heading-icon" aria-hidden="true">✎</div>
+          <div>
+            <h1>Tell me what’s happening.</h1>
+            <p>
+              Complete the short questionnaire below.<br>
+              There are no right or wrong answers.<br>
+              The more I understand your situation, the more meaningful our conversation can be.
+            </p>
+          </div>
+        </div>
+
+        <div class="form-grid">
+          <div class="field">
+            <label for="relationship">
+              What is your relationship to the person needing help?
+              <span class="required">*</span>
+            </label>
+
+            <select id="relationship" name="relationship" required>
+              <option value="">Select...</option>
+              <option value="myself">Myself</option>
+              <option value="parent">Parent</option>
+              <option value="spouse-partner">Spouse or partner</option>
+              <option value="other-family">Other family member</option>
+              <option value="friend">Friend</option>
+              <option value="professional-caregiver">Professional caregiver</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="age">
+              What is the person’s age?
+              <span class="required">*</span>
+            </label>
+
+            <select id="age" name="age" required>
+              <option value="">Select...</option>
+              <option value="under-50">Under 50</option>
+              <option value="50-64">50–64</option>
+              <option value="65-74">65–74</option>
+              <option value="75-84">75–84</option>
+              <option value="85-plus">85 or older</option>
+              <option value="unknown">I’m not sure</option>
+            </select>
+          </div>
+
+          <fieldset>
+            <legend>
+              What is the primary concern right now? (Select all that apply)
+              <span class="required">*</span>
+            </legend>
+
+            <div class="checkbox-list">
+              <label><input type="checkbox" name="concerns" value="health-condition-diagnosis"> <span>Health condition / diagnosis</span></label>
+              <label><input type="checkbox" name="concerns" value="medication-prescription"> <span>Medication / prescription issues</span></label>
+              <label><input type="checkbox" name="concerns" value="living-situation-safety"> <span>Living situation / safety</span></label>
+              <label><input type="checkbox" name="concerns" value="care-at-home"> <span>Care at home</span></label>
+              <label><input type="checkbox" name="concerns" value="assisted-living-memory-care"> <span>Assisted living / memory care</span></label>
+              <label><input type="checkbox" name="concerns" value="finances-medicare-insurance"> <span>Finances / Medicare / insurance</span></label>
+              <label><input type="checkbox" name="concerns" value="not-sure"> <span>I’m not sure yet</span></label>
+            </div>
+          </fieldset>
+
+          <div class="field">
+            <label for="situation">
+              Please describe the situation in your own words.
+              <br>(The more detail you share, the better I can help.)
+              <span class="required">*</span>
+            </label>
+
+            <textarea
+              id="situation"
+              name="situation"
+              required
+              placeholder="Type your answer here..."></textarea>
+          </div>
+        </div>
+
+        <p class="form-note">
+          Your information is confidential and will only be used to understand your situation and follow up with you.
+        </p>
+
+        <div class="form-actions">
+          <button type="submit">Continue My Free Assessment →</button>
+        </div>
+      </form>
+
+      <section class="start-next-art" aria-label="What happens next"></section>
     </div>
   </main>
-<footer class="site-footer">
-  <div class="footer-inner">
-    <p>© 2026 MaiCareNow. All rights reserved.</p>
 
-    <nav aria-label="Footer navigation">
-      <a href="privacy.html">Privacy</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </div>
-</footer>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p>© 2026 MaiCareNow. All rights reserved.</p>
+      <nav aria-label="Footer navigation">
+        <a href="privacy.html">Privacy</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </footer>
 
-<script src="js/site.js"></script>
+  <script src="js/site.js"></script>
+
+  <script>
+    (() => {
+      const FORM_ID = "7RMJy9";
+      const form = document.getElementById("story-intake");
+
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        const selectedConcerns = Array.from(
+          form.querySelectorAll('input[name="concerns"]:checked')
+        ).map((input) => input.value);
+
+        if (selectedConcerns.length === 0) {
+          alert("Please select at least one primary concern.");
+          return;
+        }
+
+        const params = new URLSearchParams({
+          relationship: form.relationship.value,
+          age: form.age.value,
+          concerns: selectedConcerns.join(","),
+          situation: form.situation.value,
+          originPage: "start-here"
+        });
+
+        const fallbackUrl = `https://tally.so/r/${FORM_ID}?${params.toString()}`;
+
+        if (window.Tally && typeof window.Tally.openPopup === "function") {
+          /* Tally forwards the page query parameters into the popup.
+             Matching Tally hidden fields can capture these values. */
+          const currentUrl = new URL(window.location.href);
+          params.forEach((value, key) => currentUrl.searchParams.set(key, value));
+          window.history.replaceState({}, "", currentUrl);
+
+          window.Tally.openPopup(FORM_ID, {
+            layout: "modal",
+            width: 580,
+            alignLeft: true,
+            hideTitle: true,
+            overlay: true,
+            autoClose: 0
+          });
+        } else {
+          window.open(fallbackUrl, "_blank", "noopener");
+        }
+      });
+    })();
+  </script>
 </body>
 </html>

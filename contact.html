@@ -1,150 +1,150 @@
-  <!doctype html>
-  <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <meta name="description" content="Contact MaiCareNow with a question or begin with the free assessment.">
-    <meta name="theme-color" content="#ffffff">
-    <meta name="author" content="Lindsey Inc.">
-    <title>Contact | MaiCareNow</title>
-    <link rel="icon" href="favicon.ico" sizes="any">
-    <link rel="icon" href="favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="styles.css">
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="Contact MaiCareNow by email or phone, review frequently asked questions, or begin the free assessment.">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="author" content="Lindsey Inc.">
+  <title>Contact | MaiCareNow</title>
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
 
-<style>
-  .story-page {
-    width: 100%;
-    overflow: hidden;
-    background: #ffffff;
-  }
+  <style>
+    .story-page { width: 100%; overflow: hidden; background: #fff; }
+    .story-page-art { width: min(var(--content-width), 100%); margin: 0 auto; }
+    .story-page-art img { display: block; width: 100%; height: auto; }
 
-  .story-page-art {
-    width: min(var(--content-width), 100%);
-    margin: 0 auto;
-  }
+    .contact-actions {
+      width: min(1120px, calc(100% - 40px));
+      margin: 18px auto 24px;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+    }
 
-  .story-page-art img {
-    display: block;
-    width: 100%;
-    height: auto;
-  }
+    .contact-actions a {
+      min-height: 48px;
+      padding: 12px 14px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid #dce5ef;
+      border-radius: 14px;
+      color: #102b63;
+      background: #f7f9fc;
+      box-shadow: 0 8px 18px rgba(16, 43, 99, .06);
+      text-align: center;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 800;
+      line-height: 1.3;
+    }
 
-  .page-text {
-    width: min(900px, calc(100% - 40px));
-    margin: 44px auto;
-  }
+    .contact-actions a:hover {
+      color: #1769d2;
+      border-color: rgba(23, 105, 210, .35);
+      transform: translateY(-1px);
+    }
 
-  .page-card {
-    background: #fff;
-    border: 1px solid #dbe5f2;
-    border-radius: 24px;
-    padding: clamp(22px, 4vw, 38px);
-    box-shadow: 0 12px 30px rgba(9, 38, 91, .08);
-  }
+    .contact-actions a:focus-visible {
+      outline: 3px solid rgba(23, 105, 210, .34);
+      outline-offset: 4px;
+    }
 
-  .page-card + .page-card { margin-top: 18px; }
+    .contact-actions .primary-action {
+      color: #fff;
+      border-color: transparent;
+      background: #7b347f;
+    }
 
-  .page-card h1,
-  .page-card h2 {
-    color: #0b2c63;
-    line-height: 1.15;
-    margin-top: 0;
-  }
+    .contact-actions .primary-action:hover {
+      color: #fff;
+      background: #672b6b;
+    }
 
-  .page-card p,
-  .page-card li {
-    color: #42516d;
-    line-height: 1.7;
-  }
+    @media (max-width: 900px) {
+      .contact-actions { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
 
-  .page-card a:not(.button) {
-    color: #1262d6;
-    text-decoration: underline;
-    text-underline-offset: 3px;
-  }
+    @media (max-width: 700px) {
+      .story-page-art { width: 100%; }
+      .contact-actions {
+        width: calc(100% - 24px);
+        margin: 14px auto 18px;
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+      .contact-actions a {
+        min-height: 44px;
+        padding: 10px 12px;
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
 
-  .page-actions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    margin-top: 22px;
-  }
-
-  .faq-list details {
-    border-top: 1px solid #dbe5f2;
-    padding: 18px 0;
-  }
-
-  .faq-list details:first-child {
-    border-top: 0;
-    padding-top: 0;
-  }
-
-  .faq-list summary {
-    cursor: pointer;
-    color: #0b2c63;
-    font-size: 1.08rem;
-    font-weight: 800;
-    line-height: 1.4;
-  }
-
-  @media (max-width: 700px) {
-    .story-page-art { width: 100%; }
-    .page-text { width: min(100% - 28px, 900px); margin: 26px auto; }
-  }
-</style>
-
-  </head>
 <body data-page="contact">
-<a class="skip-link" href="#main-content">Skip to main content</a>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
 
-<header class="site-header">
-  <div class="header-inner">
-    <a class="brand" href="index.html" aria-label="MaiCareNow home">
-      <span class="brand-mark" aria-hidden="true">♡</span>
-      <span class="brand-copy">
-        <span class="brand-name">
-          <span class="brand-mai">Mai</span><span class="brand-care">Care</span><span class="brand-now">Now</span>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html" aria-label="MaiCareNow home">
+        <span class="brand-mark" aria-hidden="true">♡</span>
+        <span class="brand-copy">
+          <span class="brand-name">
+            <span class="brand-mai">Mai</span><span class="brand-care">Care</span><span class="brand-now">Now</span>
+          </span>
+          <span class="brand-tagline">Your trusted guide through life’s healthcare decisions.</span>
         </span>
-        <span class="brand-tagline">Your trusted guide through life’s healthcare decisions.</span>
-      </span>
-    </a>
+      </a>
 
-    <button class="menu-toggle"
-            type="button"
-            aria-expanded="false"
-            aria-controls="primary-navigation">
-      <span class="menu-label">Menu</span>
-      <span class="menu-icon" aria-hidden="true"></span>
-    </button>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">
+        <span class="menu-label">Menu</span>
+        <span class="menu-icon" aria-hidden="true"></span>
+      </button>
 
-    <nav id="primary-navigation" class="primary-nav" aria-label="Primary navigation">
-      <a href="index.html">Home</a>
-  <a href="how-it-works.html">How It Works</a>
-  <a href="lower-prescription-costs.html">Lower Rx Costs</a>
-  <a href="resources.html">Resources</a>
-  <a href="about-mai.html">About Us</a>
-    </nav>
-  </div>
-</header>
-<main id="main-content">
-  <section class="story-page" aria-label="Contact">
-    <div class="story-page-art">
-      <img src="assets/illustrations/contact.png" alt="Illustrated MaiCareNow contact page." fetchpriority="high">
+      <nav id="primary-navigation" class="primary-nav" aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a href="how-it-works.html">How It Works</a>
+        <a href="lower-prescription-costs.html">Lower Rx Costs</a>
+        <a href="resources.html">Resources</a>
+        <a href="about-mai.html">About Us</a>
+      </nav>
     </div>
-  </section>
-</main>
-<footer class="site-footer">
-  <div class="footer-inner">
-    <p>© 2026 MaiCareNow. All rights reserved.</p>
+  </header>
 
-    <nav aria-label="Footer navigation">
-      <a href="privacy.html">Privacy</a>
-      <a href="contact.html">Contact</a>
+  <main id="main-content">
+    <section class="story-page" aria-label="Contact MaiCareNow">
+      <div class="story-page-art">
+        <img
+          src="assets/illustrations/contact.png"
+          alt="Illustrated MaiCareNow contact page with email, phone, message, address, privacy, and emergency information."
+          fetchpriority="high">
+      </div>
+    </section>
+
+    <nav class="contact-actions" aria-label="Contact actions">
+      <a href="mailto:mai@maicarenow.com">Email MaiCareNow</a>
+      <a href="tel:+18322485340">Call (832) 248-5340</a>
+      <a href="faq.html">View FAQs</a>
+      <a class="primary-action" href="https://tally.so/r/7RMJy9" target="_blank" rel="noopener">
+        Start My Free Assessment
+      </a>
     </nav>
-  </div>
-</footer>
+  </main>
 
-<script src="js/site.js"></script>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p>© 2026 MaiCareNow. All rights reserved.</p>
+      <nav aria-label="Footer navigation">
+        <a href="privacy.html">Privacy</a>
+        <a href="contact.html" aria-current="page">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="js/site.js"></script>
 </body>
 </html>

@@ -15,141 +15,135 @@
 
   <style>
     .start-page {
-      width: 100%;
-      background: #ffffff;
+      min-height: calc(100vh - 180px);
+      background: #fff;
     }
 
-    .start-shell {
-      width: min(840px, calc(100% - 32px));
-      margin: 24px auto 0;
+    .start-one-screen {
+      width: min(1360px, calc(100% - 28px));
+      height: calc(100vh - 180px);
+      min-height: 620px;
+      margin: 12px auto;
+      display: grid;
+      grid-template-columns: minmax(300px, 0.82fr) minmax(560px, 1.18fr);
+      gap: 18px;
     }
 
-    /* Use the current illustration as two visual slices:
-       hero above the real form, and "what happens next" below it. */
-    .start-hero-art,
-    .start-next-art {
-      width: 100%;
-      background-image: url("assets/illustrations/your-story-starts-here.png");
-      background-repeat: no-repeat;
-      background-size: 100% auto;
-      border-radius: 20px;
-    }
-
-    .start-hero-art {
-      aspect-ratio: 1024 / 390;
-      background-position: center top;
-    }
-
-    .start-next-art {
-      aspect-ratio: 1024 / 500;
-      margin-top: 18px;
-      background-position: center bottom;
-    }
-
-    .story-intake {
-      margin-top: 18px;
-      padding: clamp(22px, 4vw, 38px);
+    .start-hero-panel {
+      min-width: 0;
+      overflow: hidden;
       border: 1px solid #dfe5ee;
-      border-radius: 24px;
-      background: #ffffff;
-      box-shadow: 0 12px 30px rgba(16, 43, 99, 0.08);
+      border-radius: 22px;
+      background:
+        linear-gradient(rgba(255,255,255,.02), rgba(255,255,255,.02)),
+        url("assets/illustrations/your-story-starts-here.png") center top / cover no-repeat;
+      box-shadow: 0 10px 24px rgba(16,43,99,.07);
+    }
+
+    .start-form-panel {
+      min-width: 0;
+      min-height: 0;
+      padding: 18px;
+      display: grid;
+      grid-template-rows: auto minmax(0, 1fr) auto;
+      gap: 12px;
+      border: 1px solid #dfe5ee;
+      border-radius: 22px;
+      background: #fff;
+      box-shadow: 0 10px 24px rgba(16,43,99,.07);
     }
 
     .form-heading {
       display: grid;
-      grid-template-columns: 74px minmax(0, 1fr);
+      grid-template-columns: 50px minmax(0, 1fr);
+      gap: 12px;
       align-items: start;
-      gap: 18px;
-      margin-bottom: 24px;
     }
 
     .form-heading-icon {
-      width: 68px;
-      height: 68px;
+      width: 48px;
+      height: 48px;
       display: grid;
       place-items: center;
       border-radius: 50%;
-      color: #ffffff;
+      color: #fff;
       background: linear-gradient(135deg, #9d3aa0, #742e7b);
-      font-size: 34px;
-      line-height: 1;
+      font-size: 24px;
     }
 
     .form-heading h1 {
       margin: 0;
       color: #102b63;
       font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(28px, 3vw, 42px);
-      line-height: 1.1;
+      font-size: clamp(24px, 2.2vw, 34px);
+      line-height: 1.05;
     }
 
     .form-heading p {
-      margin: 7px 0 0;
-      color: #2d3955;
-      font-size: clamp(15px, 1.4vw, 18px);
-      line-height: 1.55;
+      margin: 4px 0 0;
+      color: #42516d;
+      font-size: 13px;
+      line-height: 1.35;
+    }
+
+    .story-intake {
+      min-height: 0;
+      display: grid;
+      grid-template-rows: minmax(0, 1fr) auto;
+      gap: 10px;
     }
 
     .form-grid {
+      min-height: 0;
       display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-      gap: 24px 34px;
-      padding: clamp(18px, 3vw, 28px);
+      grid-template-columns: 1fr 1fr;
+      gap: 14px 18px;
+      padding: 14px;
       border: 1px solid #e5e9f0;
-      border-radius: 18px;
+      border-radius: 16px;
       background: #fdfefe;
-    }
-
-    .field,
-    fieldset {
-      min-width: 0;
+      overflow: auto;
     }
 
     .field label,
     fieldset legend {
       display: block;
-      margin-bottom: 9px;
+      margin-bottom: 6px;
       color: #18243e;
-      font-size: 15px;
+      font-size: 13px;
       font-weight: 700;
-      line-height: 1.4;
+      line-height: 1.25;
     }
 
-    .required {
-      color: #e84b45;
-    }
+    .required { color: #e84b45; }
 
     select,
     textarea {
       width: 100%;
       border: 1px solid #cfd8e5;
-      border-radius: 10px;
+      border-radius: 9px;
       color: #18243e;
-      background: #ffffff;
+      background: #fff;
       font: inherit;
     }
 
     select {
-      min-height: 48px;
-      padding: 0 44px 0 14px;
+      min-height: 40px;
+      padding: 0 38px 0 11px;
+      font-size: 13px;
     }
 
     textarea {
-      min-height: 260px;
-      padding: 14px;
-      resize: vertical;
-      line-height: 1.5;
-    }
-
-    select:focus,
-    textarea:focus,
-    input[type="checkbox"]:focus-visible {
-      outline: 3px solid rgba(123, 52, 127, 0.22);
-      outline-offset: 2px;
-      border-color: #7b347f;
+      min-height: 150px;
+      height: 100%;
+      padding: 11px;
+      resize: none;
+      font-size: 13px;
+      line-height: 1.4;
     }
 
     fieldset {
+      min-width: 0;
       margin: 0;
       padding: 0;
       border: 0;
@@ -157,125 +151,148 @@
 
     .checkbox-list {
       display: grid;
-      gap: 11px;
+      gap: 6px;
     }
 
     .checkbox-list label {
       display: grid;
-      grid-template-columns: 22px minmax(0, 1fr);
+      grid-template-columns: 18px minmax(0, 1fr);
       align-items: start;
-      gap: 10px;
+      gap: 8px;
       margin: 0;
       color: #25324c;
+      font-size: 13px;
       font-weight: 500;
+      line-height: 1.25;
     }
 
     .checkbox-list input {
-      width: 19px;
-      height: 19px;
-      margin: 2px 0 0;
+      width: 16px;
+      height: 16px;
+      margin: 1px 0 0;
       accent-color: #7b347f;
     }
 
-    .form-note {
-      margin: 18px 0 0;
-      color: #47546b;
-      font-size: 13px;
-      line-height: 1.55;
+    .form-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
     }
 
-    .form-actions {
-      margin-top: 20px;
-      display: flex;
-      justify-content: center;
+    .form-note {
+      margin: 0;
+      color: #5a667b;
+      font-size: 11px;
+      line-height: 1.35;
     }
 
     .form-actions button {
-      min-height: 46px;
-      padding: 10px 22px;
+      min-height: 40px;
+      padding: 8px 17px;
       border: 0;
       border-radius: 999px;
-      color: #ffffff;
+      color: #fff;
       background: linear-gradient(135deg, #8f3b8c, #6f2f82);
-      box-shadow: 0 8px 18px rgba(111, 47, 130, 0.20);
-      font: 800 15px/1.2 Arial, Helvetica, sans-serif;
+      box-shadow: 0 6px 14px rgba(111,47,130,.18);
+      font: 800 13px/1.1 Arial, Helvetica, sans-serif;
+      white-space: nowrap;
       cursor: pointer;
     }
 
-    .form-actions button:hover {
-      background: #672b6b;
+    .next-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
     }
 
-    .form-actions button:focus-visible {
-      outline: 3px solid rgba(23, 105, 210, 0.35);
-      outline-offset: 4px;
+    .next-step {
+      padding: 9px 8px;
+      border-radius: 12px;
+      background: #f6f9fc;
+      text-align: center;
     }
 
-    .simple-footer {
-      margin-top: 0;
+    .next-step strong {
+      display: block;
+      color: #102b63;
+      font-size: 12px;
+      line-height: 1.2;
     }
 
-    @media (max-width: 800px) {
-      .start-shell {
-        width: min(720px, calc(100% - 24px));
+    .next-step span {
+      display: block;
+      margin-top: 3px;
+      color: #58647a;
+      font-size: 10px;
+      line-height: 1.25;
+    }
+
+    @media (max-width: 1100px) {
+      .start-one-screen {
+        grid-template-columns: .72fr 1.28fr;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .start-page {
+        min-height: auto;
       }
 
-      .form-grid {
+      .start-one-screen {
+        width: min(760px, calc(100% - 24px));
+        height: auto;
+        min-height: 0;
         grid-template-columns: 1fr;
       }
 
-      textarea {
-        min-height: 190px;
+      .start-hero-panel {
+        aspect-ratio: 1024 / 430;
+        background-size: 100% auto;
+      }
+
+      .start-form-panel {
+        min-height: auto;
+      }
+
+      .form-grid {
+        overflow: visible;
       }
     }
 
     @media (max-width: 700px) {
-      .start-shell {
-        width: calc(100% - 16px);
-        margin-top: 12px;
+      .start-one-screen {
+        width: calc(100% - 14px);
+        margin: 8px auto;
+        gap: 10px;
       }
 
-      .start-hero-art {
-        aspect-ratio: 1024 / 460;
-      }
-
-      .start-next-art {
-        aspect-ratio: 1024 / 540;
-      }
-
-      .story-intake {
-        margin-top: 12px;
-        padding: 18px 14px;
-        border-radius: 18px;
-      }
-
-      .form-heading {
-        grid-template-columns: 54px minmax(0, 1fr);
-        gap: 12px;
-      }
-
-      .form-heading-icon {
-        width: 50px;
-        height: 50px;
-        font-size: 25px;
-      }
-
-      .form-heading h1 {
-        font-size: 26px;
+      .start-form-panel {
+        padding: 13px;
+        border-radius: 16px;
       }
 
       .form-grid {
-        padding: 15px;
-        gap: 20px;
+        grid-template-columns: 1fr;
+        padding: 12px;
       }
 
-      .field label,
-      fieldset legend {
-        font-size: 14px;
+      textarea {
+        min-height: 170px;
+        resize: vertical;
+      }
+
+      .form-bottom {
+        align-items: stretch;
+        flex-direction: column;
       }
 
       .form-actions button {
         width: 100%;
+      }
+
+      .next-strip {
+        grid-template-columns: repeat(2, 1fr);
       }
     }
   </style>
@@ -312,100 +329,81 @@
   </header>
 
   <main id="main-content" class="start-page">
-    <div class="start-shell">
-      <section class="start-hero-art" aria-label="Your Story Starts Here introduction"></section>
+    <div class="start-one-screen">
+      <section class="start-hero-panel" aria-label="Your Story Starts Here introduction"></section>
 
-      <form id="story-intake" class="story-intake">
+      <section class="start-form-panel">
         <div class="form-heading">
           <div class="form-heading-icon" aria-hidden="true">✎</div>
           <div>
             <h1>Tell me what’s happening.</h1>
-            <p>
-              Complete the short questionnaire below.<br>
-              There are no right or wrong answers.<br>
-              The more I understand your situation, the more meaningful our conversation can be.
-            </p>
+            <p>Complete the short questionnaire. There are no right or wrong answers.</p>
           </div>
         </div>
 
-        <div class="form-grid">
-          <div class="field">
-            <label for="relationship">
-              What is your relationship to the person needing help?
-              <span class="required">*</span>
-            </label>
-
-            <select id="relationship" name="relationship" required>
-              <option value="">Select...</option>
-              <option value="myself">Myself</option>
-              <option value="parent">Parent</option>
-              <option value="spouse-partner">Spouse or partner</option>
-              <option value="other-family">Other family member</option>
-              <option value="friend">Friend</option>
-              <option value="professional-caregiver">Professional caregiver</option>
-              <option value="other">Other</option>
-            </select>
-          </div>
-
-          <div class="field">
-            <label for="age">
-              What is the person’s age?
-              <span class="required">*</span>
-            </label>
-
-            <select id="age" name="age" required>
-              <option value="">Select...</option>
-              <option value="under-50">Under 50</option>
-              <option value="50-64">50–64</option>
-              <option value="65-74">65–74</option>
-              <option value="75-84">75–84</option>
-              <option value="85-plus">85 or older</option>
-              <option value="unknown">I’m not sure</option>
-            </select>
-          </div>
-
-          <fieldset>
-            <legend>
-              What is the primary concern right now? (Select all that apply)
-              <span class="required">*</span>
-            </legend>
-
-            <div class="checkbox-list">
-              <label><input type="checkbox" name="concerns" value="health-condition-diagnosis"> <span>Health condition / diagnosis</span></label>
-              <label><input type="checkbox" name="concerns" value="medication-prescription"> <span>Medication / prescription issues</span></label>
-              <label><input type="checkbox" name="concerns" value="living-situation-safety"> <span>Living situation / safety</span></label>
-              <label><input type="checkbox" name="concerns" value="care-at-home"> <span>Care at home</span></label>
-              <label><input type="checkbox" name="concerns" value="assisted-living-memory-care"> <span>Assisted living / memory care</span></label>
-              <label><input type="checkbox" name="concerns" value="finances-medicare-insurance"> <span>Finances / Medicare / insurance</span></label>
-              <label><input type="checkbox" name="concerns" value="not-sure"> <span>I’m not sure yet</span></label>
+        <form id="story-intake" class="story-intake">
+          <div class="form-grid">
+            <div class="field">
+              <label for="relationship">Relationship to the person needing help <span class="required">*</span></label>
+              <select id="relationship" name="relationship" required>
+                <option value="">Select...</option>
+                <option value="myself">Myself</option>
+                <option value="parent">Parent</option>
+                <option value="spouse-partner">Spouse or partner</option>
+                <option value="other-family">Other family member</option>
+                <option value="friend">Friend</option>
+                <option value="professional-caregiver">Professional caregiver</option>
+                <option value="other">Other</option>
+              </select>
             </div>
-          </fieldset>
 
-          <div class="field">
-            <label for="situation">
-              Please describe the situation in your own words.
-              <br>(The more detail you share, the better I can help.)
-              <span class="required">*</span>
-            </label>
+            <div class="field">
+              <label for="age">Person’s age <span class="required">*</span></label>
+              <select id="age" name="age" required>
+                <option value="">Select...</option>
+                <option value="under-50">Under 50</option>
+                <option value="50-64">50–64</option>
+                <option value="65-74">65–74</option>
+                <option value="75-84">75–84</option>
+                <option value="85-plus">85 or older</option>
+                <option value="unknown">I’m not sure</option>
+              </select>
+            </div>
 
-            <textarea
-              id="situation"
-              name="situation"
-              required
-              placeholder="Type your answer here..."></textarea>
+            <fieldset>
+              <legend>Primary concern right now <span class="required">*</span></legend>
+              <div class="checkbox-list">
+                <label><input type="checkbox" name="concerns" value="health-condition-diagnosis"><span>Health condition / diagnosis</span></label>
+                <label><input type="checkbox" name="concerns" value="medication-prescription"><span>Medication / prescription issues</span></label>
+                <label><input type="checkbox" name="concerns" value="living-situation-safety"><span>Living situation / safety</span></label>
+                <label><input type="checkbox" name="concerns" value="care-at-home"><span>Care at home</span></label>
+                <label><input type="checkbox" name="concerns" value="assisted-living-memory-care"><span>Assisted living / memory care</span></label>
+                <label><input type="checkbox" name="concerns" value="finances-medicare-insurance"><span>Finances / Medicare / insurance</span></label>
+                <label><input type="checkbox" name="concerns" value="not-sure"><span>I’m not sure yet</span></label>
+              </div>
+            </fieldset>
+
+            <div class="field">
+              <label for="situation">Describe the situation <span class="required">*</span></label>
+              <textarea id="situation" name="situation" required placeholder="Type your answer here..."></textarea>
+            </div>
           </div>
+
+          <div class="form-bottom">
+            <p class="form-note">Your information is confidential and used only to understand your situation and follow up with you.</p>
+            <div class="form-actions">
+              <button type="submit">Continue My Free Assessment →</button>
+            </div>
+          </div>
+        </form>
+
+        <div class="next-strip" aria-label="What happens next">
+          <div class="next-step"><strong>1. You share</strong><span>Complete this short form.</span></div>
+          <div class="next-step"><strong>2. I review</strong><span>I personally review it.</span></div>
+          <div class="next-step"><strong>3. We talk</strong><span>We schedule a conversation.</span></div>
+          <div class="next-step"><strong>4. You decide</strong><span>I explain your options.</span></div>
         </div>
-
-        <p class="form-note">
-          Your information is confidential and will only be used to understand your situation and follow up with you.
-        </p>
-
-        <div class="form-actions">
-          <button type="submit">Continue My Free Assessment →</button>
-        </div>
-      </form>
-
-      <section class="start-next-art" aria-label="What happens next"></section>
+      </section>
     </div>
   </main>
 
@@ -449,8 +447,6 @@
         const fallbackUrl = `https://tally.so/r/${FORM_ID}?${params.toString()}`;
 
         if (window.Tally && typeof window.Tally.openPopup === "function") {
-          /* Tally forwards the page query parameters into the popup.
-             Matching Tally hidden fields can capture these values. */
           const currentUrl = new URL(window.location.href);
           params.forEach((value, key) => currentUrl.searchParams.set(key, value));
           window.history.replaceState({}, "", currentUrl);
